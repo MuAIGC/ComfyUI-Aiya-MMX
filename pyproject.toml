@@ -1,0 +1,26 @@
+[project]
+name        = "comfyui-mmx-aiya"          # 统一：comfyui-<publisher>-<plugin>
+version     = "1.0.0"
+description = "💕 哎呀✦MMX 系列镜像节点 —— 水印 / 尺寸 / 保存 / 分辨率一键魔法"
+readme      = "README.md"
+license     = {file = "LICENSE"}
+authors     = [
+    {name = "MuAIGC", email = "hello@muai.gc"},
+]
+dependencies = [
+    "torch",
+    "torchvision",
+    "opencv-python",
+    "Pillow",
+    "numpy",
+]
+
+[project.urls]
+Homepage      = "https://github.com/MuAIGC/ComfyUI-Aiya-MMX"
+Repository    = "https://github.com/MuAIGC/ComfyUI-Aiya-MMX"
+Documentation = "https://github.com/MuAIGC/ComfyUI-Aiya-MMX/wiki"
+
+[tool.comfy]
+PublisherId = "muai"                      # 在 https://comfyregistry.org 注册后获得
+DisplayName = "哎呀✦MMX Nodes"
+Icon        = "https://raw.githubusercontent.com/MuAIGC/ComfyUI-Aiya-MMX/main/icon.png"
