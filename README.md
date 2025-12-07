@@ -1,3 +1,5 @@
+给你一份「少女风」配色 + 徽章 + 居中排版的 README，直接复制即可生效。
+
 ```markdown
 <p align="center">
   <img src="https://github.com/MuAIGC/ComfyUI-Aiya-MMX/raw/main/MMXlab-600x600.jpg" width="280"/>
@@ -18,6 +20,7 @@
   <img src="https://img.shields.io/badge/License-MIT-ff7eb9?style=flat-square"/>
   <img src="https://img.shields.io/badge/Platform-Linux%20%7C%20Win%20%7C%20macOS-ff7eb9?style=flat-square"/>
 </p>
+```
 
 ---
 
