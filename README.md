@@ -78,12 +78,10 @@ ComfyUI-Aiya-MMX/
   ./sync.sh
   ```
 - **Issue / PR**：欢迎到 [GitHub 仓库](https://github.com/MuAIGC/ComfyUI-Aiya-MMX) 提需求  
-- **微信群**：微信号 MMXaigc
+- **微信群**：
 <div align="center">
   <img src="https://github.com/MuAIGC/ComfyUI-Aiya-MMX/raw/main/MMXlab-600x600.jpg" alt="MMX Lab" width="300"/>
 </div>
 ```
-
+微信号 MMXaigc（说明来由验证会更快一些）
 ---
-
-**Enjoy 少女风一键魔法！**
