@@ -78,4 +78,5 @@ ComfyUI-Aiya-MMX/
   <img src="https://github.com/MuAIGC/ComfyUI-Aiya-MMX/raw/main/MMXlab-600x600.jpg" alt="MMX Lab" width="300"/>
 <p>微信号 MMXaigc（说明来由验证会更快一些）</p>
 </div>
+
 ---
