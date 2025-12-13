@@ -2039,7 +2039,7 @@
         "Node name for S&R": "MMXSimplePromptResolution"
       },
       "widgets_values": [
-        "Place the subjects from the images in one picture, with a large grassland as the background",
+        "将图片主体缩小，融入新的元素，主体围绕3D艺术字"Qwen-img"为中心，柔和的自然光从斜上方洒落，形成斑驳的光影效果。浅粉色系的蔷薇与白色小花组成的花束环绕在周围，部分花瓣飞舞营造出朦胧浪漫的氛围。画面四角是暗色系的，凸显出中间的文字，整体色调温暖柔和，呈现出细腻的胶片质感。",
         "Custom",
         1024,
         1024,
@@ -2108,7 +2108,7 @@
       "title": "说明",
       "properties": {},
       "widgets_values": [
-        "# 【核心区】小白勿动\n---\n## 这一竖排是模型加载、推理的部分，不懂朋友不要动"
+        "# 【核心区】新手勿动\n---\n## 这一竖排是模型加载、推理的部分，不懂朋友不要动"
       ],
       "color": "#432",
       "bgcolor": "#653"
