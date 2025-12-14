@@ -1,8 +1,4 @@
-# ---------------------------------------------------------
 #  Aiya_mmx_Hailuo-2_3-DMX.py
-#  MiniMax-Hailuo-2.3 文生视频 · 同步下载（带重试）· 自写Video容器
-#  新增：双输出 VIDEO + download_url
-# ---------------------------------------------------------
 from __future__ import annotations
 import os
 import time
@@ -12,8 +8,6 @@ import requests
 from datetime import datetime
 import folder_paths
 from ..register import register_node
-
-# ********  最小 VIDEO 容器（自写） ********
 from ..video_adapter import Video   # 同目录上层
 import cv2                          # 用于抽参数
 
@@ -149,13 +143,11 @@ class AiyaHailuo23DMX:
         download_url = dl_resp.json()["file"]["download_url"]
         print(f"[Hailuo-2.3] 下载链接：{download_url}")
 
-        # 4. 同步下载（带重试）到本地
         temp_dir = Path(folder_paths.get_temp_directory())
         temp_dir.mkdir(parents=True, exist_ok=True)
         temp_file = temp_dir / f"hailuo23_{int(time.time()*1000)}.mp4"
         _download_file(download_url, temp_file)
 
-        # 5. 用 cv2 抽参数 + 自写 Video 容器返回
         cap = cv2.VideoCapture(str(temp_file))
         fps = cap.get(cv2.CAP_PROP_FPS) or 25.0
         w   = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
@@ -164,8 +156,7 @@ class AiyaHailuo23DMX:
 
         video = Video(str(temp_file), fps, w, h)
         print(f"[Hailuo-2.3] VIDEO 对象已生成：{video}")
-        # 6. 双输出：VIDEO + 下载链接字符串
         return (video, download_url)
 
 
-register_node(AiyaHailuo23DMX, "Hailuo-2_3-T2V-DMX")
+register_node(AiyaHailuo23DMX, "Hailuo23-文生视频-DMX")
