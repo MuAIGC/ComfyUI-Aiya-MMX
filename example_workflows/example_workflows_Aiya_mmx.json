@@ -2,7 +2,7 @@
   "id": "523b8728-114e-4c98-bdd3-164fdf060451",
   "revision": 0,
   "last_node_id": 196,
-  "last_link_id": 209,
+  "last_link_id": 211,
   "nodes": [
     {
       "id": 96,
@@ -45,7 +45,7 @@
       "flags": {
         "pinned": true
       },
-      "order": 37,
+      "order": 16,
       "mode": 4,
       "inputs": [
         {
@@ -82,7 +82,7 @@
         "pinned": true
       },
       "order": 1,
-      "mode": 4,
+      "mode": 0,
       "inputs": [],
       "outputs": [],
       "title": "使用说明",
@@ -107,7 +107,7 @@
       "flags": {
         "pinned": true
       },
-      "order": 28,
+      "order": 9,
       "mode": 4,
       "inputs": [
         {
@@ -159,7 +159,7 @@
         "pinned": true
       },
       "order": 2,
-      "mode": 4,
+      "mode": 0,
       "inputs": [],
       "outputs": [],
       "title": "使用说明",
@@ -179,12 +179,12 @@
       ],
       "size": [
         392.8447714331505,
-        97.62827761583048
+        112
       ],
       "flags": {
         "pinned": true
       },
-      "order": 31,
+      "order": 12,
       "mode": 4,
       "inputs": [
         {
@@ -199,7 +199,11 @@
         "ver": "0.3.76",
         "Node name for S&R": "PreviewAny"
       },
-      "widgets_values": []
+      "widgets_values": [
+        null,
+        null,
+        false
+      ]
     },
     {
       "id": 144,
@@ -210,12 +214,12 @@
       ],
       "size": [
         392.8447714331505,
-        97.62827761583048
+        112
       ],
       "flags": {
         "pinned": true
       },
-      "order": 32,
+      "order": 13,
       "mode": 4,
       "inputs": [
         {
@@ -230,7 +234,11 @@
         "ver": "0.3.76",
         "Node name for S&R": "PreviewAny"
       },
-      "widgets_values": []
+      "widgets_values": [
+        null,
+        null,
+        false
+      ]
     },
     {
       "id": 143,
@@ -241,12 +249,12 @@
       ],
       "size": [
         392.8447714331505,
-        97.62827761583048
+        112
       ],
       "flags": {
         "pinned": true
       },
-      "order": 33,
+      "order": 14,
       "mode": 4,
       "inputs": [
         {
@@ -261,7 +269,11 @@
         "ver": "0.3.76",
         "Node name for S&R": "PreviewAny"
       },
-      "widgets_values": []
+      "widgets_values": [
+        null,
+        null,
+        false
+      ]
     },
     {
       "id": 127,
@@ -277,8 +289,8 @@
       "flags": {
         "pinned": true
       },
-      "order": 34,
-      "mode": 4,
+      "order": 15,
+      "mode": 0,
       "inputs": [
         {
           "name": "images",
@@ -293,6 +305,11 @@
           "links": [
             154
           ]
+        },
+        {
+          "name": "jpg_path",
+          "type": "STRING",
+          "links": null
         }
       ],
       "properties": {
@@ -317,12 +334,12 @@
       ],
       "size": [
         392.8447714331505,
-        97.62827761583048
+        112
       ],
       "flags": {
         "pinned": true
       },
-      "order": 30,
+      "order": 11,
       "mode": 4,
       "inputs": [
         {
@@ -337,7 +354,11 @@
         "ver": "0.3.76",
         "Node name for S&R": "PreviewAny"
       },
-      "widgets_values": []
+      "widgets_values": [
+        null,
+        null,
+        false
+      ]
     },
     {
       "id": 98,
@@ -354,7 +375,7 @@
         "pinned": true
       },
       "order": 3,
-      "mode": 4,
+      "mode": 0,
       "inputs": [],
       "outputs": [
         {
@@ -381,939 +402,6 @@
       ]
     },
     {
-      "id": 168,
-      "type": "LoadImage",
-      "pos": [
-        2150.9317802153605,
-        3788.2370804884654
-      ],
-      "size": [
-        270,
-        314
-      ],
-      "flags": {
-        "pinned": true
-      },
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            185
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.76",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "TT-kuzi.jpg",
-        "image"
-      ]
-    },
-    {
-      "id": 164,
-      "type": "LoadImage",
-      "pos": [
-        1546.8726085260193,
-        3780.684667796491
-      ],
-      "size": [
-        270,
-        314
-      ],
-      "flags": {
-        "pinned": true
-      },
-      "order": 5,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            179
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.76",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "TT-mote.png",
-        "image"
-      ]
-    },
-    {
-      "id": 158,
-      "type": "AiyaMMXNanoBananaPro",
-      "pos": [
-        2735.189626205864,
-        3311.293136532826
-      ],
-      "size": [
-        310.83153202739084,
-        386
-      ],
-      "flags": {
-        "pinned": true
-      },
-      "order": 27,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "prompt",
-          "type": "STRING",
-          "link": 174
-        },
-        {
-          "name": "input_image_1",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 179
-        },
-        {
-          "name": "input_image_2",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 184
-        },
-        {
-          "name": "input_image_3",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 185
-        },
-        {
-          "name": "input_image_4",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 186
-        },
-        {
-          "name": "input_image_5",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 189
-        },
-        {
-          "name": "input_image_6",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 190
-        },
-        {
-          "name": "input_image_7",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 191
-        },
-        {
-          "name": "input_image_8",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 192
-        },
-        {
-          "name": "input_image_9",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 193
-        },
-        {
-          "name": "input_image_10",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 194
-        },
-        {
-          "name": "input_image_11",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 195
-        },
-        {
-          "name": "input_image_12",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 196
-        },
-        {
-          "name": "input_image_13",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 197
-        },
-        {
-          "name": "input_image_14",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 198
-        },
-        {
-          "name": "endpoint_url",
-          "type": "STRING",
-          "widget": {
-            "name": "endpoint_url"
-          },
-          "link": 180
-        },
-        {
-          "name": "api_key",
-          "type": "STRING",
-          "widget": {
-            "name": "api_key"
-          },
-          "link": 181
-        }
-      ],
-      "outputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "links": [
-            173
-          ]
-        },
-        {
-          "name": "info",
-          "type": "STRING",
-          "links": [
-            177
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "AiyaMMXNanoBananaPro"
-      },
-      "widgets_values": [
-        "https://ai.t8star.cn/v1/images/generations",
-        "",
-        "16:9"
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
-      "id": 157,
-      "type": "ImageSaveJPG",
-      "pos": [
-        3092.0535827278086,
-        3311.1110756542953
-      ],
-      "size": [
-        390.24808929287565,
-        381.3149227235351
-      ],
-      "flags": {
-        "pinned": true
-      },
-      "order": 35,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 173
-        }
-      ],
-      "outputs": [
-        {
-          "name": "prompt_text",
-          "type": "STRING",
-          "links": []
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ImageSaveJPG"
-      },
-      "widgets_values": [
-        "Aiya/%Aiya:yyyyMMdd%-Aiya/%Aiya:yyyyMMdd%_img_banana-Aiya-",
-        95,
-        true,
-        false,
-        false
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
-      "id": 161,
-      "type": "PreviewAny",
-      "pos": [
-        3541.0222295527597,
-        3318.874280004763
-      ],
-      "size": [
-        341.7858737807096,
-        160.09424562335334
-      ],
-      "flags": {
-        "pinned": true
-      },
-      "order": 36,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "source",
-          "type": "*",
-          "link": 177
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.76",
-        "Node name for S&R": "PreviewAny"
-      },
-      "widgets_values": []
-    },
-    {
-      "id": 167,
-      "type": "LoadImage",
-      "pos": [
-        1846.4319485840679,
-        3782.771554357451
-      ],
-      "size": [
-        270,
-        314
-      ],
-      "flags": {
-        "pinned": true
-      },
-      "order": 6,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            184
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.76",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "3D.png",
-        "image"
-      ]
-    },
-    {
-      "id": 169,
-      "type": "LoadImage",
-      "pos": [
-        2443.031489063454,
-        3788.411762803305
-      ],
-      "size": [
-        270,
-        314
-      ],
-      "flags": {
-        "pinned": true
-      },
-      "order": 7,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            186
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.76",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "TT-shafa.jpg",
-        "image"
-      ]
-    },
-    {
-      "id": 171,
-      "type": "LoadImage",
-      "pos": [
-        2745.6253064704792,
-        3791.3699972312456
-      ],
-      "size": [
-        270,
-        314
-      ],
-      "flags": {
-        "pinned": true
-      },
-      "order": 8,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            189
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.76",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "TT-waitao.jpg",
-        "image"
-      ]
-    },
-    {
-      "id": 174,
-      "type": "LoadImage",
-      "pos": [
-        3048.731342141627,
-        3798.782649553132
-      ],
-      "size": [
-        270,
-        314
-      ],
-      "flags": {
-        "pinned": true
-      },
-      "order": 9,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            190
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.76",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "TT-weiyi.jpg",
-        "image"
-      ]
-    },
-    {
-      "id": 176,
-      "type": "LoadImage",
-      "pos": [
-        1556.7161151703583,
-        4173.019268234183
-      ],
-      "size": [
-        270,
-        314
-      ],
-      "flags": {
-        "pinned": true
-      },
-      "order": 10,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            192
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.76",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "env.png",
-        "image"
-      ]
-    },
-    {
-      "id": 170,
-      "type": "LoadImage",
-      "pos": [
-        2158.1767470321242,
-        4180.020513565697
-      ],
-      "size": [
-        270,
-        314
-      ],
-      "flags": {
-        "pinned": true
-      },
-      "order": 11,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            194
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.76",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "thing.png",
-        "image"
-      ]
-    },
-    {
-      "id": 179,
-      "type": "LoadImage",
-      "pos": [
-        2755.217582820887,
-        4186.016501036883
-      ],
-      "size": [
-        270,
-        314
-      ],
-      "flags": {
-        "pinned": true
-      },
-      "order": 12,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            196
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.76",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "20251114005923_833_293.png",
-        "image"
-      ]
-    },
-    {
-      "id": 180,
-      "type": "LoadImage",
-      "pos": [
-        3058.7513597104394,
-        4186.132093677148
-      ],
-      "size": [
-        270,
-        314
-      ],
-      "flags": {
-        "pinned": true
-      },
-      "order": 13,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            197
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.76",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "20250803152343-wan22-_00004_.png",
-        "image"
-      ]
-    },
-    {
-      "id": 178,
-      "type": "LoadImage",
-      "pos": [
-        3361.931355991313,
-        4186.499404764258
-      ],
-      "size": [
-        270,
-        314
-      ],
-      "flags": {
-        "pinned": true
-      },
-      "order": 14,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            198
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.76",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "20250803152343-wan22-_00003_.png",
-        "image"
-      ]
-    },
-    {
-      "id": 172,
-      "type": "LoadImage",
-      "pos": [
-        3344.856341191185,
-        3800.9897366328237
-      ],
-      "size": [
-        270,
-        314
-      ],
-      "flags": {
-        "pinned": true
-      },
-      "order": 15,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            191
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.76",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "TT-xiezi.jpg",
-        "image"
-      ]
-    },
-    {
-      "id": 177,
-      "type": "LoadImage",
-      "pos": [
-        1852.402547851487,
-        4175.367817170292
-      ],
-      "size": [
-        270,
-        314
-      ],
-      "flags": {
-        "pinned": true
-      },
-      "order": 16,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            193
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.76",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "human.png",
-        "image"
-      ]
-    },
-    {
-      "id": 175,
-      "type": "LoadImage",
-      "pos": [
-        2459.565918734545,
-        4183.506552348738
-      ],
-      "size": [
-        270,
-        314
-      ],
-      "flags": {
-        "pinned": true
-      },
-      "order": 17,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            195
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.76",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "woman.jpg",
-        "image"
-      ]
-    },
-    {
-      "id": 181,
-      "type": "MarkdownNote",
-      "pos": [
-        1574.297641510501,
-        3267.3371105392016
-      ],
-      "size": [
-        410.70184179689704,
-        347.9087855968014
-      ],
-      "flags": {
-        "collapsed": false,
-        "pinned": true
-      },
-      "order": 18,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "说明",
-      "properties": {},
-      "widgets_values": [
-        "# 【第一步】 填/注册API\n---\n## 可以使用贞贞工坊API\n\n## [>>点这里获取key<<](https://ai.t8star.cn/register?aff=QdDN47556/)\n\n## 令牌->添加令牌->获得key\n\n## ->将key填入下框->确认"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 155,
-      "type": "PrimitiveString",
-      "pos": [
-        2157.324978913262,
-        3506.809440884343
-      ],
-      "size": [
-        316.60792079476505,
-        58
-      ],
-      "flags": {
-        "pinned": true
-      },
-      "order": 19,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            180
-          ]
-        }
-      ],
-      "title": "api的网站",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.76",
-        "Node name for S&R": "PrimitiveString"
-      },
-      "widgets_values": [
-        "https://ai.t8star.cn/v1/images/generations"
-      ]
-    },
-    {
-      "id": 162,
-      "type": "PrimitiveStringMultiline",
-      "pos": [
-        2112.3287296227622,
-        3300.320236344281
-      ],
-      "size": [
-        407.53951321551085,
-        143.45365088366907
-      ],
-      "flags": {
-        "pinned": true
-      },
-      "order": 20,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            174
-          ]
-        }
-      ],
-      "title": "提示词",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.76",
-        "Node name for S&R": "PrimitiveStringMultiline"
-      },
-      "widgets_values": [
-        "将这14张图的元素主体放到一张图里"
-      ]
-    },
-    {
-      "id": 154,
-      "type": "PrimitiveString",
-      "pos": [
-        1627.2806496541616,
-        3660.6049811494754
-      ],
-      "size": [
-        308.63219746066034,
-        58
-      ],
-      "flags": {
-        "pinned": true
-      },
-      "order": 21,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            181
-          ]
-        }
-      ],
-      "title": "key",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.76",
-        "Node name for S&R": "PrimitiveString"
-      },
-      "widgets_values": [
-        ""
-      ]
-    },
-    {
       "id": 10,
       "type": "LoadVideo",
       "pos": [
@@ -1327,7 +415,7 @@
       "flags": {
         "pinned": true
       },
-      "order": 22,
+      "order": 4,
       "mode": 4,
       "inputs": [],
       "outputs": [
@@ -1364,7 +452,7 @@
       "flags": {
         "pinned": true
       },
-      "order": 29,
+      "order": 10,
       "mode": 4,
       "inputs": [
         {
@@ -1401,7 +489,7 @@
       "flags": {
         "pinned": true
       },
-      "order": 44,
+      "order": 23,
       "mode": 4,
       "inputs": [
         {
@@ -1437,7 +525,7 @@
         "collapsed": false,
         "pinned": true
       },
-      "order": 23,
+      "order": 5,
       "mode": 4,
       "inputs": [],
       "outputs": [],
@@ -1463,7 +551,7 @@
       "flags": {
         "pinned": true
       },
-      "order": 40,
+      "order": 19,
       "mode": 4,
       "inputs": [
         {
@@ -1508,12 +596,12 @@
       ],
       "size": [
         392.8447714331505,
-        97.62827761583048
+        112
       ],
       "flags": {
         "pinned": true
       },
-      "order": 41,
+      "order": 20,
       "mode": 4,
       "inputs": [
         {
@@ -1528,7 +616,11 @@
         "ver": "0.3.76",
         "Node name for S&R": "PreviewAny"
       },
-      "widgets_values": []
+      "widgets_values": [
+        null,
+        null,
+        false
+      ]
     },
     {
       "id": 194,
@@ -1539,12 +631,12 @@
       ],
       "size": [
         392.8447714331505,
-        97.62827761583048
+        112
       ],
       "flags": {
         "pinned": true
       },
-      "order": 43,
+      "order": 22,
       "mode": 4,
       "inputs": [
         {
@@ -1559,7 +651,11 @@
         "ver": "0.3.76",
         "Node name for S&R": "PreviewAny"
       },
-      "widgets_values": []
+      "widgets_values": [
+        null,
+        null,
+        false
+      ]
     },
     {
       "id": 190,
@@ -1575,7 +671,7 @@
       "flags": {
         "pinned": true
       },
-      "order": 38,
+      "order": 17,
       "mode": 4,
       "inputs": [
         {
@@ -1632,12 +728,12 @@
       ],
       "size": [
         392.8447714331505,
-        97.62827761583048
+        112
       ],
       "flags": {
         "pinned": true
       },
-      "order": 42,
+      "order": 21,
       "mode": 4,
       "inputs": [
         {
@@ -1652,7 +748,11 @@
         "ver": "0.3.76",
         "Node name for S&R": "PreviewAny"
       },
-      "widgets_values": []
+      "widgets_values": [
+        null,
+        null,
+        false
+      ]
     },
     {
       "id": 138,
@@ -1663,13 +763,13 @@
       ],
       "size": [
         392.8447714331505,
-        97.62827761583048
+        112
       ],
       "flags": {
         "pinned": true
       },
-      "order": 39,
-      "mode": 4,
+      "order": 18,
+      "mode": 0,
       "inputs": [
         {
           "name": "source",
@@ -1683,7 +783,11 @@
         "ver": "0.3.76",
         "Node name for S&R": "PreviewAny"
       },
-      "widgets_values": []
+      "widgets_values": [
+        null,
+        null,
+        false
+      ]
     },
     {
       "id": 126,
@@ -1699,8 +803,8 @@
       "flags": {
         "pinned": true
       },
-      "order": 26,
-      "mode": 4,
+      "order": 8,
+      "mode": 0,
       "inputs": [
         {
           "name": "图像",
@@ -1749,7 +853,7 @@
       "flags": {
         "pinned": true
       },
-      "order": 24,
+      "order": 6,
       "mode": 4,
       "inputs": [],
       "outputs": [
@@ -1799,17 +903,15 @@
       "id": 192,
       "type": "Fast Groups Bypasser (rgthree)",
       "pos": [
-        1038.9559394126122,
-        3538.986988888408
+        984.5798163509355,
+        1785.3633306625743
       ],
       "size": [
         380.7272202493423,
         161.85968732183983
       ],
-      "flags": {
-        "pinned": true
-      },
-      "order": 25,
+      "flags": {},
+      "order": 7,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1906,158 +1008,6 @@
       143,
       0,
       "*"
-    ],
-    [
-      173,
-      158,
-      0,
-      157,
-      0,
-      "IMAGE"
-    ],
-    [
-      174,
-      162,
-      0,
-      158,
-      0,
-      "STRING"
-    ],
-    [
-      177,
-      158,
-      1,
-      161,
-      0,
-      "*"
-    ],
-    [
-      179,
-      164,
-      0,
-      158,
-      1,
-      "IMAGE"
-    ],
-    [
-      180,
-      155,
-      0,
-      158,
-      15,
-      "STRING"
-    ],
-    [
-      181,
-      154,
-      0,
-      158,
-      16,
-      "STRING"
-    ],
-    [
-      184,
-      167,
-      0,
-      158,
-      2,
-      "IMAGE"
-    ],
-    [
-      185,
-      168,
-      0,
-      158,
-      3,
-      "IMAGE"
-    ],
-    [
-      186,
-      169,
-      0,
-      158,
-      4,
-      "IMAGE"
-    ],
-    [
-      189,
-      171,
-      0,
-      158,
-      5,
-      "IMAGE"
-    ],
-    [
-      190,
-      174,
-      0,
-      158,
-      6,
-      "IMAGE"
-    ],
-    [
-      191,
-      172,
-      0,
-      158,
-      7,
-      "IMAGE"
-    ],
-    [
-      192,
-      176,
-      0,
-      158,
-      8,
-      "IMAGE"
-    ],
-    [
-      193,
-      177,
-      0,
-      158,
-      9,
-      "IMAGE"
-    ],
-    [
-      194,
-      170,
-      0,
-      158,
-      10,
-      "IMAGE"
-    ],
-    [
-      195,
-      175,
-      0,
-      158,
-      11,
-      "IMAGE"
-    ],
-    [
-      196,
-      179,
-      0,
-      158,
-      12,
-      "IMAGE"
-    ],
-    [
-      197,
-      180,
-      0,
-      158,
-      13,
-      "IMAGE"
-    ],
-    [
-      198,
-      178,
-      0,
-      158,
-      14,
-      "IMAGE"
     ],
     [
       200,
@@ -2157,19 +1107,6 @@
       "flags": {}
     },
     {
-      "id": 7,
-      "title": "香蕉专业版",
-      "bounding": [
-        1468.2729799251265,
-        3037.85921255579,
-        2463.8462414919486,
-        1487.83989107041
-      ],
-      "color": "#3f789e",
-      "font_size": 100,
-      "flags": {}
-    },
-    {
       "id": 8,
       "title": "视频加水印(兼容版)",
       "bounding": [
@@ -2186,18 +1123,18 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1.0610764609500154,
+      "scale": 0.5989500000000022,
       "offset": [
-        -884.4749882439194,
-        -3428.6358484433376
+        -311.25404495816485,
+        -810.455457722335
       ]
     },
-    "frontendVersion": "1.33.10",
+    "frontendVersion": "1.34.8",
+    "workflowRendererVersion": "LG",
     "VHS_latentpreview": false,
     "VHS_latentpreviewrate": 0,
     "VHS_MetadataImage": true,
-    "VHS_KeepIntermediate": true,
-    "workflowRendererVersion": "LG"
+    "VHS_KeepIntermediate": true
   },
   "version": 0.4
 }
