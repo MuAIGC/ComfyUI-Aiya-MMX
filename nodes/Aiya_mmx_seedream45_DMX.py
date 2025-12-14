@@ -1,9 +1,3 @@
-"""
-💕 哎呀✦MMX SeeDream4.5 图生图对齐版（10图）
-官方 JSON + image[]（URL/Base64）方式，与示例完全一致
-四件套：清晰度 / 比例 / 网址 / key  
-运行日志打印完整参数，其余写死
-"""
 from __future__ import annotations
 import io
 import requests
@@ -72,7 +66,7 @@ RECOMMENDED_SIZE = {
 # ---------- 节点 ----------
 class SeeDream4_5_DMX:
     DESCRIPTION = (
-        "💕 哎呀✦MMX SeeDream4.5 图生图对齐版（10图）\n\n"
+        "💕 哎呀✦MMX SeeDream4.5（10图）\n\n"
         "官方 JSON + image[]（URL/Base64）方式，与示例完全一致\n"
         "四件套：清晰度 / 比例 / 网址 / key  \n"
         "运行日志打印完整参数，9:16 已对齐\n\n"
@@ -254,4 +248,4 @@ class SeeDream4_5_DMX:
 
 
 # ---------- 注册 ----------
-register_node(SeeDream4_5_DMX, "SeeDream4_5_DMX")
+register_node(SeeDream4_5_DMX, "SeeDream45_DMX")
