@@ -1,7 +1,8 @@
 """
-💕 哎呀✦MMX 通用视频下载节点
-自动下载 + 返回本地路径字符串 → 下游接「LoadVideo」即可
-文件：Aiya_mmx_DownloadVideo.py
+Aiya_mmx_DownloadVideo.py
+💕 哎呀✦通用视频下载节点
+输入：http/https 直链（.mp4/.mov/.avi 等）
+输出：橙色 VIDEO 口 → 下游任意视频节点即插即用
 注册：DownloadVideo
 """
 from __future__ import annotations
@@ -12,7 +13,9 @@ from pathlib import Path
 from datetime import datetime
 import folder_paths
 from ..register import register_node
-from ..date_variable import replace_date_vars   # 与你 saveJPG 完全相同
+from ..date_variable import replace_date_vars   
+from ..video_adapter import Video              
+import cv2                                    
 
 OUTPUT_DIR = Path(folder_paths.get_output_directory())
 OUTPUT_DIR.mkdir(exist_ok=True)
@@ -20,15 +23,14 @@ OUTPUT_DIR.mkdir(exist_ok=True)
 
 class DownloadVideo:
     DESCRIPTION = (
-        "💕 哎呀✦通用视频下载节点\n\n"
+        "💕 哎呀✦通用视频下载节点（VIDEO 输出）\n\n"
         "输入：http/https 直链（.mp4/.mov/.avi 等）\n"
-        "输出：本地文件路径字符串 → 下游接「LoadVideo」即可\n\n"
+        "输出：橙色 VIDEO → 下游任意视频节点即插即用\n\n"
         "文件名：支持与你 saveJPG 完全相同的日期变量\n"
-        "例如 %Aiya:yyyyMMdd%  → 20251213\n"
         "保存路径：官方 output 目录，自动防重名"
     )
-    RETURN_TYPES = ("STRING",)   # ← 路径字符串
-    RETURN_NAMES = ("path",)
+    RETURN_TYPES = ("VIDEO",)         
+    RETURN_NAMES = ("video",)
     FUNCTION = "download"
     CATEGORY = "哎呀✦MMX/video"
 
@@ -47,7 +49,7 @@ class DownloadVideo:
             raise RuntimeError("❌ 下载链接为空")
 
         url = download_url.strip()
-        # 1. 与你 saveJPG 完全相同的变量替换 + 路径安全
+        # 1. 变量替换 + 路径安全
         prefix = replace_date_vars(filename_prefix.strip(), safe_path=True)
         # 2. 官方防重名 + 自动子目录
         full_output_folder, filename, counter, subfolder, filename_prefix = folder_paths.get_save_image_path(
@@ -75,8 +77,17 @@ class DownloadVideo:
             raise RuntimeError(f"下载失败：{e}")
 
         print(f"[DownloadVideo] 已保存 → {video_path}")
-        # 只返回路径字符串
-        return (str(video_path),)
+
+        # 4. 用 cv2 抽参数 + 自写容器包成 VIDEO
+        cap = cv2.VideoCapture(str(video_path))
+        fps = cap.get(cv2.CAP_PROP_FPS) or 25.0
+        w   = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+        h   = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+        cap.release()
+
+        video = Video(str(video_path), fps, w, h)
+        print(f"[DownloadVideo] VIDEO 对象已生成：{video}")
+        return (video,)   # 橙色 VIDEO 口
 
 
 register_node(DownloadVideo, "DownloadVideo")
