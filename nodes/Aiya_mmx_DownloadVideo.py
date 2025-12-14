@@ -13,9 +13,9 @@ from pathlib import Path
 from datetime import datetime
 import folder_paths
 from ..register import register_node
-from ..date_variable import replace_date_vars   
-from ..video_adapter import Video              
-import cv2                                    
+from ..date_variable import replace_date_vars   # 与你 saveJPG 完全相同
+from ..video_adapter import Video               # 自写容器，已对齐 VHS 接口
+import cv2                                      # 抽 fps/宽高
 
 OUTPUT_DIR = Path(folder_paths.get_output_directory())
 OUTPUT_DIR.mkdir(exist_ok=True)
@@ -29,7 +29,7 @@ class DownloadVideo:
         "文件名：支持与你 saveJPG 完全相同的日期变量\n"
         "保存路径：官方 output 目录，自动防重名"
     )
-    RETURN_TYPES = ("VIDEO",)         
+    RETURN_TYPES = ("VIDEO",)          # ← 橙色 VIDEO 口
     RETURN_NAMES = ("video",)
     FUNCTION = "download"
     CATEGORY = "哎呀✦MMX/video"
