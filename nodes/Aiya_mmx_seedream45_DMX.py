@@ -1,3 +1,4 @@
+# Aiya_mmx_SeeDream45_DMX_v2.py
 from __future__ import annotations
 import io
 import requests
@@ -67,7 +68,16 @@ RECOMMENDED_SIZE = {
 class SeeDream4_5_DMX:
     DESCRIPTION = (
         "💕 哎呀✦MMX SeeDream4.5（10图）\n\n"
-        "English: DMX-native doubao-seedream-4-5-251128 / 10 imgs / full logs"
+        "模型固定：doubao-seedream-4-5-251128\n\n"
+        "1️⃣ 文生图\n"
+        "  不插参考图即可；prompt≤300字；seed=-1随机\n\n"
+        "2️⃣ 图生图（单图）\n"
+        "  插1张图即可；prompt里用“图1”指代\n\n"
+        "3️⃣ 多图融合（≤10张）\n"
+        "  继续连input_image_2…10；prompt用“图1、图2…”指代；例：把图1衣服换成图2风格\n"
+        "  单图≤10MB，像素≤6000×6000，宽高比1/3-3\n\n"
+        "4️⃣ 共通\n"
+        "  返回最大分辨率那张；503/超时自动重试3次，高峰失败请降清晰度或减少参考图"
     )
 
     @classmethod
@@ -183,30 +193,68 @@ class SeeDream4_5_DMX:
             raise RuntimeError("No image returned")
         return images
 
+    # ---------- 网络请求：温柔重试 ----------
     def call_api(self, url, key, ar, **kwargs):
-        """带降级重试（503 时删 aspect_ratio+size）"""
+        """带 503/超时自动重试，超时 300 s，最多 3 次，提示温柔"""
         headers = {"Authorization": f"Bearer {key}"}
+        # 准备 payload（降级用）
         if "json" in kwargs:
             headers["Content-Type"] = "application/json"
-            resp = requests.post(url, headers=headers, json=kwargs["json"], timeout=180)
+            payload = kwargs["json"]
         else:
-            resp = requests.post(url, headers=headers, data=kwargs["data"], files=kwargs["files"], timeout=180)
+            payload = kwargs.get("data", {})
 
-        if resp.status_code == 200:
-            return resp
-        if "rix_api_error" in resp.text and "bad_response_status_code" in resp.text:
-            print("[SeeDream4.5-DMX] 后端限流，自动降级重试…")
-            if "json" in kwargs:
-                payload = kwargs["json"].copy()
-                payload.pop("aspect_ratio", None)
-                payload.pop("size", None)
-                return requests.post(url, headers=headers, json=payload, timeout=180)
-            else:
-                data = kwargs["data"].copy()
-                data.pop("aspect_ratio", None)
-                data.pop("size", None)
-                return requests.post(url, headers=headers, data=data, files=kwargs["files"], timeout=180)
-        return resp
+        max_retry = 3
+        for attempt in range(1, max_retry + 1):
+            try:
+                print(f"[SeeDream4.5-DMX] 第 {attempt}/{max_retry} 次请求中…")
+                if "json" in kwargs:
+                    resp = requests.post(url, headers=headers, json=payload, timeout=300)
+                else:
+                    resp = requests.post(url, headers=headers, data=payload,
+                                         files=kwargs.get("files"), timeout=300)
+
+                # 503 或 5xx 可重试
+                if 500 <= resp.status_code < 600:
+                    print(f"[SeeDream4.5-DMX] 服务器开小差 ({resp.status_code})，{(2 ** attempt)} 秒后重试…")
+                    time.sleep(2 ** attempt)
+                    continue
+
+                # 限流特殊返回（rix_api_error）
+                if resp.status_code != 200 and "rix_api_error" in resp.text and "bad_response_status_code" in resp.text:
+                    print("[SeeDream4.5-DMX] 后端限流，自动降级（去掉 aspect_ratio & size）重试…")
+                    if "json" in kwargs:
+                        payload = payload.copy()
+                        payload.pop("aspect_ratio", None)
+                        payload.pop("size", None)
+                        resp = requests.post(url, headers=headers, json=payload, timeout=300)
+                    else:
+                        data = payload.copy()
+                        data.pop("aspect_ratio", None)
+                        data.pop("size", None)
+                        resp = requests.post(url, headers=headers, data=data,
+                                             files=kwargs.get("files"), timeout=300)
+
+                return resp      # 把最终响应交出去
+
+            except requests.exceptions.Timeout:
+                print(f"[SeeDream4.5-DMX] 请求超时 (>300 s)，别急，我再试试…（{attempt}/{max_retry}）")
+                if attempt < max_retry:
+                    time.sleep(5)
+                continue
+            except requests.exceptions.RequestException as e:
+                print(f"[SeeDream4.5-DMX] 网络波动：{e}，{attempt}/{max_retry} 次")
+                if attempt < max_retry:
+                    time.sleep(5)
+                continue
+
+        # 走到这里说明重试用完
+        raise RuntimeError(
+            "[SeeDream4.5-DMX] 我已经很努力啦，可服务器还是木有响应～\n"
+            "1. 高峰时段生成较慢，请 3~5 分钟后再试；\n"
+            "2. 检查 API 额度是否充足；\n"
+            "3. 调低 clarity（4K→2K）或减少参考图数量再试试～"
+        )
 
     # ---------- 主入口 ----------
     def generate(self, endpoint_url, api_key, prompt, clarity, aspect_ratio, seed: int = -1, **imgs):
@@ -243,6 +291,4 @@ class SeeDream4_5_DMX:
                f"input: {cnt}  output: {len(images)}")
         return (pil2tensor(best), txt)
 
-
-# ---------- 注册 ----------
 register_node(SeeDream4_5_DMX, "SeeDream45_DMX")
