@@ -1,22 +1,36 @@
-"""
-💕 哎呀✦MMX  MiniMax-Hailuo-2.3 视频生成节点
-仅返回下载链接字符串，不下载、不封装
-可选参数 + 中文说明 + 运镜指令完整提示
-文件：Aiya_mmx_Hailuo-2_3-DMX.py
-"""
+# ---------------------------------------------------------
+#  Aiya_mmx_Hailuo-2_3-DMX.py
+#  MiniMax-Hailuo-2.3 文生视频 · 同步下载 · 自写Video容器
+# ---------------------------------------------------------
 from __future__ import annotations
 import os
 import time
 import json
-import requests
 from pathlib import Path
+import requests
 from datetime import datetime
 import folder_paths
 from ..register import register_node
 
+# ********  最小 VIDEO 容器（自写） ********
+from ..video_adapter import Video   # 同目录上层
+import cv2                          # 用于抽参数
+
 POLL_INTERVAL = 3
 MAX_POLL    = 100
 
+
+# ---------------  同步下载函数 ---------------
+def _download_file(url: str, dst: Path):
+    with requests.get(url, stream=True, timeout=120) as r:
+        r.raise_for_status()
+        with open(dst, 'wb') as f:
+            for chunk in r.iter_content(chunk_size=8192):
+                if chunk:
+                    f.write(chunk)
+
+
+# ---------------  节点本体 ---------------
 class AiyaHailuo23DMX:
     DESCRIPTION = (
         "💕 哎呀✦MiniMax-Hailuo-2.3 文生视频\n\n"
@@ -37,8 +51,8 @@ class AiyaHailuo23DMX:
         "【尺寸】仅支持 768P / 1080P，其他值会报错"
     )
 
-    RETURN_TYPES = ("STRING",)
-    RETURN_NAMES = ("download_url",)
+    RETURN_TYPES = ("VIDEO",)
+    RETURN_NAMES = ("video",)
     FUNCTION = "generate"
     CATEGORY = "哎呀✦MMX/video"
 
@@ -51,7 +65,6 @@ class AiyaHailuo23DMX:
                 "duration": (["6", "10"], {"default": "6"}),
                 "resolution": (["768P", "1080P"], {"default": "768P"}),
                 "seed": ("INT", {"default": -1, "min": -1, "max": 0xffffffffffffffff}),
-                # 可选参数（中文下拉，与官方默认值一致）
                 "自动优化提示词": (["开启", "关闭"], {"default": "开启"}),
                 "快速预处理": (["关闭", "开启"], {"default": "关闭"}),
                 "水印": (["关闭", "开启"], {"default": "关闭"}),
@@ -66,28 +79,21 @@ class AiyaHailuo23DMX:
         base_url = "https://www.dmxapi.cn"
         token    = api_key.strip()
 
-        # 布尔映射（中文→官方布尔）
-        prompt_optimizer = 自动优化提示词 == "开启"
-        fast_pretreatment = 快速预处理 == "开启"
-        aigc_watermark   = 水印 == "开启"
-
-        # 1. 提交任务
-        submit_url = f"{base_url}/v1/video_generation"
         payload = {
             "model": "MiniMax-Hailuo-2.3",
             "prompt": prompt.strip(),
             "duration": int(duration),
             "resolution": resolution,
-            "prompt_optimizer": prompt_optimizer,
-            "fast_pretreatment": fast_pretreatment,
-            "aigc_watermark": aigc_watermark,
+            "prompt_optimizer": 自动优化提示词 == "开启",
+            "fast_pretreatment": 快速预处理 == "开启",
+            "aigc_watermark": 水印 == "开启",
         }
         if seed != -1:
             payload["seed"] = int(seed)
 
-        print(f"[Hailuo-2.3] 提交 POST → {submit_url}")
-        resp = requests.post(submit_url,
-                             json=payload,
+        # 1. 提交任务
+        submit_url = f"{base_url}/v1/video_generation"
+        resp = requests.post(submit_url, json=payload,
                              headers={"Content-Type": "application/json",
                                       "Authorization": f"Bearer {token}"},
                              timeout=30)
@@ -96,21 +102,18 @@ class AiyaHailuo23DMX:
         task_id = resp.json()["task_id"]
         print(f"[Hailuo-2.3] task_id = {task_id}")
 
-        # 2. 轮询查询
+        # 2. 轮询
         query_url = f"{base_url}/v1/query/video_generation"
         for cnt in range(1, MAX_POLL + 1):
             time.sleep(POLL_INTERVAL)
-            q_resp = requests.get(query_url,
-                                  params={"task_id": task_id},
-                                  headers={"Authorization": f"Bearer {token}"},
-                                  timeout=30)
+            q_resp = requests.get(query_url, params={"task_id": task_id},
+                                  headers={"Authorization": f"Bearer {token}"}, timeout=30)
             if q_resp.status_code != 200:
                 print(f"[Hailuo-2.3] 查询异常 HTTP {q_resp.status_code}，继续重试…")
                 continue
             raw = q_resp.json()
             status  = raw.get("status") or raw.get("state") or "unknown"
             file_id = raw.get("file_id")
-
             if status.lower() == "processing":
                 print(f"[Hailuo-2.3] 处理中… {cnt}/{MAX_POLL}")
                 continue
@@ -121,16 +124,32 @@ class AiyaHailuo23DMX:
         else:
             raise RuntimeError("⏰ 轮询超时")
 
-        # 3. 只拿下载链接，不下载
+        # 3. 拿下载链接
         retrieve_url = f"{base_url}/v1/files/retrieve"
         dl_resp = requests.get(retrieve_url,
                                params={"file_id": file_id, "task_id": task_id},
-                               headers={"Authorization": f"Bearer {token}"},
-                               timeout=30)
+                               headers={"Authorization": f"Bearer {token}"}, timeout=30)
         if dl_resp.status_code != 200:
             raise RuntimeError(f"获取下载链接失败 HTTP {dl_resp.status_code}")
         download_url = dl_resp.json()["file"]["download_url"]
-        print(f"[Hailuo-2.3] 下载链接已生成：{download_url}")
-        return (download_url,)   # 仅返回字符串
+        print(f"[Hailuo-2.3] 下载链接：{download_url}")
+
+        # 4. 同步下载到本地
+        temp_dir = Path(folder_paths.get_temp_directory())
+        temp_dir.mkdir(parents=True, exist_ok=True)
+        temp_file = temp_dir / f"hailuo23_{int(time.time()*1000)}.mp4"
+        _download_file(download_url, temp_file)
+
+        # 5. 用 cv2 抽参数 + 自写 Video 容器返回
+        cap = cv2.VideoCapture(str(temp_file))
+        fps = cap.get(cv2.CAP_PROP_FPS) or 25.0
+        w   = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+        h   = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+        cap.release()
+
+        video = Video(str(temp_file), fps, w, h)
+        print(f"[Hailuo-2.3] VIDEO 对象已生成：{video}")
+        return (video,)
+
 
 register_node(AiyaHailuo23DMX, "Hailuo-2_3-DMX")
