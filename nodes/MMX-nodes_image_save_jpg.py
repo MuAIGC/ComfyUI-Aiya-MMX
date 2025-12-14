@@ -1,7 +1,3 @@
-# ~/ComfyUI/custom_nodes/Aiya_mmx/nodes/MMX-nodes_image_save_jpg.py
-"""
-💕 哎呀✦MMX 一键保存 JPG + 提示词归档
-"""
 from __future__ import annotations
 import os
 import json
@@ -49,8 +45,9 @@ class ImageSaveJPG:
             },
         }
 
-    RETURN_TYPES = ("STRING",)
-    RETURN_NAMES = ("prompt_text",)
+    # ★ 新增一路 STRING：返回 jpg 绝对路径
+    RETURN_TYPES = ("STRING", "STRING")
+    RETURN_NAMES = ("prompt_text", "jpg_path")
     FUNCTION = "save_images"
     OUTPUT_NODE = True
     CATEGORY = "哎呀✦MMX/输出"
@@ -76,6 +73,9 @@ class ImageSaveJPG:
 
         prompt_text = self._extract_prompt_text(prompt)
 
+        # ★ 保存绝对路径列表（多张图时返回首张路径）
+        saved_paths = []
+
         results = []
         for image in images:
             i = 255. * image.cpu().numpy()
@@ -85,6 +85,7 @@ class ImageSaveJPG:
             save_path = os.path.join(full_output_folder, file)
             img.save(save_path, format='JPEG', quality=quality,
                      optimize=optimize, progressive=progressive)
+            saved_paths.append(save_path)          # ★ 记录路径
 
             # 只要开关打开就一定写 txt（空也写，保持旧习惯）
             if save_prompt_as_txt:
@@ -96,8 +97,9 @@ class ImageSaveJPG:
                            "subfolder": subfolder, "type": self.type})
             counter += 1
 
-        # 字符串即使空也返回，符合端口规范
-        return {"ui": {"images": results}, "result": (prompt_text,)}
+        # ★ 返回：prompt_text + 首张 jpg 绝对路径
+        return {"ui": {"images": results},
+                "result": (prompt_text, saved_paths[0] if saved_paths else "")}
 
     # ---------- 只抓「inputs.prompt」字段 ----------
     def _extract_prompt_text(self, prompt):
@@ -111,6 +113,4 @@ class ImageSaveJPG:
                     texts.append(t.strip())
         return "\n".join(texts)
 
-
-# ---------- 注册 ----------
 register_node(ImageSaveJPG, "保存为JPG")
