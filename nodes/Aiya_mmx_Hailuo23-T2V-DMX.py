@@ -168,4 +168,4 @@ class AiyaHailuo23DMX:
         return (video, download_url)
 
 
-register_node(AiyaHailuo23DMX, "Hailuo-2_3-DMX")
+register_node(AiyaHailuo23DMX, "Hailuo-2_3-T2V-DMX")
