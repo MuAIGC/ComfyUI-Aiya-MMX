@@ -1,0 +1,792 @@
+{
+  "id": "ff3c63fc-eea8-412b-ab36-3cf6451893f9",
+  "revision": 0,
+  "last_node_id": 41,
+  "last_link_id": 89,
+  "nodes": [
+    {
+      "id": 34,
+      "type": "MarkdownNote",
+      "pos": [
+        -1012.8754385172368,
+        648.3820454633573
+      ],
+      "size": [
+        385.61418813396176,
+        254.58251337908882
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "说明",
+      "properties": {},
+      "widgets_values": [
+        "# 【第二步】 选择玩法\n---\n## 这个开关，每次跑图建议，只打开一个“yes”，不然开几个跑几次图"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 35,
+      "type": "MarkdownNote",
+      "pos": [
+        -1478.5038799217184,
+        647.378628128385
+      ],
+      "size": [
+        410.70184179689704,
+        347.9087855968014
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "说明",
+      "properties": {},
+      "widgets_values": [
+        "# 【第一步】 填/注册API\n---\n## 可以使用DMX-API\n\n## [>>点这里获取key<<](https://www.dmxapi.cn/register?aff=LpUa/)\n\n## 令牌->添加令牌->获得key\n\n## ->将key填入下框->确认"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 14,
+      "type": "PreviewAny",
+      "pos": [
+        684.7297733022148,
+        454.1965059054477
+      ],
+      "size": [
+        582.50608201965,
+        187.36017164573263
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 79
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 16,
+      "type": "PreviewAny",
+      "pos": [
+        693.4739352071244,
+        1270.2988948171974
+      ],
+      "size": [
+        585.2429531574899,
+        191.00924036082063
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 85
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 21,
+      "type": "Reroute",
+      "pos": [
+        -154.11878673251292,
+        652.3178878394722
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "widget": {
+            "name": "value"
+          },
+          "link": 24
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "STRING",
+          "links": [
+            72,
+            81
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 11,
+      "type": "PreviewAny",
+      "pos": [
+        673.8169134705828,
+        114.09300530676346
+      ],
+      "size": [
+        591.3801498174548,
+        256.444705297072
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 78
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 15,
+      "type": "PreviewAny",
+      "pos": [
+        689.4826402012343,
+        996.8048656340026
+      ],
+      "size": [
+        601.5810757645374,
+        200.38091476536673
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 84
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 33,
+      "type": "VideoPromptOptimizer_DMX",
+      "pos": [
+        224.6134455459292,
+        1058.100773307313
+      ],
+      "size": [
+        400,
+        258
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "api_key",
+          "type": "STRING",
+          "widget": {
+            "name": "api_key"
+          },
+          "link": 81
+        },
+        {
+          "name": "user_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "user_prompt"
+          },
+          "link": 82
+        },
+        {
+          "name": "duration",
+          "type": "INT",
+          "widget": {
+            "name": "duration"
+          },
+          "link": 89
+        }
+      ],
+      "outputs": [
+        {
+          "name": "optimized_zh",
+          "type": "STRING",
+          "links": [
+            84
+          ]
+        },
+        {
+          "name": "optimized_en",
+          "type": "STRING",
+          "links": [
+            85
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VideoPromptOptimizer_DMX"
+      },
+      "widgets_values": [
+        "",
+        "",
+        "文生视频",
+        "微距特写",
+        10,
+        ""
+      ]
+    },
+    {
+      "id": 25,
+      "type": "Reroute",
+      "pos": [
+        -156.81772325239328,
+        764.6559782664834
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "widget": {
+            "name": "value"
+          },
+          "link": 38
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "STRING",
+          "links": [
+            73,
+            82
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 41,
+      "type": "Reroute",
+      "pos": [
+        -157.98615556953186,
+        939.0646687833928
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "widget": {
+            "name": "value"
+          },
+          "link": 87
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "INT",
+          "links": [
+            88,
+            89
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 36,
+      "type": "Fast Groups Bypasser (rgthree)",
+      "pos": [
+        -994.7254164835925,
+        1014.6043005312408
+      ],
+      "size": [
+        363.37696676699966,
+        116.51715306473875
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "可选连接",
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "玩法选择",
+      "properties": {
+        "matchColors": "",
+        "matchTitle": "",
+        "showNav": true,
+        "showAllGraphs": true,
+        "sort": "position",
+        "customSortAlphabet": "",
+        "toggleRestriction": "default"
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 12,
+      "type": "LoadImage",
+      "pos": [
+        -490.902830287692,
+        382.37366476261116
+      ],
+      "size": [
+        270,
+        314
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            71
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "TT-mote.png",
+        "image"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        -474.7985073618613,
+        770.3420601605839
+      ],
+      "size": [
+        244.91221315694224,
+        88
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            38
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "一个女人"
+      ]
+    },
+    {
+      "id": 32,
+      "type": "VideoPromptOptimizer_DMX",
+      "pos": [
+        203.57119488450658,
+        185.9265367464775
+      ],
+      "size": [
+        400,
+        258
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 71
+        },
+        {
+          "name": "api_key",
+          "type": "STRING",
+          "widget": {
+            "name": "api_key"
+          },
+          "link": 72
+        },
+        {
+          "name": "user_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "user_prompt"
+          },
+          "link": 73
+        },
+        {
+          "name": "duration",
+          "type": "INT",
+          "widget": {
+            "name": "duration"
+          },
+          "link": 88
+        }
+      ],
+      "outputs": [
+        {
+          "name": "optimized_zh",
+          "type": "STRING",
+          "links": [
+            78
+          ]
+        },
+        {
+          "name": "optimized_en",
+          "type": "STRING",
+          "links": [
+            79
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VideoPromptOptimizer_DMX"
+      },
+      "widgets_values": [
+        "",
+        "",
+        "图生视频",
+        "恐怖惊悚",
+        5,
+        ""
+      ]
+    },
+    {
+      "id": 40,
+      "type": "PrimitiveInt",
+      "pos": [
+        -484.2615887211747,
+        942.9064471707806
+      ],
+      "size": [
+        250.7405285972044,
+        82
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            87
+          ]
+        }
+      ],
+      "title": "时长（s）",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PrimitiveInt"
+      },
+      "widgets_values": [
+        6,
+        "fixed"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "PrimitiveString",
+      "pos": [
+        -1446.2880892138285,
+        1092.1774668098165
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            24
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PrimitiveString"
+      },
+      "widgets_values": [
+        ""
+      ]
+    }
+  ],
+  "links": [
+    [
+      24,
+      13,
+      0,
+      21,
+      0,
+      "STRING"
+    ],
+    [
+      38,
+      24,
+      0,
+      25,
+      0,
+      "STRING"
+    ],
+    [
+      71,
+      12,
+      0,
+      32,
+      0,
+      "IMAGE"
+    ],
+    [
+      72,
+      21,
+      0,
+      32,
+      1,
+      "STRING"
+    ],
+    [
+      73,
+      25,
+      0,
+      32,
+      2,
+      "STRING"
+    ],
+    [
+      78,
+      32,
+      0,
+      11,
+      0,
+      "STRING"
+    ],
+    [
+      79,
+      32,
+      1,
+      14,
+      0,
+      "STRING"
+    ],
+    [
+      81,
+      21,
+      0,
+      33,
+      1,
+      "STRING"
+    ],
+    [
+      82,
+      25,
+      0,
+      33,
+      2,
+      "STRING"
+    ],
+    [
+      84,
+      33,
+      0,
+      15,
+      0,
+      "STRING"
+    ],
+    [
+      85,
+      33,
+      1,
+      16,
+      0,
+      "STRING"
+    ],
+    [
+      87,
+      40,
+      0,
+      41,
+      0,
+      "INT"
+    ],
+    [
+      88,
+      41,
+      0,
+      32,
+      3,
+      "INT"
+    ],
+    [
+      89,
+      41,
+      0,
+      33,
+      3,
+      "INT"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "玩法1：文+图->视频提示词",
+      "bounding": [
+        107.47716537026,
+        -72.96934105742139,
+        1337.24677098274,
+        740.5498739300629
+      ],
+      "color": "#3f789e",
+      "font_size": 100,
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "玩法2：文->视频提示词",
+      "bounding": [
+        107.32777033877579,
+        759.111880086999,
+        1337.24677098274,
+        740.5498739300629
+      ],
+      "color": "#3f789e",
+      "font_size": 100,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7247295000000012,
+      "offset": [
+        1440.1384245470006,
+        -41.81460471589742
+      ]
+    },
+    "workflowRendererVersion": "LG",
+    "frontendVersion": "1.34.8",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
