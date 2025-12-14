@@ -1,7 +1,7 @@
 # ---------------------------------------------------------
 #  Aiya_mmx_Hailuo-2_3-DMX.py
-#  MiniMax-Hailuo-2.3 文生视频 · 同步下载 · 自写Video容器
-#  新增：额外输出下载链接字符串
+#  MiniMax-Hailuo-2.3 文生视频 · 同步下载（带重试）· 自写Video容器
+#  新增：双输出 VIDEO + download_url
 # ---------------------------------------------------------
 from __future__ import annotations
 import os
@@ -21,14 +21,28 @@ POLL_INTERVAL = 3
 MAX_POLL    = 100
 
 
-# ---------------  同步下载函数 ---------------
-def _download_file(url: str, dst: Path):
-    with requests.get(url, stream=True, timeout=120) as r:
-        r.raise_for_status()
-        with open(dst, 'wb') as f:
-            for chunk in r.iter_content(chunk_size=8192):
-                if chunk:
-                    f.write(chunk)
+# ---------------  带重试的下载函数 ---------------
+def _download_file(url: str, dst: Path, max_retry: int = 3, timeout: int = 120):
+    """3 次重试 + 异常隔离，网络偶发 DNS 失败不崩整个流程"""
+    for attempt in range(1, max_retry + 1):
+        try:
+            print(f"[Download] 尝试第 {attempt}/{max_retry} 次：{url}")
+            with requests.get(url, stream=True, timeout=timeout) as r:
+                r.raise_for_status()
+                total = int(r.headers.get("content-length", 0))
+                down = 0
+                with open(dst, "wb") as f:
+                    for chunk in r.iter_content(chunk_size=8192):
+                        if chunk:
+                            f.write(chunk)
+                            down += len(chunk)
+                print(f"[Download] 成功写入 {down} 字节 → {dst}")
+                return  # 成功就跳出
+        except Exception as e:
+            print(f"[Download] 第 {attempt} 次失败：{e}")
+            if attempt == max_retry:
+                raise RuntimeError(f"下载失败（重试 {max_retry} 次）：{e}")
+            time.sleep(2)  # 短暂冷却再试
 
 
 # ---------------  节点本体 ---------------
@@ -52,7 +66,7 @@ class AiyaHailuo23DMX:
         "【尺寸】仅支持 768P / 1080P，其他值会报错"
     )
 
-    RETURN_TYPES = ("VIDEO", "STRING")          # ← 双输出
+    RETURN_TYPES = ("VIDEO", "STRING")          # 双输出
     RETURN_NAMES = ("video", "download_url")
     FUNCTION = "generate"
     CATEGORY = "哎呀✦MMX/video"
@@ -135,7 +149,7 @@ class AiyaHailuo23DMX:
         download_url = dl_resp.json()["file"]["download_url"]
         print(f"[Hailuo-2.3] 下载链接：{download_url}")
 
-        # 4. 同步下载到本地
+        # 4. 同步下载（带重试）到本地
         temp_dir = Path(folder_paths.get_temp_directory())
         temp_dir.mkdir(parents=True, exist_ok=True)
         temp_file = temp_dir / f"hailuo23_{int(time.time()*1000)}.mp4"
