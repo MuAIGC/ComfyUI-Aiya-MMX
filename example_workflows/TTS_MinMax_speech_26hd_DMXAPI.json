@@ -42,7 +42,7 @@
         26
       ],
       "flags": {},
-      "order": 10,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -80,7 +80,7 @@
         26
       ],
       "flags": {},
-      "order": 12,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
@@ -118,7 +118,7 @@
         26
       ],
       "flags": {},
-      "order": 16,
+      "order": 15,
       "mode": 0,
       "inputs": [
         {
@@ -155,7 +155,7 @@
         26
       ],
       "flags": {},
-      "order": 17,
+      "order": 16,
       "mode": 0,
       "inputs": [
         {
@@ -377,40 +377,6 @@
       "bgcolor": "#533"
     },
     {
-      "id": 15,
-      "type": "PrimitiveString",
-      "pos": [
-        -428.11434338262814,
-        1661.8200232278787
-      ],
-      "size": [
-        270,
-        58
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            92,
-            133
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.4.0",
-        "Node name for S&R": "PrimitiveString"
-      },
-      "widgets_values": [
-        "sk-0r3sbiOIQ7wZLsJhH8GEy69RjqtwARr2u1mVUUxW1TimTrYU"
-      ]
-    },
-    {
       "id": 67,
       "type": "MiniMaxTTS_DMX",
       "pos": [
@@ -422,7 +388,7 @@
         372
       ],
       "flags": {},
-      "order": 14,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -541,7 +507,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 6,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -565,7 +531,7 @@
         390.2282966318794
       ],
       "flags": {},
-      "order": 7,
+      "order": 6,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -598,7 +564,7 @@
         26
       ],
       "flags": {},
-      "order": 11,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -636,7 +602,7 @@
         190
       ],
       "flags": {},
-      "order": 8,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
@@ -733,7 +699,7 @@
         190
       ],
       "flags": {},
-      "order": 9,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -857,7 +823,7 @@
         382
       ],
       "flags": {},
-      "order": 13,
+      "order": 14,
       "mode": 0,
       "inputs": [
         {
@@ -982,7 +948,7 @@
         136
       ],
       "flags": {},
-      "order": 15,
+      "order": 17,
       "mode": 0,
       "inputs": [
         {
@@ -1019,6 +985,40 @@
       "widgets_values": [
         "audio/ComfyUI",
         "V0"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "PrimitiveString",
+      "pos": [
+        -428.11434338262814,
+        1661.8200232278787
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            92,
+            133
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PrimitiveString"
+      },
+      "widgets_values": [
+        ""
       ]
     }
   ],
@@ -2211,10 +2211,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.5445000000000061,
+      "scale": 0.9646149645000112,
       "offset": [
-        -221.39452878854283,
-        -1019.4474004965881
+        582.7602805306019,
+        -1350.1283739906469
       ]
     },
     "frontendVersion": "1.34.9",
