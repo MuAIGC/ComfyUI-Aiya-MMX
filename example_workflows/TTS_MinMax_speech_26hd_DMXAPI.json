@@ -1,8 +1,8 @@
 {
   "id": "afa0223c-4818-45d8-a6b3-fb25b5ecd3d4",
   "revision": 0,
-  "last_node_id": 167,
-  "last_link_id": 247,
+  "last_node_id": 174,
+  "last_link_id": 262,
   "nodes": [
     {
       "id": 54,
@@ -118,7 +118,7 @@
         26
       ],
       "flags": {},
-      "order": 15,
+      "order": 16,
       "mode": 0,
       "inputs": [
         {
@@ -155,7 +155,7 @@
         26
       ],
       "flags": {},
-      "order": 16,
+      "order": 17,
       "mode": 0,
       "inputs": [
         {
@@ -230,39 +230,6 @@
       ]
     },
     {
-      "id": 26,
-      "type": "PreviewAny",
-      "pos": [
-        1310.8925666757023,
-        2039.5174333061163
-      ],
-      "size": [
-        883.2031327120851,
-        157.01290680461034
-      ],
-      "flags": {},
-      "order": 21,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "source",
-          "type": "*",
-          "link": 66
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.4.0",
-        "Node name for S&R": "PreviewAny"
-      },
-      "widgets_values": [
-        null,
-        null,
-        null
-      ]
-    },
-    {
       "id": 55,
       "type": "MarkdownNote",
       "pos": [
@@ -325,32 +292,6 @@
       "bgcolor": "#353"
     },
     {
-      "id": 66,
-      "type": "MarkdownNote",
-      "pos": [
-        2285.689272184877,
-        1190.7472032631706
-      ],
-      "size": [
-        721.6666091677753,
-        1551.8096768842954
-      ],
-      "flags": {
-        "collapsed": false
-      },
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "使用方法：音色",
-      "properties": {},
-      "widgets_values": [
-        "#         官方音色速查表\n        \"01  male-qn-qingse                     青涩青年        中文\\n\"\n        \"02  male-qn-jingying                   精英青年        中文\\n\"\n        \"03  male-qn-badao                      霸道青年        中文\\n\"\n        \"04  male-qn-daxuesheng                 青年大学生      中文\\n\"\n        \"05  female-shaonv                      少女            中文\\n\"\n        \"06  female-yujie                       御姐            中文\\n\"\n        \"07  female-chengshu                    成熟女性        中文\\n\"\n        \"08  female-tianmei                     甜美女性        中文\\n\"\n        \"09  male-qn-qingse-jingpin             青涩青年-b      中文\\n\"\n        \"10  male-qn-jingying-jingpin           精英青年-b      中文\\n\"\n        \"11  male-qn-badao-jingpin              霸道青年-b      中文\\n\"\n        \"12  male-qn-daxuesheng-jingpin         大学生-b        中文\\n\"\n        \"13  female-shaonv-jingpin              少女-b          中文\\n\"\n        \"14  female-yujie-jingpin               御姐-b          中文\\n\"\n        \"15  female-chengshu-jingpin            成熟女-b        中文\\n\"\n        \"16  female-tianmei-jingpin             甜美女-b        中文\\n\"\n        \"17  clever_boy                         聪明男童        中文\\n\"\n        \"18  cute_boy                           可爱男童        中文\\n\"\n        \"19  lovely_girl                        萌萌女童        中文\\n\"\n        \"20  cartoon_pig                        卡通猪小琪      中文\\n\"\n        \"21  bingjiao_didi                      病娇弟弟        中文\\n\"\n        \"22  junlang_nanyou                     俊朗男友        中文\\n\"\n        \"23  chunzhen_xuedi                     纯真学弟        中文\\n\"\n        \"24  lengdan_xiongzhang                 冷淡学长        中文\\n\"\n        \"25  badao_shaoye                       霸道少爷        中文\\n\"\n        \"26  tianxin_xiaoling                   甜心小玲        中文\\n\"\n        \"27  qiaopi_mengmei                     俏皮萌妹        中文\\n\"\n        \"28  wumei_yujie                        妩媚御姐        中文\\n\"\n        \"29  diadia_xuemei                      嗲嗲学妹        中文\\n\"\n        \"30  danya_xuejie                       淡雅学姐        中文\\n\"\n        \"31  Chinese (Mandarin)_Reliable_Executive      沉稳高管        中文\\n\"\n        \"32  Chinese (Mandarin)_News_Anchor             新闻女声        中文\\n\"\n        \"33  Chinese (Mandarin)_Mature_Woman            傲娇御姐        中文\\n\"\n        \"34  Chinese (Mandarin)_Unrestrained_Young_Man  不羁青年        中文\\n\"\n        \"35  Arrogant_Miss                              嚣张小姐        中文\\n\"\n        \"36  Robot_Armor                                机械战甲        中文\\n\"\n        \"37  Chinese (Mandarin)_Kind-hearted_Antie      热心大婶        中文\\n\"\n        \"38  Chinese (Mandarin)_HK_Flight_Attendant     港普空姐        中文\\n\"\n        \"39  Chinese (Mandarin)_Humorous_Elder          搞笑大爷        中文\\n\"\n        \"40  Chinese (Mandarin)_Gentleman               温润男声        中文\\n\"\n        \"41  Chinese (Mandarin)_Warm_Bestie             温暖闺蜜        中文\\n\"\n        \"42  Chinese (Mandarin)_Male_Announcer          播报男声        中文\\n\"\n        \"43  Chinese (Mandarin)_Sweet_Lady              甜美女声        中文\\n\"\n        \"44  Chinese (Mandarin)_Southern_Young_Man      南方小哥        中文\\n\"\n        \"45  Chinese (Mandarin)_Wise_Women              阅历姐姐        中文\\n\"\n        \"46  Chinese (Mandarin)_Gentle_Youth            温润青年        中文\\n\"\n        \"47  Chinese (Mandarin)_Warm_Girl               温暖少女        中文\\n\"\n        \"48  Chinese (Mandarin)_Kind-hearted_Elder      花甲奶奶        中文\\n\"\n        \"49  Chinese (Mandarin)_Cute_Spirit             憨憨萌兽        中文\\n\"\n        \"50  Chinese (Mandarin)_Radio_Host              电台男主播      中文\\n\"\n        \"51  Chinese (Mandarin)_Lyrical_Voice           抒情男声        中文\\n\"\n        \"52  Chinese (Mandarin)_Straightforward_Boy     率真弟弟        中文\\n\"\n        \"53  Chinese (Mandarin)_Sincere_Adult           真诚青年        中文\\n\"\n        \"54  Chinese (Mandarin)_Gentle_Senior           温柔学姐        中文\\n\"\n        \"55  Chinese (Mandarin)_Stubborn_Friend         嘴硬竹马        中文\\n\"\n        \"56  Chinese (Mandarin)_Crisp_Girl              清脆少女        中文\\n\"\n        \"57  Chinese (Mandarin)_Pure-hearted_Boy        清澈邻家弟      中文\\n\"\n        \"58  Chinese (Mandarin)_Soft_Girl               软软女孩        中文\\n\"\n        \"59  Cantonese_ProfessionalHost（F)             粤普女主持      粤语\\n\"\n        \"60  Cantonese_GentleLady                       粤语温柔女      粤语\\n\"\n        \"61  Cantonese_ProfessionalHost（M)             粤普男主持      粤语\\n\"\n        \"62  Cantonese_PlayfulMan                       粤语活泼男      粤语\\n\"\n        \"63  Cantonese_CuteGirl                         粤语可爱女      粤语\\n\"\n        \"64  Cantonese_KindWoman                        粤语善良女      粤语\\n\"\n        \"65  Santa_Claus                                圣诞老人        英文\\n\"\n        \"66  Grinch                                     格林奇          英文\\n\"\n        \"67  Rudolph                                    鲁道夫          英文\\n\"\n        \"68  Arnold                                     阿诺德          英文\\n\"\n        \"69  Charming_Santa                             魅力圣诞老人    英文\\n\"\n        \"70  Charming_Lady                              魅力女士        英文\\n\"\n        \"71  Sweet_Girl                                 甜美女孩        英文\\n\"\n        \"72  Cute_Elf                                   可爱精灵        英文\\n\"\n        \"73  Attractive_Girl                            魅力女孩        英文\\n\"\n        \"74  Serene_Woman                               宁静女士        英文\\n\"\n        \"75  English_Trustworthy_Man                    可信男士        英文\\n\"\n        \"76  English_Graceful_Lady                      优雅女士        英文\\n\"\n        \"77  English_Aussie_Bloke                       澳洲男士        英文\\n\"\n        \"78  English_Whispering_girl                    耳语少女        英文\\n\"\n        \"79  English_Diligent_Man                       勤奋男士        英文\\n\"\n        \"80  English_Gentle-voiced_man                  温柔男声        英文\""
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
       "id": 125,
       "type": "MarkdownNote",
       "pos": [
@@ -364,7 +305,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -507,7 +448,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -518,267 +459,6 @@
       ],
       "color": "#322",
       "bgcolor": "#533"
-    },
-    {
-      "id": 16,
-      "type": "PrimitiveStringMultiline",
-      "pos": [
-        532.81659492094,
-        1402.7001114273357
-      ],
-      "size": [
-        768.8650921050489,
-        390.2282966318794
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            125
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.4.0",
-        "Node name for S&R": "PrimitiveStringMultiline"
-      },
-      "widgets_values": [
-        "嘘——\n风来了……\n\n哦！\n不对，是脚步声！哒、哒、哒——越来越近！\n\n我屏住呼吸，心跳砰砰砰！像小鹿乱撞，撞、撞、撞！\n然后——门！被！推！开！啦！！！\n\n他……他站在那里，嘴角挂着笑，却让我后背发凉。\n我、我只是……只是想拿回属于我的东西，而已啊…… \n\n可你——你为什么要把一切都毁掉？！\n好……很好……既然这样，那就别怪我不客气了。\n\n呼——长舒一口气，我松开紧握的拳头。\n风停了，月亮也出来了。\n原来，情绪就像天气，说变就变——而我，终于学会了，让它走。"
-      ]
-    },
-    {
-      "id": 97,
-      "type": "Reroute",
-      "pos": [
-        531.5463955689585,
-        2406.2000957966457
-      ],
-      "size": [
-        75,
-        26
-      ],
-      "flags": {},
-      "order": 12,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "",
-          "type": "*",
-          "widget": {
-            "name": "value"
-          },
-          "link": 133
-        }
-      ],
-      "outputs": [
-        {
-          "name": "",
-          "type": "STRING",
-          "links": [
-            239
-          ]
-        }
-      ],
-      "properties": {
-        "showOutputText": false,
-        "horizontal": false
-      }
-    },
-    {
-      "id": 164,
-      "type": "Text String",
-      "pos": [
-        613.712303308984,
-        2424.052779580072
-      ],
-      "size": [
-        566.6714661471425,
-        190
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "文本",
-          "name": "text",
-          "type": "STRING",
-          "widget": {
-            "name": "text"
-          },
-          "link": null
-        },
-        {
-          "label": "文本_B",
-          "name": "text_b",
-          "shape": 7,
-          "type": "STRING",
-          "widget": {
-            "name": "text_b"
-          },
-          "link": null
-        },
-        {
-          "label": "文本_C",
-          "name": "text_c",
-          "shape": 7,
-          "type": "STRING",
-          "widget": {
-            "name": "text_c"
-          },
-          "link": null
-        },
-        {
-          "label": "文本_d",
-          "name": "text_d",
-          "shape": 7,
-          "type": "STRING",
-          "widget": {
-            "name": "text_d"
-          },
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "TEXT",
-          "type": "STRING",
-          "links": [
-            240
-          ]
-        },
-        {
-          "name": "TEXT_B",
-          "type": "STRING",
-          "links": [
-            241
-          ]
-        },
-        {
-          "name": "TEXT_C",
-          "type": "STRING",
-          "links": [
-            242
-          ]
-        },
-        {
-          "name": "TEXT_D",
-          "type": "STRING",
-          "links": [
-            243
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "was-node-suite-comfyui",
-        "ver": "ea935d1044ae5a26efa54ebeb18fe9020af49a45",
-        "Node name for S&R": "Text String"
-      },
-      "widgets_values": [
-        "哦？你终于来了……",
-        "是啊！我等你好久了，风都吹倦了！",
-        "风倦了，可我没倦。我只想知道，你为什么把一切都毁掉？",
-        "毁掉？不，我是在重建！你看，月亮都被我擦亮了！"
-      ]
-    },
-    {
-      "id": 165,
-      "type": "Text String",
-      "pos": [
-        614.9719907520524,
-        2661.463036337477
-      ],
-      "size": [
-        568.0101899674513,
-        190
-      ],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "文本",
-          "name": "text",
-          "type": "STRING",
-          "widget": {
-            "name": "text"
-          },
-          "link": null
-        },
-        {
-          "label": "文本_B",
-          "name": "text_b",
-          "shape": 7,
-          "type": "STRING",
-          "widget": {
-            "name": "text_b"
-          },
-          "link": null
-        },
-        {
-          "label": "文本_C",
-          "name": "text_c",
-          "shape": 7,
-          "type": "STRING",
-          "widget": {
-            "name": "text_c"
-          },
-          "link": null
-        },
-        {
-          "label": "文本_d",
-          "name": "text_d",
-          "shape": 7,
-          "type": "STRING",
-          "widget": {
-            "name": "text_d"
-          },
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "TEXT",
-          "type": "STRING",
-          "links": [
-            245
-          ]
-        },
-        {
-          "name": "TEXT_B",
-          "type": "STRING",
-          "links": [
-            244
-          ]
-        },
-        {
-          "name": "TEXT_C",
-          "type": "STRING",
-          "links": []
-        },
-        {
-          "name": "TEXT_D",
-          "type": "STRING",
-          "links": []
-        }
-      ],
-      "properties": {
-        "cnr_id": "was-node-suite-comfyui",
-        "ver": "ea935d1044ae5a26efa54ebeb18fe9020af49a45",
-        "Node name for S&R": "Text String"
-      },
-      "widgets_values": [
-        "月亮亮了，可我心里暗了。暗得连你的影子都看不见。",
-        "那就让我做你的灯，做你的星，做你的整个宇宙！别再躲在阴影里——跟我走，好吗？",
-        "",
-        ""
-      ]
     },
     {
       "id": 11,
@@ -812,18 +492,178 @@
       ]
     },
     {
-      "id": 166,
-      "type": "6e851faa-9831-458d-ab01-92a524becbc5",
+      "id": 26,
+      "type": "PreviewAny",
       "pos": [
-        1260.171117127065,
-        2426.898700217459
+        1310.8925666757023,
+        2039.5174333061163
       ],
       "size": [
-        210,
-        382
+        883.2031327120851,
+        157.01290680461034
       ],
       "flags": {},
-      "order": 14,
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 66
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 16,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        532.81659492094,
+        1402.7001114273357
+      ],
+      "size": [
+        768.8650921050489,
+        390.2282966318794
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            125
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "嘘——\n风来了……\n\n哦！\n不对，是脚步声！哒、哒、哒——越来越近！\n\n我屏住呼吸，心跳砰砰砰！像小鹿乱撞，撞、撞、撞！\n然后——门！被！推！开！啦！！！\n\n他……他站在那里，嘴角挂着笑，却让我后背发凉。\n我、我只是……只是想拿回属于我的东西，而已啊…… \n\n可你——你为什么要把一切都毁掉？！\n好……很好……既然这样，那就别怪我不客气了。\n\n呼——长舒一口气，我松开紧握的拳头。\n风停了，月亮也出来了。\n原来，情绪就像天气，说变就变——而我，终于学会了，让它走。"
+      ]
+    },
+    {
+      "id": 66,
+      "type": "MarkdownNote",
+      "pos": [
+        2285.689272184877,
+        1190.7472032631706
+      ],
+      "size": [
+        721.6666091677753,
+        1551.8096768842954
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "使用方法：音色",
+      "properties": {},
+      "widgets_values": [
+        "#         官方音色速查表\n        \"01  male-qn-qingse                     青涩青年        中文\\n\"\n        \"02  male-qn-jingying                   精英青年        中文\\n\"\n        \"03  male-qn-badao                      霸道青年        中文\\n\"\n        \"04  male-qn-daxuesheng                 青年大学生      中文\\n\"\n        \"05  female-shaonv                      少女            中文\\n\"\n        \"06  female-yujie                       御姐            中文\\n\"\n        \"07  female-chengshu                    成熟女性        中文\\n\"\n        \"08  female-tianmei                     甜美女性        中文\\n\"\n        \"09  male-qn-qingse-jingpin             青涩青年-b      中文\\n\"\n        \"10  male-qn-jingying-jingpin           精英青年-b      中文\\n\"\n        \"11  male-qn-badao-jingpin              霸道青年-b      中文\\n\"\n        \"12  male-qn-daxuesheng-jingpin         大学生-b        中文\\n\"\n        \"13  female-shaonv-jingpin              少女-b          中文\\n\"\n        \"14  female-yujie-jingpin               御姐-b          中文\\n\"\n        \"15  female-chengshu-jingpin            成熟女-b        中文\\n\"\n        \"16  female-tianmei-jingpin             甜美女-b        中文\\n\"\n        \"17  clever_boy                         聪明男童        中文\\n\"\n        \"18  cute_boy                           可爱男童        中文\\n\"\n        \"19  lovely_girl                        萌萌女童        中文\\n\"\n        \"20  cartoon_pig                        卡通猪小琪      中文\\n\"\n        \"21  bingjiao_didi                      病娇弟弟        中文\\n\"\n        \"22  junlang_nanyou                     俊朗男友        中文\\n\"\n        \"23  chunzhen_xuedi                     纯真学弟        中文\\n\"\n        \"24  lengdan_xiongzhang                 冷淡学长        中文\\n\"\n        \"25  badao_shaoye                       霸道少爷        中文\\n\"\n        \"26  tianxin_xiaoling                   甜心小玲        中文\\n\"\n        \"27  qiaopi_mengmei                     俏皮萌妹        中文\\n\"\n        \"28  wumei_yujie                        妩媚御姐        中文\\n\"\n        \"29  diadia_xuemei                      嗲嗲学妹        中文\\n\"\n        \"30  danya_xuejie                       淡雅学姐        中文\\n\"\n        \"31  Chinese (Mandarin)_Reliable_Executive      沉稳高管        中文\\n\"\n        \"32  Chinese (Mandarin)_News_Anchor             新闻女声        中文\\n\"\n        \"33  Chinese (Mandarin)_Mature_Woman            傲娇御姐        中文\\n\"\n        \"34  Chinese (Mandarin)_Unrestrained_Young_Man  不羁青年        中文\\n\"\n        \"35  Arrogant_Miss                              嚣张小姐        中文\\n\"\n        \"36  Robot_Armor                                机械战甲        中文\\n\"\n        \"37  Chinese (Mandarin)_Kind-hearted_Antie      热心大婶        中文\\n\"\n        \"38  Chinese (Mandarin)_HK_Flight_Attendant     港普空姐        中文\\n\"\n        \"39  Chinese (Mandarin)_Humorous_Elder          搞笑大爷        中文\\n\"\n        \"40  Chinese (Mandarin)_Gentleman               温润男声        中文\\n\"\n        \"41  Chinese (Mandarin)_Warm_Bestie             温暖闺蜜        中文\\n\"\n        \"42  Chinese (Mandarin)_Male_Announcer          播报男声        中文\\n\"\n        \"43  Chinese (Mandarin)_Sweet_Lady              甜美女声        中文\\n\"\n        \"44  Chinese (Mandarin)_Southern_Young_Man      南方小哥        中文\\n\"\n        \"45  Chinese (Mandarin)_Wise_Women              阅历姐姐        中文\\n\"\n        \"46  Chinese (Mandarin)_Gentle_Youth            温润青年        中文\\n\"\n        \"47  Chinese (Mandarin)_Warm_Girl               温暖少女        中文\\n\"\n        \"48  Chinese (Mandarin)_Kind-hearted_Elder      花甲奶奶        中文\\n\"\n        \"49  Chinese (Mandarin)_Cute_Spirit             憨憨萌兽        中文\\n\"\n        \"50  Chinese (Mandarin)_Radio_Host              电台男主播      中文\\n\"\n        \"51  Chinese (Mandarin)_Lyrical_Voice           抒情男声        中文\\n\"\n        \"52  Chinese (Mandarin)_Straightforward_Boy     率真弟弟        中文\\n\"\n        \"53  Chinese (Mandarin)_Sincere_Adult           真诚青年        中文\\n\"\n        \"54  Chinese (Mandarin)_Gentle_Senior           温柔学姐        中文\\n\"\n        \"55  Chinese (Mandarin)_Stubborn_Friend         嘴硬竹马        中文\\n\"\n        \"56  Chinese (Mandarin)_Crisp_Girl              清脆少女        中文\\n\"\n        \"57  Chinese (Mandarin)_Pure-hearted_Boy        清澈邻家弟      中文\\n\"\n        \"58  Chinese (Mandarin)_Soft_Girl               软软女孩        中文\\n\"\n        \"59  Cantonese_ProfessionalHost（F)             粤普女主持      粤语\\n\"\n        \"60  Cantonese_GentleLady                       粤语温柔女      粤语\\n\"\n        \"61  Cantonese_ProfessionalHost（M)             粤普男主持      粤语\\n\"\n        \"62  Cantonese_PlayfulMan                       粤语活泼男      粤语\\n\"\n        \"63  Cantonese_CuteGirl                         粤语可爱女      粤语\\n\"\n        \"64  Cantonese_KindWoman                        粤语善良女      粤语\\n\"\n        \"65  Santa_Claus                                圣诞老人        英文\\n\"\n        \"66  Grinch                                     格林奇          英文\\n\"\n        \"67  Rudolph                                    鲁道夫          英文\\n\"\n        \"68  Arnold                                     阿诺德          英文\\n\"\n        \"69  Charming_Santa                             魅力圣诞老人    英文\\n\"\n        \"70  Charming_Lady                              魅力女士        英文\\n\"\n        \"71  Sweet_Girl                                 甜美女孩        英文\\n\"\n        \"72  Cute_Elf                                   可爱精灵        英文\\n\"\n        \"73  Attractive_Girl                            魅力女孩        英文\\n\"\n        \"74  Serene_Woman                               宁静女士        英文\\n\"\n        \"75  English_Trustworthy_Man                    可信男士        英文\\n\"\n        \"76  English_Graceful_Lady                      优雅女士        英文\\n\"\n        \"77  English_Aussie_Bloke                       澳洲男士        英文\\n\"\n        \"78  English_Whispering_girl                    耳语少女        英文\\n\"\n        \"79  English_Diligent_Man                       勤奋男士        英文\\n\"\n        \"80  English_Gentle-voiced_man                  温柔男声        英文\""
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 170,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        560.854184015102,
+        2425.68413924953
+      ],
+      "size": [
+        475.1629860615634,
+        248.37237068836566
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            258
+          ]
+        }
+      ],
+      "title": "对话内容",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "小艾: 哦？你终于来了……\n小娜: 是啊！我等你好久了，风都吹倦了！\n小艾: 风倦了，可我没倦。我只想知道，你为什么把一切都毁掉？\n小娜: 毁掉？不，我是在重建！你看，月亮都被我擦亮了！\n小艾: 月亮亮了，可我心里暗了。暗得连你的影子都看不见。\n小娜: 那就让我做你的灯，做你的星，做你的整个宇宙！别再躲在阴影里——跟我走，好吗？"
+      ]
+    },
+    {
+      "id": 174,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        564.0187568802253,
+        2723.444883187756
+      ],
+      "size": [
+        471.73593459996766,
+        128.42562182516758
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            262
+          ]
+        }
+      ],
+      "title": "角色设定",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "小艾=female-tianmei\n小娜=Cantonese_ProfessionalHost（F)"
+      ]
+    },
+    {
+      "id": 168,
+      "type": "MiniMaxTTSMultiChar_DMX",
+      "pos": [
+        1152.160369753426,
+        2448.6298205195117
+      ],
+      "size": [
+        516.2750923789267,
+        373.48406087408694
+      ],
+      "flags": {},
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -832,130 +672,77 @@
           "widget": {
             "name": "api_key"
           },
-          "link": 239
+          "link": 259
         },
         {
-          "name": "text",
+          "name": "script",
           "type": "STRING",
           "widget": {
-            "name": "text"
+            "name": "script"
           },
-          "link": 240
+          "link": 258
         },
         {
-          "name": "text_1",
+          "name": "voice_map",
           "type": "STRING",
           "widget": {
-            "name": "text_1"
+            "name": "voice_map"
           },
-          "link": 241
-        },
-        {
-          "name": "text_2",
-          "type": "STRING",
-          "widget": {
-            "name": "text_2"
-          },
-          "link": 242
-        },
-        {
-          "name": "text_3",
-          "type": "STRING",
-          "widget": {
-            "name": "text_3"
-          },
-          "link": 243
-        },
-        {
-          "name": "text_4",
-          "type": "STRING",
-          "widget": {
-            "name": "text_4"
-          },
-          "link": 244
-        },
-        {
-          "name": "text_5",
-          "type": "STRING",
-          "widget": {
-            "name": "text_5"
-          },
-          "link": 245
+          "link": 262
         }
       ],
       "outputs": [
         {
-          "name": "AUDIO",
+          "name": "拼接音频",
           "type": "AUDIO",
           "links": [
-            247
+            260
+          ]
+        },
+        {
+          "name": "info",
+          "type": "STRING",
+          "links": [
+            261
           ]
         }
       ],
       "properties": {
-        "proxyWidgets": [
-          [
-            "-1",
-            "api_key"
-          ],
-          [
-            "-1",
-            "text"
-          ],
-          [
-            "-1",
-            "text_1"
-          ],
-          [
-            "-1",
-            "text_2"
-          ],
-          [
-            "-1",
-            "text_3"
-          ],
-          [
-            "-1",
-            "text_4"
-          ],
-          [
-            "-1",
-            "text_5"
-          ]
-        ],
-        "cnr_id": "comfy-core",
-        "ver": "0.4.0"
+        "Node name for S&R": "MiniMaxTTSMultiChar_DMX"
       },
       "widgets_values": [
         "",
         "",
         "",
-        "",
-        "",
-        "",
-        ""
+        "speech-2.6-hd",
+        1,
+        0,
+        1,
+        "neutral",
+        "mp3",
+        24000
       ]
     },
     {
       "id": 167,
       "type": "SaveAudioMP3",
       "pos": [
-        1543.106712495487,
-        2430.717428751393
+        1776.6546342082895,
+        2424.2651846961517
       ],
       "size": [
-        270,
-        136
+        415.33352463726214,
+        142.5693456479412
       ],
       "flags": {},
-      "order": 17,
+      "order": 14,
       "mode": 0,
       "inputs": [
         {
           "label": "音频",
           "name": "audio",
           "type": "AUDIO",
-          "link": 247
+          "link": 260
         },
         {
           "label": "文件名前缀",
@@ -988,6 +775,39 @@
       ]
     },
     {
+      "id": 169,
+      "type": "PreviewAny",
+      "pos": [
+        1787.1991218607002,
+        2633.4530805599557
+      ],
+      "size": [
+        399.7397948810003,
+        191.1768370552104
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 261
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
       "id": 15,
       "type": "PrimitiveString",
       "pos": [
@@ -1008,7 +828,7 @@
           "type": "STRING",
           "links": [
             92,
-            133
+            259
           ]
         }
       ],
@@ -1104,76 +924,44 @@
       "STRING"
     ],
     [
-      133,
+      258,
+      170,
+      0,
+      168,
+      1,
+      "STRING"
+    ],
+    [
+      259,
       15,
       0,
-      97,
+      168,
       0,
       "STRING"
     ],
     [
-      239,
-      97,
-      0,
-      166,
-      0,
-      "STRING"
-    ],
-    [
-      240,
-      164,
-      0,
-      166,
-      1,
-      "STRING"
-    ],
-    [
-      241,
-      164,
-      1,
-      166,
-      2,
-      "STRING"
-    ],
-    [
-      242,
-      164,
-      2,
-      166,
-      3,
-      "STRING"
-    ],
-    [
-      243,
-      164,
-      3,
-      166,
-      4,
-      "STRING"
-    ],
-    [
-      244,
-      165,
-      1,
-      166,
-      5,
-      "STRING"
-    ],
-    [
-      245,
-      165,
-      0,
-      166,
-      6,
-      "STRING"
-    ],
-    [
-      247,
-      166,
+      260,
+      168,
       0,
       167,
       0,
       "AUDIO"
+    ],
+    [
+      261,
+      168,
+      1,
+      169,
+      0,
+      "STRING"
+    ],
+    [
+      262,
+      174,
+      0,
+      168,
+      2,
+      "STRING"
     ]
   ],
   "groups": [
@@ -1192,1029 +980,25 @@
     },
     {
       "id": 5,
-      "title": "玩法2：对话（测试版）",
+      "title": "玩法2：多人对话",
       "bounding": [
-        527.9288812639653,
+        538.2135012565043,
         2238.3273111039666,
-        1689.3904624491174,
-        645.7076119755816
+        1668.8212224640395,
+        611.9150969818947
       ],
       "color": "#3f789e",
       "font_size": 100,
       "flags": {}
     }
   ],
-  "definitions": {
-    "subgraphs": [
-      {
-        "id": "6e851faa-9831-458d-ab01-92a524becbc5",
-        "version": 1,
-        "state": {
-          "lastGroupId": 5,
-          "lastNodeId": 165,
-          "lastLinkId": 238,
-          "lastRerouteId": 0
-        },
-        "revision": 0,
-        "config": {},
-        "name": "New Subgraph",
-        "inputNode": {
-          "id": -10,
-          "bounding": [
-            1117.9221227534933,
-            2488.2444540382685,
-            120,
-            180
-          ]
-        },
-        "outputNode": {
-          "id": -20,
-          "bounding": [
-            1897.4425635624664,
-            2548.2444540382685,
-            120,
-            60
-          ]
-        },
-        "inputs": [
-          {
-            "id": "2530369d-9143-4e42-bb54-88b4bfcadc98",
-            "name": "api_key",
-            "type": "STRING",
-            "linkIds": [
-              134,
-              189,
-              185,
-              191,
-              193,
-              187
-            ],
-            "localized_name": "api_key",
-            "pos": [
-              55,
-              20
-            ]
-          },
-          {
-            "id": "75a4a09b-8e94-4ded-ba27-b627ac3d1f6c",
-            "name": "text",
-            "type": "STRING",
-            "linkIds": [
-              231
-            ],
-            "localized_name": "text",
-            "pos": [
-              55,
-              40
-            ]
-          },
-          {
-            "id": "cfae4f1a-b356-400e-a26f-98736073ebde",
-            "name": "text_1",
-            "type": "STRING",
-            "linkIds": [
-              232
-            ],
-            "localized_name": "text_1",
-            "pos": [
-              55,
-              60
-            ]
-          },
-          {
-            "id": "ecde5ab3-af4b-4bad-aaa9-a71c76bea0ae",
-            "name": "text_2",
-            "type": "STRING",
-            "linkIds": [
-              233
-            ],
-            "localized_name": "text_2",
-            "pos": [
-              55,
-              80
-            ]
-          },
-          {
-            "id": "001a15a8-7fc3-40ff-af0d-e68515932971",
-            "name": "text_3",
-            "type": "STRING",
-            "linkIds": [
-              234
-            ],
-            "localized_name": "text_3",
-            "pos": [
-              55,
-              100
-            ]
-          },
-          {
-            "id": "bc5cf452-33b6-4cde-a7a2-6db4e356a281",
-            "name": "text_4",
-            "type": "STRING",
-            "linkIds": [
-              238
-            ],
-            "localized_name": "text_4",
-            "pos": [
-              55,
-              120
-            ]
-          },
-          {
-            "id": "a2ff2ec8-9e9c-4959-8652-26c227ae540f",
-            "name": "text_5",
-            "type": "STRING",
-            "linkIds": [
-              237
-            ],
-            "localized_name": "text_5",
-            "pos": [
-              55,
-              140
-            ]
-          }
-        ],
-        "outputs": [
-          {
-            "id": "67b5d99a-d35e-4e47-9cbf-74ca8d2e0aac",
-            "name": "AUDIO",
-            "type": "AUDIO",
-            "linkIds": [
-              220
-            ],
-            "localized_name": "音频",
-            "pos": [
-              20,
-              20
-            ]
-          }
-        ],
-        "widgets": [],
-        "nodes": [
-          {
-            "id": 98,
-            "type": "MiniMaxTTS_DMX",
-            "pos": [
-              1305.3229510362257,
-              2434.9485095036543
-            ],
-            "size": [
-              298.4830078125,
-              372
-            ],
-            "flags": {
-              "collapsed": true
-            },
-            "order": 0,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "api_key",
-                "name": "api_key",
-                "type": "STRING",
-                "widget": {
-                  "name": "api_key"
-                },
-                "link": 134
-              },
-              {
-                "localized_name": "text",
-                "name": "text",
-                "type": "STRING",
-                "widget": {
-                  "name": "text"
-                },
-                "link": 231
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "音频",
-                "name": "音频",
-                "type": "AUDIO",
-                "links": [
-                  205
-                ]
-              },
-              {
-                "localized_name": "info",
-                "name": "info",
-                "type": "STRING",
-                "links": []
-              }
-            ],
-            "properties": {
-              "Node name for S&R": "MiniMaxTTS_DMX"
-            },
-            "widgets_values": [
-              "",
-              "",
-              "speech-2.6-hd",
-              "male-qn-badao",
-              1,
-              0,
-              1,
-              "happy",
-              "mp3",
-              24000,
-              "",
-              ""
-            ]
-          },
-          {
-            "id": 140,
-            "type": "MiniMaxTTS_DMX",
-            "pos": [
-              1341.2787744148131,
-              2492.107160630529
-            ],
-            "size": [
-              298.4830078125,
-              372
-            ],
-            "flags": {
-              "collapsed": true
-            },
-            "order": 3,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "api_key",
-                "name": "api_key",
-                "type": "STRING",
-                "widget": {
-                  "name": "api_key"
-                },
-                "link": 189
-              },
-              {
-                "localized_name": "text",
-                "name": "text",
-                "type": "STRING",
-                "widget": {
-                  "name": "text"
-                },
-                "link": 232
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "音频",
-                "name": "音频",
-                "type": "AUDIO",
-                "links": [
-                  206
-                ]
-              },
-              {
-                "localized_name": "info",
-                "name": "info",
-                "type": "STRING",
-                "links": []
-              }
-            ],
-            "properties": {
-              "Node name for S&R": "MiniMaxTTS_DMX"
-            },
-            "widgets_values": [
-              "",
-              "",
-              "speech-2.6-hd",
-              "female-chengshu",
-              1,
-              0,
-              1,
-              "happy",
-              "mp3",
-              24000,
-              "",
-              ""
-            ]
-          },
-          {
-            "id": 136,
-            "type": "MiniMaxTTS_DMX",
-            "pos": [
-              1297.9221227534933,
-              2559.6745676310607
-            ],
-            "size": [
-              298.4830078125,
-              372
-            ],
-            "flags": {
-              "collapsed": true
-            },
-            "order": 1,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "api_key",
-                "name": "api_key",
-                "type": "STRING",
-                "widget": {
-                  "name": "api_key"
-                },
-                "link": 185
-              },
-              {
-                "localized_name": "text",
-                "name": "text",
-                "type": "STRING",
-                "widget": {
-                  "name": "text"
-                },
-                "link": 233
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "音频",
-                "name": "音频",
-                "type": "AUDIO",
-                "links": [
-                  207
-                ]
-              },
-              {
-                "localized_name": "info",
-                "name": "info",
-                "type": "STRING",
-                "links": []
-              }
-            ],
-            "properties": {
-              "Node name for S&R": "MiniMaxTTS_DMX"
-            },
-            "widgets_values": [
-              "",
-              "",
-              "speech-2.6-hd",
-              "male-qn-badao",
-              1,
-              0,
-              1,
-              "happy",
-              "mp3",
-              24000,
-              "",
-              ""
-            ]
-          },
-          {
-            "id": 142,
-            "type": "MiniMaxTTS_DMX",
-            "pos": [
-              1346.40611843176,
-              2618.0294143150772
-            ],
-            "size": [
-              298.4830078125,
-              372
-            ],
-            "flags": {
-              "collapsed": true
-            },
-            "order": 4,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "api_key",
-                "name": "api_key",
-                "type": "STRING",
-                "widget": {
-                  "name": "api_key"
-                },
-                "link": 191
-              },
-              {
-                "localized_name": "text",
-                "name": "text",
-                "type": "STRING",
-                "widget": {
-                  "name": "text"
-                },
-                "link": 234
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "音频",
-                "name": "音频",
-                "type": "AUDIO",
-                "links": [
-                  208
-                ]
-              },
-              {
-                "localized_name": "info",
-                "name": "info",
-                "type": "STRING",
-                "links": []
-              }
-            ],
-            "properties": {
-              "Node name for S&R": "MiniMaxTTS_DMX"
-            },
-            "widgets_values": [
-              "",
-              "",
-              "speech-2.6-hd",
-              "female-chengshu",
-              1,
-              0,
-              1,
-              "happy",
-              "mp3",
-              24000,
-              "",
-              ""
-            ]
-          },
-          {
-            "id": 144,
-            "type": "MiniMaxTTS_DMX",
-            "pos": [
-              1359.807718789822,
-              2751.540398572883
-            ],
-            "size": [
-              298.4830078125,
-              372
-            ],
-            "flags": {
-              "collapsed": true
-            },
-            "order": 5,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "api_key",
-                "name": "api_key",
-                "type": "STRING",
-                "widget": {
-                  "name": "api_key"
-                },
-                "link": 193
-              },
-              {
-                "localized_name": "text",
-                "name": "text",
-                "type": "STRING",
-                "widget": {
-                  "name": "text"
-                },
-                "link": 238
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "音频",
-                "name": "音频",
-                "type": "AUDIO",
-                "links": [
-                  213
-                ]
-              },
-              {
-                "localized_name": "info",
-                "name": "info",
-                "type": "STRING",
-                "links": []
-              }
-            ],
-            "properties": {
-              "Node name for S&R": "MiniMaxTTS_DMX"
-            },
-            "widgets_values": [
-              "",
-              "",
-              "speech-2.6-hd",
-              "female-chengshu",
-              1,
-              0,
-              1,
-              "happy",
-              "mp3",
-              24000,
-              "",
-              ""
-            ]
-          },
-          {
-            "id": 151,
-            "type": "AudioConcat",
-            "pos": [
-              1596.8013527913035,
-              2498.2391883535324
-            ],
-            "size": [
-              270,
-              78
-            ],
-            "flags": {
-              "collapsed": true
-            },
-            "order": 6,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "audio1",
-                "name": "audio1",
-                "type": "AUDIO",
-                "link": 205
-              },
-              {
-                "localized_name": "音频2",
-                "name": "audio2",
-                "type": "AUDIO",
-                "link": 206
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "音频",
-                "name": "AUDIO",
-                "type": "AUDIO",
-                "links": [
-                  216
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.4.0",
-              "Node name for S&R": "AudioConcat"
-            },
-            "widgets_values": [
-              "after"
-            ]
-          },
-          {
-            "id": 154,
-            "type": "AudioConcat",
-            "pos": [
-              1729.4425635624664,
-              2545.3949792526782
-            ],
-            "size": [
-              270,
-              78
-            ],
-            "flags": {
-              "collapsed": true
-            },
-            "order": 9,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "audio1",
-                "name": "audio1",
-                "type": "AUDIO",
-                "link": 216
-              },
-              {
-                "localized_name": "音频2",
-                "name": "audio2",
-                "type": "AUDIO",
-                "link": 217
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "音频",
-                "name": "AUDIO",
-                "type": "AUDIO",
-                "links": [
-                  218
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.4.0",
-              "Node name for S&R": "AudioConcat"
-            },
-            "widgets_values": [
-              "after"
-            ]
-          },
-          {
-            "id": 153,
-            "type": "AudioConcat",
-            "pos": [
-              1602.8942325804724,
-              2709.128386534828
-            ],
-            "size": [
-              270,
-              78
-            ],
-            "flags": {
-              "collapsed": true
-            },
-            "order": 8,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "audio1",
-                "name": "audio1",
-                "type": "AUDIO",
-                "link": 212
-              },
-              {
-                "localized_name": "音频2",
-                "name": "audio2",
-                "type": "AUDIO",
-                "link": 213
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "音频",
-                "name": "AUDIO",
-                "type": "AUDIO",
-                "links": [
-                  219
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.4.0",
-              "Node name for S&R": "AudioConcat"
-            },
-            "widgets_values": [
-              "after"
-            ]
-          },
-          {
-            "id": 152,
-            "type": "AudioConcat",
-            "pos": [
-              1605.8942488586808,
-              2598.9915640874788
-            ],
-            "size": [
-              270,
-              78
-            ],
-            "flags": {
-              "collapsed": true
-            },
-            "order": 7,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "audio1",
-                "name": "audio1",
-                "type": "AUDIO",
-                "link": 207
-              },
-              {
-                "localized_name": "音频2",
-                "name": "audio2",
-                "type": "AUDIO",
-                "link": 208
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "音频",
-                "name": "AUDIO",
-                "type": "AUDIO",
-                "links": [
-                  217
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.4.0",
-              "Node name for S&R": "AudioConcat"
-            },
-            "widgets_values": [
-              "after"
-            ]
-          },
-          {
-            "id": 155,
-            "type": "AudioConcat",
-            "pos": [
-              1724.7141775060068,
-              2664.310448656231
-            ],
-            "size": [
-              270,
-              78
-            ],
-            "flags": {
-              "collapsed": true
-            },
-            "order": 10,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "audio1",
-                "name": "audio1",
-                "type": "AUDIO",
-                "link": 218
-              },
-              {
-                "localized_name": "音频2",
-                "name": "audio2",
-                "type": "AUDIO",
-                "link": 219
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "音频",
-                "name": "AUDIO",
-                "type": "AUDIO",
-                "links": [
-                  220
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.4.0",
-              "Node name for S&R": "AudioConcat"
-            },
-            "widgets_values": [
-              "after"
-            ]
-          },
-          {
-            "id": 138,
-            "type": "MiniMaxTTS_DMX",
-            "pos": [
-              1303.0365712199168,
-              2678.4148704393824
-            ],
-            "size": [
-              298.4830078125,
-              372
-            ],
-            "flags": {
-              "collapsed": true
-            },
-            "order": 2,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "api_key",
-                "name": "api_key",
-                "type": "STRING",
-                "widget": {
-                  "name": "api_key"
-                },
-                "link": 187
-              },
-              {
-                "localized_name": "text",
-                "name": "text",
-                "type": "STRING",
-                "widget": {
-                  "name": "text"
-                },
-                "link": 237
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "音频",
-                "name": "音频",
-                "type": "AUDIO",
-                "links": [
-                  212
-                ]
-              },
-              {
-                "localized_name": "info",
-                "name": "info",
-                "type": "STRING",
-                "links": []
-              }
-            ],
-            "properties": {
-              "Node name for S&R": "MiniMaxTTS_DMX"
-            },
-            "widgets_values": [
-              "",
-              "",
-              "speech-2.6-hd",
-              "male-qn-badao",
-              1,
-              0,
-              1,
-              "happy",
-              "mp3",
-              24000,
-              "",
-              ""
-            ]
-          }
-        ],
-        "groups": [],
-        "links": [
-          {
-            "id": 205,
-            "origin_id": 98,
-            "origin_slot": 0,
-            "target_id": 151,
-            "target_slot": 0,
-            "type": "AUDIO"
-          },
-          {
-            "id": 206,
-            "origin_id": 140,
-            "origin_slot": 0,
-            "target_id": 151,
-            "target_slot": 1,
-            "type": "AUDIO"
-          },
-          {
-            "id": 216,
-            "origin_id": 151,
-            "origin_slot": 0,
-            "target_id": 154,
-            "target_slot": 0,
-            "type": "AUDIO"
-          },
-          {
-            "id": 217,
-            "origin_id": 152,
-            "origin_slot": 0,
-            "target_id": 154,
-            "target_slot": 1,
-            "type": "AUDIO"
-          },
-          {
-            "id": 212,
-            "origin_id": 138,
-            "origin_slot": 0,
-            "target_id": 153,
-            "target_slot": 0,
-            "type": "AUDIO"
-          },
-          {
-            "id": 213,
-            "origin_id": 144,
-            "origin_slot": 0,
-            "target_id": 153,
-            "target_slot": 1,
-            "type": "AUDIO"
-          },
-          {
-            "id": 207,
-            "origin_id": 136,
-            "origin_slot": 0,
-            "target_id": 152,
-            "target_slot": 0,
-            "type": "AUDIO"
-          },
-          {
-            "id": 208,
-            "origin_id": 142,
-            "origin_slot": 0,
-            "target_id": 152,
-            "target_slot": 1,
-            "type": "AUDIO"
-          },
-          {
-            "id": 218,
-            "origin_id": 154,
-            "origin_slot": 0,
-            "target_id": 155,
-            "target_slot": 0,
-            "type": "AUDIO"
-          },
-          {
-            "id": 219,
-            "origin_id": 153,
-            "origin_slot": 0,
-            "target_id": 155,
-            "target_slot": 1,
-            "type": "AUDIO"
-          },
-          {
-            "id": 134,
-            "origin_id": -10,
-            "origin_slot": 0,
-            "target_id": 98,
-            "target_slot": 0,
-            "type": "STRING"
-          },
-          {
-            "id": 189,
-            "origin_id": -10,
-            "origin_slot": 0,
-            "target_id": 140,
-            "target_slot": 0,
-            "type": "STRING"
-          },
-          {
-            "id": 185,
-            "origin_id": -10,
-            "origin_slot": 0,
-            "target_id": 136,
-            "target_slot": 0,
-            "type": "STRING"
-          },
-          {
-            "id": 191,
-            "origin_id": -10,
-            "origin_slot": 0,
-            "target_id": 142,
-            "target_slot": 0,
-            "type": "STRING"
-          },
-          {
-            "id": 193,
-            "origin_id": -10,
-            "origin_slot": 0,
-            "target_id": 144,
-            "target_slot": 0,
-            "type": "STRING"
-          },
-          {
-            "id": 187,
-            "origin_id": -10,
-            "origin_slot": 0,
-            "target_id": 138,
-            "target_slot": 0,
-            "type": "STRING"
-          },
-          {
-            "id": 231,
-            "origin_id": -10,
-            "origin_slot": 1,
-            "target_id": 98,
-            "target_slot": 1,
-            "type": "STRING"
-          },
-          {
-            "id": 232,
-            "origin_id": -10,
-            "origin_slot": 2,
-            "target_id": 140,
-            "target_slot": 1,
-            "type": "STRING"
-          },
-          {
-            "id": 233,
-            "origin_id": -10,
-            "origin_slot": 3,
-            "target_id": 136,
-            "target_slot": 1,
-            "type": "STRING"
-          },
-          {
-            "id": 234,
-            "origin_id": -10,
-            "origin_slot": 4,
-            "target_id": 142,
-            "target_slot": 1,
-            "type": "STRING"
-          },
-          {
-            "id": 238,
-            "origin_id": -10,
-            "origin_slot": 5,
-            "target_id": 144,
-            "target_slot": 1,
-            "type": "STRING"
-          },
-          {
-            "id": 237,
-            "origin_id": -10,
-            "origin_slot": 6,
-            "target_id": 138,
-            "target_slot": 1,
-            "type": "STRING"
-          },
-          {
-            "id": 220,
-            "origin_id": 155,
-            "origin_slot": 0,
-            "target_id": -20,
-            "target_slot": 0,
-            "type": "AUDIO"
-          }
-        ],
-        "extra": {}
-      }
-    ]
-  },
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.9646149645000112,
+      "scale": 0.5445000000000022,
       "offset": [
-        582.7602805306019,
-        -1350.1283739906469
+        -125.44140625635455,
+        -1043.5560686000388
       ]
     },
     "frontendVersion": "1.34.9",
