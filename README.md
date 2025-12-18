@@ -89,9 +89,9 @@
     <td align="center" style="border:1px solid #FFE0F0; border-radius:8px; padding:8px;">
       <table border="0" cellpadding="4" cellspacing="0">
         <tr>
-          <td align="center" width="240">
+          <td align="center" width="340">
             <a href="https://spacehpc.com/user/register?inviteCode=46153274">
-              <img src="https://github.com/MuAIGC/ComfyUI-Aiya-MMX/raw/main/web/starsea-2.png" width="240"/>
+              <img src="https://github.com/MuAIGC/ComfyUI-Aiya-MMX/raw/main/web/starsea-2.png" width="340"/>
             </a>
           </td>
         </tr>
@@ -107,9 +107,9 @@
     <td align="center" style="border:1px solid #FFE0F0; border-radius:8px; padding:8px;">
       <table border="0" cellpadding="4" cellspacing="0">
         <tr>
-          <td align="center" width="240">
+          <td align="center" width="340">
             <a href="https://www.dmxapi.cn/register?aff=LpUa">
-              <img src="https://github.com/MuAIGC/ComfyUI-Aiya-MMX/raw/main/web/DMXAPI.png" width="240"/>
+              <img src="https://github.com/MuAIGC/ComfyUI-Aiya-MMX/raw/main/web/DMXAPI.png" width="340"/>
             </a>
           </td>
         </tr>
