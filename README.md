@@ -82,25 +82,26 @@
 ## 💖 赞助商 · 感谢投喂
 <p align="center"><i>排名不分先后，一起给项目续命 🎀</i></p>
 
-<div align="center" style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;">
-  <!-- 星海智算 -->
-  <div style="text-align:center;flex:0 1 180px;">
-    <a href="https://spacehpc.com/user/register?inviteCode=46153274">
-      <img src="https://github.com/MuAIGC/ComfyUI-Aiya-MMX/raw/main/web/starsea-2.png" width="100%"/>
-    </a>
-    <br/><b style="color:#FF7EB9;font-size:18px;">星海智算</b>
-    <br/><small>专业高性能 GPU 云</small>
-  </div>
-
-  <!-- DMXAPI -->
-  <div style="text-align:center;flex:0 1 180px;">
-    <a href="https://www.dmxapi.cn/register?aff=LpUa">
-      <img src="https://github.com/MuAIGC/ComfyUI-Aiya-MMX/raw/main/web/DMXAPI.png" width="100%"/>
-    </a>
-    <br/><b style="color:#FF7EB9;font-size:18px;">DMXAPI</b>
-    <br/><small>海外 6.8 折 · 国内 7.9 折</small>
-  </div>
-</div>
+<table align="center" cellpadding="16">
+  <tr>
+    <!-- 星海智算 -->
+    <td align="center" valign="top">
+      <a href="https://spacehpc.com/user/register?inviteCode=46153274">
+        <img src="https://github.com/MuAIGC/ComfyUI-Aiya-MMX/raw/main/web/starsea-2.png" width="160"/>
+      </a>
+      <br/><b><font color="#FF7EB9">星海智算</font></b>
+      <br/><small>专业高性能 GPU 云</small>
+    </td>
+    <!-- DMXAPI -->
+    <td align="center" valign="top">
+      <a href="https://www.dmxapi.cn/register?aff=LpUa">
+        <img src="https://github.com/MuAIGC/ComfyUI-Aiya-MMX/raw/main/web/DMXAPI.png" width="160"/>
+      </a>
+      <br/><b><font color="#FF7EB9">DMXAPI</font></b>
+      <br/><small>海外 6.8 折 · 国内 7.9 折</small>
+    </td>
+  </tr>
+</table>
 
 <p align="center">
   <small>想成为赞助商？微信戳 <b>MMXaigc</b> 备注「赞助」即可～</small>
