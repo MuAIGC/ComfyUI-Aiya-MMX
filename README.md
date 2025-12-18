@@ -81,28 +81,33 @@
 
 ## 💖 赞助商 · 感谢投喂
 
+---
+
+## 💖 赞助商 · 感谢投喂
 <p align="center"><i>排名不分先后，一起给项目续命 🎀</i></p>
 
-<table align="center" border="0" cellpadding="20">
-  <tr>
+<div align="center">
+  <!-- 单行 flex 容器：图片+文字 左右分布 -->
+  <div style="display:inline-flex;align-items:center;gap:24px;">
     <!-- DMXAPI -->
-    <td align="center" width="440">
+    <div style="text-align:center;">
       <a href="https://www.dmxapi.cn/register?aff=LpUa">
-        <img src="https://github.com/MuAIGC/ComfyUI-Aiya-MMX/raw/main/web/DMXAPI.png" width="400"/>
+        <img src="https://github.com/MuAIGC/ComfyUI-Aiya-MMX/raw/main/web/DMXAPI.png" width="380"/>
       </a>
       <br/><b style="color:#FF7EB9;font-size:22px;">DMXAPI</b>
       <br/>海外模型 6.8 折 · 国内模型 7.9 折 · 当天开票 · 快速报销
-    </td>
+    </div>
+
     <!-- 星海智算 -->
-    <td align="center" width="440">
+    <div style="text-align:center;">
       <a href="https://spacehpc.com/user/register?inviteCode=46153274">
-        <img src="https://github.com/MuAIGC/ComfyUI-Aiya-MMX/raw/main/web/starsea-2.png" width="400"/>
+        <img src="https://github.com/MuAIGC/ComfyUI-Aiya-MMX/raw/main/web/starsea-2.png" width="380"/>
       </a>
       <br/><b style="color:#FF7EB9;font-size:22px;">星海智算</b>
       <br/>专业且高效的高性能 GPU 云 · 开箱即用 · 快速部署 AI 应用
-    </td>
-  </tr>
-</table>
+    </div>
+  </div>
+</div>
 
 <p align="center">
   <small>想成为赞助商？微信戳 <b>MMXaigc</b> 备注「赞助」即可～</small>
