@@ -1,8 +1,8 @@
 {
   "id": "1fe2d8ef-584b-4bd3-a15c-7822d26d85dd",
   "revision": 0,
-  "last_node_id": 451,
-  "last_link_id": 743,
+  "last_node_id": 453,
+  "last_link_id": 755,
   "nodes": [
     {
       "id": 260,
@@ -1231,7 +1231,7 @@
           "name": "STRING",
           "type": "STRING",
           "links": [
-            743
+            752
           ]
         }
       ],
@@ -1267,7 +1267,7 @@
           "name": "STRING",
           "type": "STRING",
           "links": [
-            742
+            751
           ]
         }
       ],
@@ -1438,7 +1438,7 @@
         {
           "name": "source",
           "type": "*",
-          "link": 740
+          "link": 754
         }
       ],
       "outputs": [],
@@ -1473,7 +1473,7 @@
         {
           "name": "prompt",
           "type": "STRING",
-          "link": 741
+          "link": 755
         },
         {
           "name": "input_image_1",
@@ -1714,7 +1714,7 @@
           "name": "STRING",
           "type": "STRING",
           "links": [
-            737
+            748
           ]
         }
       ],
@@ -1869,7 +1869,7 @@
           "name": "STRING",
           "type": "STRING",
           "links": [
-            738
+            749
           ]
         }
       ],
@@ -1995,7 +1995,7 @@
         {
           "name": "prompt",
           "type": "STRING",
-          "link": 736
+          "link": 750
         },
         {
           "name": "input_image_1",
@@ -5604,119 +5604,6 @@
       "widgets_values": []
     },
     {
-      "id": 449,
-      "type": "JoinStrings_mmx",
-      "pos": [
-        -157.78573549659976,
-        2352.3735758558337
-      ],
-      "size": [
-        212.2271484375,
-        220
-      ],
-      "flags": {
-        "collapsed": true,
-        "pinned": true
-      },
-      "order": 54,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "string1",
-          "shape": 7,
-          "type": "STRING",
-          "widget": {
-            "name": "string1"
-          },
-          "link": 737
-        },
-        {
-          "name": "string2",
-          "shape": 7,
-          "type": "STRING",
-          "widget": {
-            "name": "string2"
-          },
-          "link": 738
-        }
-      ],
-      "outputs": [
-        {
-          "name": "string",
-          "type": "STRING",
-          "links": [
-            736
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "JoinStrings_mmx"
-      },
-      "widgets_values": [
-        ",",
-        "",
-        "",
-        ""
-      ]
-    },
-    {
-      "id": 451,
-      "type": "JoinStrings_mmx",
-      "pos": [
-        -148.41544807283617,
-        889.2223691474646
-      ],
-      "size": [
-        212.2271484375,
-        220
-      ],
-      "flags": {
-        "collapsed": true,
-        "pinned": true
-      },
-      "order": 52,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "string1",
-          "shape": 7,
-          "type": "STRING",
-          "widget": {
-            "name": "string1"
-          },
-          "link": 742
-        },
-        {
-          "name": "string2",
-          "shape": 7,
-          "type": "STRING",
-          "widget": {
-            "name": "string2"
-          },
-          "link": 743
-        }
-      ],
-      "outputs": [
-        {
-          "name": "string",
-          "type": "STRING",
-          "links": [
-            740,
-            741
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "JoinStrings_mmx"
-      },
-      "widgets_values": [
-        ",",
-        "",
-        "",
-        ""
-      ]
-    },
-    {
       "id": 263,
       "type": "PrimitiveString",
       "pos": [
@@ -6222,6 +6109,119 @@
       ],
       "color": "#232",
       "bgcolor": "#353"
+    },
+    {
+      "id": 452,
+      "type": "StringConcatenate",
+      "pos": [
+        -38.42353769468126,
+        2353.937268951371
+      ],
+      "size": [
+        210,
+        166
+      ],
+      "flags": {
+        "collapsed": true,
+        "pinned": true
+      },
+      "order": 54,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "string_a",
+          "type": "STRING",
+          "widget": {
+            "name": "string_a"
+          },
+          "link": 748
+        },
+        {
+          "name": "string_b",
+          "type": "STRING",
+          "widget": {
+            "name": "string_b"
+          },
+          "link": 749
+        }
+      ],
+      "outputs": [
+        {
+          "label": "字符串",
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            750
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "StringConcatenate"
+      },
+      "widgets_values": [
+        "",
+        "",
+        "，"
+      ]
+    },
+    {
+      "id": 453,
+      "type": "StringConcatenate",
+      "pos": [
+        -20.389532139966427,
+        880.1709996633678
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {
+        "collapsed": true,
+        "pinned": true
+      },
+      "order": 52,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "string_a",
+          "type": "STRING",
+          "widget": {
+            "name": "string_a"
+          },
+          "link": 751
+        },
+        {
+          "name": "string_b",
+          "type": "STRING",
+          "widget": {
+            "name": "string_b"
+          },
+          "link": 752
+        }
+      ],
+      "outputs": [
+        {
+          "label": "字符串",
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            754,
+            755
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "StringConcatenate"
+      },
+      "widgets_values": [
+        "",
+        "",
+        "，"
+      ]
     }
   ],
   "links": [
@@ -7354,59 +7354,59 @@
       "IMAGE"
     ],
     [
-      736,
-      449,
+      748,
+      371,
+      0,
+      452,
+      0,
+      "STRING"
+    ],
+    [
+      749,
+      370,
+      0,
+      452,
+      1,
+      "STRING"
+    ],
+    [
+      750,
+      452,
       0,
       378,
       0,
       "STRING"
     ],
     [
-      737,
-      371,
+      751,
+      271,
       0,
-      449,
+      453,
       0,
       "STRING"
     ],
     [
-      738,
-      370,
+      752,
+      273,
       0,
-      449,
+      453,
       1,
       "STRING"
     ],
     [
-      740,
-      451,
+      754,
+      453,
       0,
       274,
       0,
       "STRING"
     ],
     [
-      741,
-      451,
+      755,
+      453,
       0,
       358,
       0,
-      "STRING"
-    ],
-    [
-      742,
-      271,
-      0,
-      451,
-      0,
-      "STRING"
-    ],
-    [
-      743,
-      273,
-      0,
-      451,
-      1,
       "STRING"
     ]
   ],
@@ -7493,10 +7493,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.45000000000000956,
+      "scale": 0.7247295000000056,
       "offset": [
-        2436.7688500538193,
-        -4045.3738756706452
+        1188.9501923128873,
+        -4278.605863998645
       ]
     },
     "frontendVersion": "1.34.9",
