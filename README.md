@@ -55,7 +55,7 @@
 
 ## 🚀 步快速上手
 
-1. **克隆到 ComfyUI**
+**克隆到 ComfyUI**
    ```bash
    cd ComfyUI/custom_nodes
    git clone https://github.com/MuAIGC/ComfyUI-Aiya-MMX.git
