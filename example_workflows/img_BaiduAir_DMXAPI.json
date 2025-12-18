@@ -1,0 +1,2427 @@
+{
+  "id": "1fe2d8ef-584b-4bd3-a15c-7822d26d85dd",
+  "revision": 0,
+  "last_node_id": 453,
+  "last_link_id": 787,
+  "nodes": [
+    {
+      "id": 240,
+      "type": "MarkdownNote",
+      "pos": [
+        -1785.8396085107004,
+        164.47130557427283
+      ],
+      "size": [
+        410.70184179689704,
+        347.9087855968014
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "说明",
+      "properties": {},
+      "widgets_values": [
+        "# 【第一步】 填/注册API\n---\n## 可以使用DMX-API\n\n## [>>点这里获取key<<](https://www.dmxapi.cn/register?aff=LpUa/)\n\n## 令牌->添加令牌->获得key\n\n## ->将key填入下框->确认"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 343,
+      "type": "SaveImage",
+      "pos": [
+        314.33654856716646,
+        -122.89194699253405
+      ],
+      "size": [
+        343.3388803610885,
+        440.66712095334776
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 776
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "Aiya/%date:yyyyMMdd%-Aiya/%date:yyyyMMdd%_img_Aiya-"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 340,
+      "type": "PreviewAny",
+      "pos": [
+        -399.37393548203454,
+        126.02912137440829
+      ],
+      "size": [
+        289.46740441035575,
+        180.80332945049884
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 778
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.76",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 275,
+      "type": "ImageSaveJPG",
+      "pos": [
+        -57.690808591233534,
+        -117.01561457321624
+      ],
+      "size": [
+        330.9765770869776,
+        433.85562939812837
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 775
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt_text",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "name": "jpg_path",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "MuAIGC/ComfyUI-Aiya-MMX",
+        "Node name for S&R": "ImageSaveJPG",
+        "ver": "664197f6ae0648387a88848ff278ebec99a3e6f6"
+      },
+      "widgets_values": [
+        "Aiya/%Aiya:yyyyMMdd%-Aiya/%Aiya:yyyyMMdd%_img_Aiya-",
+        95,
+        true,
+        false,
+        false
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 273,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        -325.9513177210928,
+        950.6033953182643
+      ],
+      "size": [
+        294.88735804476687,
+        171.45192735080718
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            787
+          ]
+        }
+      ],
+      "title": "提示词",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.76",
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "九种不同的动作，严格三等分，形成 9 个大小完全相同的方格，每格里画一幅独立的小画，九幅小画彼此不重叠、不留白边，整张图看起来就是一张完整的九宫格。"
+      ]
+    },
+    {
+      "id": 271,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        -328.2446851734863,
+        659.128310457528
+      ],
+      "size": [
+        294.88735804476687,
+        171.45192735080718
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            786
+          ]
+        }
+      ],
+      "title": "提示词",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.76",
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "范丞丞帅气舞，人物是乙女向游戏男主风格，精致、帅气、成熟、有气场。画面是九个帅气舞动作的分镜"
+      ]
+    },
+    {
+      "id": 259,
+      "type": "MarkdownNote",
+      "pos": [
+        -749.1833356789808,
+        979.181325474294
+      ],
+      "size": [
+        347.4245561952027,
+        147.2883674644222
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "说明",
+      "properties": {},
+      "widgets_values": [
+        "# 默认提示词，一般不用修改"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 115,
+      "type": "MarkdownNote",
+      "pos": [
+        -741.3683514462609,
+        613.8113275062149
+      ],
+      "size": [
+        335.6434175700118,
+        242.05838529830783
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "说明",
+      "properties": {},
+      "widgets_values": [
+        "填入主体\n-----\n示例1：XXX卡通手办，大头，小身板，打篮球\n\n示例2：XXX帅气舞，人物是乙女向游戏男主风格，精致、帅气、成熟、有气场。画面是九个帅气舞动作的分镜"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 277,
+      "type": "ImageSaveJPG",
+      "pos": [
+        580.6348996447367,
+        570.9953493952214
+      ],
+      "size": [
+        510.79229360354293,
+        551.1587309104832
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 782
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt_text",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "name": "jpg_path",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "MuAIGC/ComfyUI-Aiya-MMX",
+        "Node name for S&R": "ImageSaveJPG",
+        "ver": "664197f6ae0648387a88848ff278ebec99a3e6f6"
+      },
+      "widgets_values": [
+        "Aiya/%Aiya:yyyyMMdd%-Aiya/%Aiya:yyyyMMdd%_img_Aiya-",
+        95,
+        true,
+        false,
+        false
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 359,
+      "type": "SaveImage",
+      "pos": [
+        103.60896203853741,
+        980.8208680262585
+      ],
+      "size": [
+        402.1084140567732,
+        440.66712095334776
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 781
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "Aiya/%date:yyyyMMdd%-Aiya/%date:yyyyMMdd%_img_Aiya-"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 274,
+      "type": "PreviewAny",
+      "pos": [
+        104.45041096425224,
+        601.5134914032932
+      ],
+      "size": [
+        396.1951135914986,
+        298.3105086282768
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 740
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.76",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 368,
+      "type": "PreviewAny",
+      "pos": [
+        106.65964620302266,
+        1513.0743283029149
+      ],
+      "size": [
+        392.4253569837433,
+        251.56549217895838
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 783
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.76",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 423,
+      "type": "Reroute",
+      "pos": [
+        969.040146807652,
+        1492.7502101986745
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 694
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "links": [
+            705,
+            708,
+            711,
+            714,
+            717,
+            720,
+            723,
+            726,
+            729
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 424,
+      "type": "ImageSaveJPG",
+      "pos": [
+        1465.528808436336,
+        594.2859623680115
+      ],
+      "size": [
+        215.580078125,
+        386
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 695
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt_text",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "name": "jpg_path",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "MuAIGC/ComfyUI-Aiya-MMX",
+        "Node name for S&R": "ImageSaveJPG",
+        "ver": "664197f6ae0648387a88848ff278ebec99a3e6f6"
+      },
+      "widgets_values": [
+        "Aiya/%Aiya:yyyyMMdd%-Aiya/%Aiya:yyyyMMdd%_img_Aiya-",
+        95,
+        true,
+        false,
+        false
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 425,
+      "type": "ImageSaveJPG",
+      "pos": [
+        1471.6008201942054,
+        1059.0286874338879
+      ],
+      "size": [
+        215.580078125,
+        386
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 37,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 696
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt_text",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "name": "jpg_path",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "MuAIGC/ComfyUI-Aiya-MMX",
+        "Node name for S&R": "ImageSaveJPG",
+        "ver": "664197f6ae0648387a88848ff278ebec99a3e6f6"
+      },
+      "widgets_values": [
+        "Aiya/%Aiya:yyyyMMdd%-Aiya/%Aiya:yyyyMMdd%_img_Aiya-",
+        95,
+        true,
+        false,
+        false
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 426,
+      "type": "ImageSaveJPG",
+      "pos": [
+        1966.9952707295602,
+        1059.5611958183138
+      ],
+      "size": [
+        215.580078125,
+        386
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 38,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 697
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt_text",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "name": "jpg_path",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "MuAIGC/ComfyUI-Aiya-MMX",
+        "Node name for S&R": "ImageSaveJPG",
+        "ver": "664197f6ae0648387a88848ff278ebec99a3e6f6"
+      },
+      "widgets_values": [
+        "Aiya/%Aiya:yyyyMMdd%-Aiya/%Aiya:yyyyMMdd%_img_Aiya-",
+        95,
+        true,
+        false,
+        false
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 427,
+      "type": "ImageSaveJPG",
+      "pos": [
+        1960.9232589716896,
+        594.818470752437
+      ],
+      "size": [
+        215.580078125,
+        386
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 36,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 698
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt_text",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "name": "jpg_path",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "MuAIGC/ComfyUI-Aiya-MMX",
+        "Node name for S&R": "ImageSaveJPG",
+        "ver": "664197f6ae0648387a88848ff278ebec99a3e6f6"
+      },
+      "widgets_values": [
+        "Aiya/%Aiya:yyyyMMdd%-Aiya/%Aiya:yyyyMMdd%_img_Aiya-",
+        95,
+        true,
+        false,
+        false
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 428,
+      "type": "ImageSaveJPG",
+      "pos": [
+        2457.023980932448,
+        1062.3347826069903
+      ],
+      "size": [
+        215.580078125,
+        386
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 39,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 699
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt_text",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "name": "jpg_path",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "MuAIGC/ComfyUI-Aiya-MMX",
+        "Node name for S&R": "ImageSaveJPG",
+        "ver": "664197f6ae0648387a88848ff278ebec99a3e6f6"
+      },
+      "widgets_values": [
+        "Aiya/%Aiya:yyyyMMdd%-Aiya/%Aiya:yyyyMMdd%_img_Aiya-",
+        95,
+        true,
+        false,
+        false
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 429,
+      "type": "ImageSaveJPG",
+      "pos": [
+        2450.9519691745786,
+        597.5920575411137
+      ],
+      "size": [
+        215.580078125,
+        386
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 35,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 700
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt_text",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "name": "jpg_path",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "MuAIGC/ComfyUI-Aiya-MMX",
+        "Node name for S&R": "ImageSaveJPG",
+        "ver": "664197f6ae0648387a88848ff278ebec99a3e6f6"
+      },
+      "widgets_values": [
+        "Aiya/%Aiya:yyyyMMdd%-Aiya/%Aiya:yyyyMMdd%_img_Aiya-",
+        95,
+        true,
+        false,
+        false
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 430,
+      "type": "ImageSaveJPG",
+      "pos": [
+        2461.7652169271064,
+        1466.4901932071268
+      ],
+      "size": [
+        215.580078125,
+        386
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 41,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 701
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt_text",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "name": "jpg_path",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "MuAIGC/ComfyUI-Aiya-MMX",
+        "Node name for S&R": "ImageSaveJPG",
+        "ver": "664197f6ae0648387a88848ff278ebec99a3e6f6"
+      },
+      "widgets_values": [
+        "Aiya/%Aiya:yyyyMMdd%-Aiya/%Aiya:yyyyMMdd%_img_Aiya-",
+        95,
+        true,
+        false,
+        false
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 431,
+      "type": "ImageSaveJPG",
+      "pos": [
+        1971.7365067242176,
+        1463.71660641845
+      ],
+      "size": [
+        215.580078125,
+        386
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 40,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 702
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt_text",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "name": "jpg_path",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "MuAIGC/ComfyUI-Aiya-MMX",
+        "Node name for S&R": "ImageSaveJPG",
+        "ver": "664197f6ae0648387a88848ff278ebec99a3e6f6"
+      },
+      "widgets_values": [
+        "Aiya/%Aiya:yyyyMMdd%-Aiya/%Aiya:yyyyMMdd%_img_Aiya-",
+        95,
+        true,
+        false,
+        false
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 432,
+      "type": "ImageSaveJPG",
+      "pos": [
+        1476.3420561888638,
+        1463.1840980340241
+      ],
+      "size": [
+        215.580078125,
+        386
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 42,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 703
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt_text",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "name": "jpg_path",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "MuAIGC/ComfyUI-Aiya-MMX",
+        "Node name for S&R": "ImageSaveJPG",
+        "ver": "664197f6ae0648387a88848ff278ebec99a3e6f6"
+      },
+      "widgets_values": [
+        "Aiya/%Aiya:yyyyMMdd%-Aiya/%Aiya:yyyyMMdd%_img_Aiya-",
+        95,
+        true,
+        false,
+        false
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 435,
+      "type": "MarkdownNote",
+      "pos": [
+        595.923216286237,
+        1243.5765342795064
+      ],
+      "size": [
+        210,
+        88
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "说明",
+      "properties": {},
+      "widgets_values": [
+        "坐标定位裁剪\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 436,
+      "type": "ImageCrop",
+      "pos": [
+        1219.4919677456169,
+        626.2201152305086
+      ],
+      "size": [
+        211.58918106468923,
+        141.41359181216967
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 705
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 706
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 707
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            695
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "ImageCrop"
+      },
+      "widgets_values": [
+        512,
+        512,
+        0,
+        0
+      ]
+    },
+    {
+      "id": 437,
+      "type": "ImageCrop",
+      "pos": [
+        2215.9042931692197,
+        633.9304496540669
+      ],
+      "size": [
+        211.58918106468923,
+        141.41359181216967
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 708
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 709
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 710
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            700
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "ImageCrop"
+      },
+      "widgets_values": [
+        512,
+        512,
+        0,
+        2048
+      ]
+    },
+    {
+      "id": 438,
+      "type": "ImageCrop",
+      "pos": [
+        1723.226832664559,
+        627.0182435743093
+      ],
+      "size": [
+        211.58918106468923,
+        141.41359181216967
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 711
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 712
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 713
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            698
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "ImageCrop"
+      },
+      "widgets_values": [
+        512,
+        512,
+        0,
+        1024
+      ]
+    },
+    {
+      "id": 439,
+      "type": "ImageCrop",
+      "pos": [
+        1222.9544858928143,
+        1071.771093800131
+      ],
+      "size": [
+        211.58918106468923,
+        141.41359181216967
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 714
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 715
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 716
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            696
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "ImageCrop"
+      },
+      "widgets_values": [
+        512,
+        512,
+        1024,
+        0
+      ]
+    },
+    {
+      "id": 440,
+      "type": "ImageCrop",
+      "pos": [
+        1726.6893508117564,
+        1072.5692221439317
+      ],
+      "size": [
+        211.58918106468923,
+        141.41359181216967
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 29,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 717
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 718
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 719
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            697
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "ImageCrop"
+      },
+      "widgets_values": [
+        512,
+        512,
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": 441,
+      "type": "ImageCrop",
+      "pos": [
+        2219.366811316417,
+        1079.4814282236894
+      ],
+      "size": [
+        211.58918106468923,
+        141.41359181216967
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 720
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 721
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 722
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            699
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "ImageCrop"
+      },
+      "widgets_values": [
+        512,
+        512,
+        1024,
+        2048
+      ]
+    },
+    {
+      "id": 442,
+      "type": "ImageCrop",
+      "pos": [
+        1726.079449559974,
+        1508.0564423844096
+      ],
+      "size": [
+        211.58918106468923,
+        141.41359181216967
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 31,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 723
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 724
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 725
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            702
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "ImageCrop"
+      },
+      "widgets_values": [
+        512,
+        512,
+        2048,
+        1024
+      ]
+    },
+    {
+      "id": 443,
+      "type": "ImageCrop",
+      "pos": [
+        2218.7569100646347,
+        1514.9686484641672
+      ],
+      "size": [
+        211.58918106468923,
+        141.41359181216967
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 726
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 727
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 728
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            701
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "ImageCrop"
+      },
+      "widgets_values": [
+        512,
+        512,
+        2048,
+        2048
+      ]
+    },
+    {
+      "id": 444,
+      "type": "ImageCrop",
+      "pos": [
+        1222.3445846410318,
+        1507.2583140406089
+      ],
+      "size": [
+        210,
+        130
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 729
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 730
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 731
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            703
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "ImageCrop"
+      },
+      "widgets_values": [
+        512,
+        512,
+        2048,
+        0
+      ]
+    },
+    {
+      "id": 445,
+      "type": "PrimitiveInt",
+      "pos": [
+        854.2701487532427,
+        1178.4504435846209
+      ],
+      "size": [
+        210,
+        82
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            706,
+            709,
+            712,
+            715,
+            718,
+            721,
+            724,
+            727,
+            730
+          ]
+        }
+      ],
+      "title": "宽度",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PrimitiveInt"
+      },
+      "widgets_values": [
+        1024,
+        "fixed"
+      ]
+    },
+    {
+      "id": 446,
+      "type": "PrimitiveInt",
+      "pos": [
+        853.7152479786714,
+        1320.4963636129949
+      ],
+      "size": [
+        210,
+        82
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": true
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            707,
+            710,
+            713,
+            716,
+            719,
+            722,
+            725,
+            728,
+            731
+          ]
+        }
+      ],
+      "title": "高度",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PrimitiveInt"
+      },
+      "widgets_values": [
+        1024,
+        "fixed"
+      ]
+    },
+    {
+      "id": 447,
+      "type": "ImageScale",
+      "pos": [
+        590.1731255187016,
+        1545.286403078845
+      ],
+      "size": [
+        229.14158779159004,
+        130
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 784
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            694,
+            704
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "ImageScale"
+      },
+      "widgets_values": [
+        "nearest-exact",
+        3072,
+        3072,
+        "disabled"
+      ]
+    },
+    {
+      "id": 434,
+      "type": "PreviewImage",
+      "pos": [
+        876.5259921486402,
+        1568.744176123639
+      ],
+      "size": [
+        214.52922646307547,
+        246
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 704
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.76",
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 241,
+      "type": "MarkdownNote",
+      "pos": [
+        -1320.2111671062185,
+        165.4747229092451
+      ],
+      "size": [
+        385.61418813396176,
+        254.58251337908882
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "说明",
+      "properties": {},
+      "widgets_values": [
+        "# 【第二步】 选择玩法\n---\n## 这个开关，每次跑图建议，只打开一个“yes”，不然开几个跑几次图"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 453,
+      "type": "BaiduAirDMX",
+      "pos": [
+        -315.6164938435172,
+        1242.8601256053446
+      ],
+      "size": [
+        321.42310222351966,
+        243.9812762805998
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 779
+        },
+        {
+          "name": "api_key",
+          "type": "STRING",
+          "widget": {
+            "name": "api_key"
+          },
+          "link": 785
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            781,
+            782,
+            783,
+            784
+          ]
+        },
+        {
+          "name": "info",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BaiduAirDMX"
+      },
+      "widgets_values": [
+        "https://www.dmxapi.cn/v1/images/generations",
+        "",
+        "1:1  高清 1328×1328",
+        "url",
+        1786952936,
+        "randomize"
+      ]
+    },
+    {
+      "id": 239,
+      "type": "Fast Groups Bypasser (rgthree)",
+      "pos": [
+        -1302.1167078357462,
+        563.5308150065443
+      ],
+      "size": [
+        364.71261714343973,
+        202
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "可选连接",
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "玩法选择",
+      "properties": {
+        "matchColors": "",
+        "matchTitle": "",
+        "showNav": true,
+        "showAllGraphs": true,
+        "sort": "position",
+        "customSortAlphabet": "",
+        "toggleRestriction": "default"
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 269,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        -404.21362784197913,
+        -115.41611362204004
+      ],
+      "size": [
+        294.88735804476687,
+        171.45192735080718
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            777
+          ]
+        }
+      ],
+      "title": "提示词",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.76",
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "一只圆滚滚的橘猫正趴在初夏午后阳光洒落的木质地板上，半眯着眼打盹，尾巴轻轻卷起，身旁翻倒的咖啡杯里流出浅浅的褐色液体，在暖黄光束下泛着柔和反光，背景是奶油色极简北欧客厅，白墙配原木书架，书架顶层一盆绿萝垂下嫩叶，窗外隐约可见樱花树随风摇曳，粉色花瓣飘进室内，落在猫耳旁，整个画面采用写实厚涂风格，色调温暖柔和，高分辨率，充满治愈氛围，光线细腻，质感丰富，像宫崎骏动画里定格的一帧，安静而温柔\n"
+      ]
+    },
+    {
+      "id": 452,
+      "type": "BaiduAirDMX",
+      "pos": [
+        -768.3398836133132,
+        -83.62396867721012
+      ],
+      "size": [
+        328.30244675195263,
+        202.70498417230692
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 777
+        },
+        {
+          "name": "api_key",
+          "type": "STRING",
+          "widget": {
+            "name": "api_key"
+          },
+          "link": 773
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            775,
+            776
+          ]
+        },
+        {
+          "name": "info",
+          "type": "STRING",
+          "links": [
+            778
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BaiduAirDMX"
+      },
+      "widgets_values": [
+        "https://www.dmxapi.cn/v1/images/generations",
+        "",
+        "3:4  高清 1104×1472",
+        "url",
+        2092029288,
+        "randomize"
+      ]
+    },
+    {
+      "id": 451,
+      "type": "JoinStrings_mmx",
+      "pos": [
+        -161.18732777869207,
+        887.3979043914449
+      ],
+      "size": [
+        212.2271484375,
+        266
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text1",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "text1"
+          },
+          "link": 786
+        },
+        {
+          "name": "text2",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "text2"
+          },
+          "link": 787
+        }
+      ],
+      "outputs": [
+        {
+          "name": "string",
+          "type": "STRING",
+          "links": [
+            740,
+            779
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "JoinStrings_mmx"
+      },
+      "widgets_values": [
+        ",",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 263,
+      "type": "PrimitiveString",
+      "pos": [
+        -1776.4592110976341,
+        568.8338293683878
+      ],
+      "size": [
+        371.3754347866104,
+        58
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            773,
+            785
+          ]
+        }
+      ],
+      "title": "key",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.76",
+        "Node name for S&R": "PrimitiveString"
+      },
+      "widgets_values": [
+        ""
+      ]
+    }
+  ],
+  "links": [
+    [
+      694,
+      447,
+      0,
+      423,
+      0,
+      "IMAGE"
+    ],
+    [
+      695,
+      436,
+      0,
+      424,
+      0,
+      "IMAGE"
+    ],
+    [
+      696,
+      439,
+      0,
+      425,
+      0,
+      "IMAGE"
+    ],
+    [
+      697,
+      440,
+      0,
+      426,
+      0,
+      "IMAGE"
+    ],
+    [
+      698,
+      438,
+      0,
+      427,
+      0,
+      "IMAGE"
+    ],
+    [
+      699,
+      441,
+      0,
+      428,
+      0,
+      "IMAGE"
+    ],
+    [
+      700,
+      437,
+      0,
+      429,
+      0,
+      "IMAGE"
+    ],
+    [
+      701,
+      443,
+      0,
+      430,
+      0,
+      "IMAGE"
+    ],
+    [
+      702,
+      442,
+      0,
+      431,
+      0,
+      "IMAGE"
+    ],
+    [
+      703,
+      444,
+      0,
+      432,
+      0,
+      "IMAGE"
+    ],
+    [
+      704,
+      447,
+      0,
+      434,
+      0,
+      "IMAGE"
+    ],
+    [
+      705,
+      423,
+      0,
+      436,
+      0,
+      "IMAGE"
+    ],
+    [
+      706,
+      445,
+      0,
+      436,
+      1,
+      "INT"
+    ],
+    [
+      707,
+      446,
+      0,
+      436,
+      2,
+      "INT"
+    ],
+    [
+      708,
+      423,
+      0,
+      437,
+      0,
+      "IMAGE"
+    ],
+    [
+      709,
+      445,
+      0,
+      437,
+      1,
+      "INT"
+    ],
+    [
+      710,
+      446,
+      0,
+      437,
+      2,
+      "INT"
+    ],
+    [
+      711,
+      423,
+      0,
+      438,
+      0,
+      "IMAGE"
+    ],
+    [
+      712,
+      445,
+      0,
+      438,
+      1,
+      "INT"
+    ],
+    [
+      713,
+      446,
+      0,
+      438,
+      2,
+      "INT"
+    ],
+    [
+      714,
+      423,
+      0,
+      439,
+      0,
+      "IMAGE"
+    ],
+    [
+      715,
+      445,
+      0,
+      439,
+      1,
+      "INT"
+    ],
+    [
+      716,
+      446,
+      0,
+      439,
+      2,
+      "INT"
+    ],
+    [
+      717,
+      423,
+      0,
+      440,
+      0,
+      "IMAGE"
+    ],
+    [
+      718,
+      445,
+      0,
+      440,
+      1,
+      "INT"
+    ],
+    [
+      719,
+      446,
+      0,
+      440,
+      2,
+      "INT"
+    ],
+    [
+      720,
+      423,
+      0,
+      441,
+      0,
+      "IMAGE"
+    ],
+    [
+      721,
+      445,
+      0,
+      441,
+      1,
+      "INT"
+    ],
+    [
+      722,
+      446,
+      0,
+      441,
+      2,
+      "INT"
+    ],
+    [
+      723,
+      423,
+      0,
+      442,
+      0,
+      "IMAGE"
+    ],
+    [
+      724,
+      445,
+      0,
+      442,
+      1,
+      "INT"
+    ],
+    [
+      725,
+      446,
+      0,
+      442,
+      2,
+      "INT"
+    ],
+    [
+      726,
+      423,
+      0,
+      443,
+      0,
+      "IMAGE"
+    ],
+    [
+      727,
+      445,
+      0,
+      443,
+      1,
+      "INT"
+    ],
+    [
+      728,
+      446,
+      0,
+      443,
+      2,
+      "INT"
+    ],
+    [
+      729,
+      423,
+      0,
+      444,
+      0,
+      "IMAGE"
+    ],
+    [
+      730,
+      445,
+      0,
+      444,
+      1,
+      "INT"
+    ],
+    [
+      731,
+      446,
+      0,
+      444,
+      2,
+      "INT"
+    ],
+    [
+      740,
+      451,
+      0,
+      274,
+      0,
+      "STRING"
+    ],
+    [
+      773,
+      263,
+      0,
+      452,
+      1,
+      "STRING"
+    ],
+    [
+      775,
+      452,
+      0,
+      275,
+      0,
+      "IMAGE"
+    ],
+    [
+      776,
+      452,
+      0,
+      343,
+      0,
+      "IMAGE"
+    ],
+    [
+      777,
+      269,
+      0,
+      452,
+      0,
+      "STRING"
+    ],
+    [
+      778,
+      452,
+      1,
+      340,
+      0,
+      "STRING"
+    ],
+    [
+      779,
+      451,
+      0,
+      453,
+      0,
+      "STRING"
+    ],
+    [
+      781,
+      453,
+      0,
+      359,
+      0,
+      "IMAGE"
+    ],
+    [
+      782,
+      453,
+      0,
+      277,
+      0,
+      "IMAGE"
+    ],
+    [
+      783,
+      453,
+      0,
+      368,
+      0,
+      "IMAGE"
+    ],
+    [
+      784,
+      453,
+      0,
+      447,
+      0,
+      "IMAGE"
+    ],
+    [
+      785,
+      263,
+      0,
+      453,
+      1,
+      "STRING"
+    ],
+    [
+      786,
+      271,
+      0,
+      451,
+      0,
+      "STRING"
+    ],
+    [
+      787,
+      273,
+      0,
+      451,
+      1,
+      "STRING"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "玩法1：文生图(海报)",
+      "bounding": [
+        -821.4031092515604,
+        -307.09559867957233,
+        1594.0562541427307,
+        676.0180664622321
+      ],
+      "color": "#3f789e",
+      "font_size": 100,
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "玩法2：文生九宫格+分割裁剪",
+      "bounding": [
+        -821.5362024328174,
+        423.6746344615382,
+        3562.936292687704,
+        1450.050409868927
+      ],
+      "color": "#3f789e",
+      "font_size": 100,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.1671841070450086,
+      "offset": [
+        1894.0950626362148,
+        -180.0464863957892
+      ]
+    },
+    "frontendVersion": "1.34.9",
+    "workflowRendererVersion": "LG",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
