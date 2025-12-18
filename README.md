@@ -86,7 +86,6 @@
       <a href="https://www.dmxapi.cn/register?aff=LpUa">
         <img src="https://github.com/MuAIGC/ComfyUI-Aiya-MMX/raw/main/web/DMXAPI.png" width="420"/>
       </a>
-      <br/><b style="color:#FF7EB9;font-size:22px;">DMXAPI</b>
       <br/>海外模型 6.8 折 · 国内模型 7.9 折 · 当天开票 · 快速报销
     </td>
 <p align="center">
