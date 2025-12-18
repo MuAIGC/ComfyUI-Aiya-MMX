@@ -80,16 +80,10 @@
 ---
 
 ## 💖 赞助商 · 感谢投喂
-<p align="center">
-  <i>给项目续命的小伙伴排名不分先后，么么哒！</i>
-</p>
 
-<p align="center">
-  <a href="#"><img src="https://img.shields.io/badge/☕-咖啡投喂-FF7EB9?style=flat-square"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/🍰-蛋糕投喂-FF7EB9?style=flat-square"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/🧋-奶茶投喂-FF7EB9?style=flat-square"/></a>
+<p align="center" style="font-size:28px; color:#FF7EB9; font-weight:bold;">
+  DMXAPI 海外模型6.8折 · 国内模型7.9折 · 当天开票 · 快速报销 🎀
 </p>
-
 <p align="center">
   <small>想成为赞助商？微信戳 <b>MMXaigc</b> 备注「赞助」即可～</small>
 </p>
