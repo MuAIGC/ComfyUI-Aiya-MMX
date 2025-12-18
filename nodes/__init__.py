@@ -1,4 +1,4 @@
-# MMXTools/ComfyUI/custom_nodes/Aiya_mmx/nodes/__init__.py
+# ~/ComfyUI/custom_nodes/Aiya_mmx/nodes/__init__.py
 """
 💕 哎呀✦MMX 节点自动装载机
 按文件名升序批量导入，避免手动维护
