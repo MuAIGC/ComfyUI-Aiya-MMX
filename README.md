@@ -82,47 +82,40 @@
 ## 💖 赞助商 · 感谢投喂
 <p align="center"><i>排名不分先后，一起给项目续命 🎀</i></p>
 
-<!-- 外层表格：居中、允许换行 -->
+<div align="center">
 <table align="center" border="0" cellpadding="12" cellspacing="8">
   <tr valign="top">
     <!-- 星海智算 大格子 -->
-    <td align="center" style="border:1px solid #FFE0F0; border-radius:8px; padding:8px;">
-      <table border="0" cellpadding="4" cellspacing="0">
-        <tr>
-          <td align="center" width="340">
-            <a href="https://spacehpc.com/user/register?inviteCode=46153274">
-              <img src="https://github.com/MuAIGC/ComfyUI-Aiya-MMX/raw/main/web/starsea-2.png" width="340"/>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td align="center">
-            <b><font color="#FF7EB9">星海智算</font>
-              <small>专业高性能 GPU 云</small></b>
-          </td>
-        </tr>
+    <td align="center" style="border:1px solid #FFE0F0;border-radius:8px;padding:8px;">
+      <table border="0" cellpadding="4" cellspacing="0" width="100%">
+        <tr><td align="center">
+          <a href="https://spacehpc.com/user/register?inviteCode=46153274">
+            <img src="https://github.com/MuAIGC/ComfyUI-Aiya-MMX/raw/main/web/starsea-2.png" width="320"/>
+          </a>
+        </td></tr>
+        <tr><td align="center">
+          <b><font color="#FF7EB9">星海智算</font></b>
+          <br/><small>专业高性能 GPU 云</small>
+        </td></tr>
       </table>
     </td>
     <!-- DMXAPI 大格子 -->
-    <td align="center" style="border:1px solid #FFE0F0; border-radius:8px; padding:8px;">
-      <table border="0" cellpadding="4" cellspacing="0">
-        <tr>
-          <td align="center" width="340">
-            <a href="https://www.dmxapi.cn/register?aff=LpUa">
-              <img src="https://github.com/MuAIGC/ComfyUI-Aiya-MMX/raw/main/web/DMXAPI.png" width="340"/>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td align="center">
-            <b><font color="#FF7EB9">DMXAPI</font>
-              <small>海外 6.8 折 · 国内 7.9 折</small></b>
-          </td>
-        </tr>
+    <td align="center" style="border:1px solid #FFE0F0;border-radius:8px;padding:8px;">
+      <table border="0" cellpadding="4" cellspacing="0" width="100%">
+        <tr><td align="center">
+          <a href="https://www.dmxapi.cn/register?aff=LpUa">
+            <img src="https://github.com/MuAIGC/ComfyUI-Aiya-MMX/raw/main/web/DMXAPI.png" width="320"/>
+          </a>
+        </td></tr>
+        <tr><td align="center">
+          <b><font color="#FF7EB9">DMXAPI</font></b>
+          <br/><small>海外 6.8 折 · 国内 7.9 折</small>
+        </td></tr>
       </table>
     </td>
   </tr>
 </table>
+</div>
 
 <p align="center">
   <small>想成为赞助商？微信戳 <b>MMXaigc</b> 备注「赞助」即可～</small>
