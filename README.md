@@ -81,7 +81,10 @@
 
 ## 💖 赞助商 · 感谢投喂
 
-<p align="center" style="font-size:28px; color:#FF7EB9; font-weight:bold;">
+<p align="center">
+  <img src="https://github.com/MuAIGC/ComfyUI-Aiya-MMX/raw/main/web/DMXAPI.png" width="420"/>
+</p>
+<p align="center" style="font-size:26px; color:#FF7EB9; font-weight:bold;">
   DMXAPI 海外模型6.8折 · 国内模型7.9折 · 当天开票 · 快速报销 🎀
 </p>
 <p align="center">
