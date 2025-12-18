@@ -1,4 +1,4 @@
-# Aiya_mmx_SeeDream45_DMX_v2.py
+# Aiya_mmx_SeeDream45_DMX.py
 from __future__ import annotations
 import io
 import requests
