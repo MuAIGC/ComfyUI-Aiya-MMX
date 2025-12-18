@@ -1,0 +1,1530 @@
+{
+  "id": "f65ba1be-5ac6-40be-9ba8-0666650e317f",
+  "revision": 0,
+  "last_node_id": 57,
+  "last_link_id": 78,
+  "nodes": [
+    {
+      "id": 12,
+      "type": "PreviewAny",
+      "pos": [
+        2400.4076887371807,
+        -83.24219169457471
+      ],
+      "size": [
+        210,
+        112
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 51
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 13,
+      "type": "PreviewAny",
+      "pos": [
+        2864.6478532555975,
+        -82.93312330674978
+      ],
+      "size": [
+        210,
+        112
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 53
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 14,
+      "type": "PreviewAny",
+      "pos": [
+        2627.871999611278,
+        -82.29013315636062
+      ],
+      "size": [
+        210,
+        112
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 52
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 15,
+      "type": "PreviewAny",
+      "pos": [
+        1938.1913090338626,
+        -85.966197008805
+      ],
+      "size": [
+        210,
+        112.68545212644347
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 49
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 17,
+      "type": "PreviewAny",
+      "pos": [
+        2166.591627672669,
+        -84.64866816155818
+      ],
+      "size": [
+        210,
+        112
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 50
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 40,
+      "type": "PreviewAny",
+      "pos": [
+        2403.9841034558854,
+        79.87210014852326
+      ],
+      "size": [
+        210,
+        112
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 56
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 43,
+      "type": "PreviewAny",
+      "pos": [
+        2170.1680423913735,
+        78.4656236815398
+      ],
+      "size": [
+        210,
+        112
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 55
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 11,
+      "type": "SplitString_mmx",
+      "pos": [
+        1627.390081007848,
+        -83.54296585239572
+      ],
+      "size": [
+        228.85307301667257,
+        272
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 38
+        }
+      ],
+      "outputs": [
+        {
+          "name": "string1",
+          "type": "STRING",
+          "links": [
+            39,
+            49
+          ]
+        },
+        {
+          "name": "string2",
+          "type": "STRING",
+          "links": [
+            40,
+            50
+          ]
+        },
+        {
+          "name": "string3",
+          "type": "STRING",
+          "links": [
+            41,
+            51
+          ]
+        },
+        {
+          "name": "string4",
+          "type": "STRING",
+          "links": [
+            42,
+            52
+          ]
+        },
+        {
+          "name": "string5",
+          "type": "STRING",
+          "links": [
+            43,
+            53
+          ]
+        },
+        {
+          "name": "string6",
+          "type": "STRING",
+          "links": [
+            44,
+            54
+          ]
+        },
+        {
+          "name": "string7",
+          "type": "STRING",
+          "links": [
+            45,
+            55
+          ]
+        },
+        {
+          "name": "string8",
+          "type": "STRING",
+          "links": [
+            46,
+            56
+          ]
+        },
+        {
+          "name": "string9",
+          "type": "STRING",
+          "links": [
+            48,
+            57
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SplitString_mmx"
+      },
+      "widgets_values": [
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 42,
+      "type": "PreviewAny",
+      "pos": [
+        1941.7677237525672,
+        77.14809483429298
+      ],
+      "size": [
+        210,
+        112.68545212644347
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 54
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 41,
+      "type": "PreviewAny",
+      "pos": [
+        2631.448414329983,
+        80.82415868673729
+      ],
+      "size": [
+        210,
+        112
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 57
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 44,
+      "type": "PreviewAny",
+      "pos": [
+        2359.171001068983,
+        323.3851297147468
+      ],
+      "size": [
+        355.96502647158013,
+        261.28236166711434
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 58
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 18,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        1182.1656783559727,
+        -80.04100406127117
+      ],
+      "size": [
+        310.4898207545558,
+        268.55353158377295
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            38
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "001_第一段\n002_第二行\n003_第三段\n004_第四行\n005_第五段\n006_第六行\n007_第七段\n008_第八行\n009_第九段"
+      ]
+    },
+    {
+      "id": 45,
+      "type": "PreviewAny",
+      "pos": [
+        2412.919493912683,
+        739.0980812584246
+      ],
+      "size": [
+        210,
+        112
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 59
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 46,
+      "type": "PreviewAny",
+      "pos": [
+        2877.1596584310996,
+        739.4071496462495
+      ],
+      "size": [
+        210,
+        112
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 60
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 47,
+      "type": "PreviewAny",
+      "pos": [
+        2640.3838047867803,
+        740.0501397966386
+      ],
+      "size": [
+        210,
+        112
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 61
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 48,
+      "type": "PreviewAny",
+      "pos": [
+        1950.7031142093647,
+        736.3740759441943
+      ],
+      "size": [
+        210,
+        112.68545212644347
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 62
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 49,
+      "type": "PreviewAny",
+      "pos": [
+        2179.103432848171,
+        737.6916047914411
+      ],
+      "size": [
+        210,
+        112
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 63
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 50,
+      "type": "PreviewAny",
+      "pos": [
+        2416.4959086313875,
+        902.2123731015225
+      ],
+      "size": [
+        210,
+        112
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 64
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 51,
+      "type": "PreviewAny",
+      "pos": [
+        2182.6798475668757,
+        900.8058966345391
+      ],
+      "size": [
+        210,
+        112
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 65
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 53,
+      "type": "PreviewAny",
+      "pos": [
+        1954.2795289280693,
+        899.4883677872922
+      ],
+      "size": [
+        210,
+        112.68545212644347
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 67
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 54,
+      "type": "PreviewAny",
+      "pos": [
+        2643.960219505485,
+        903.1644316397366
+      ],
+      "size": [
+        210,
+        112
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 68
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 55,
+      "type": "JoinStrings_mmx",
+      "pos": [
+        1991.187077820305,
+        1136.0519070585267
+      ],
+      "size": [
+        272.2271484375,
+        274
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text1",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "text1"
+          },
+          "link": 69
+        },
+        {
+          "name": "text2",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "text2"
+          },
+          "link": 70
+        },
+        {
+          "name": "text3",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "text3"
+          },
+          "link": 71
+        },
+        {
+          "name": "text4",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "text4"
+          },
+          "link": 72
+        },
+        {
+          "name": "text5",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "text5"
+          },
+          "link": 73
+        },
+        {
+          "name": "text6",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "text6"
+          },
+          "link": 74
+        },
+        {
+          "name": "text7",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "text7"
+          },
+          "link": 75
+        },
+        {
+          "name": "text8",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "text8"
+          },
+          "link": 76
+        },
+        {
+          "name": "text9",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "text9"
+          },
+          "link": 77
+        }
+      ],
+      "outputs": [
+        {
+          "name": "string",
+          "type": "STRING",
+          "links": [
+            78
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "JoinStrings_mmx"
+      },
+      "widgets_values": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 52,
+      "type": "SplitString_mmx",
+      "pos": [
+        1639.9018861833501,
+        738.7973071006036
+      ],
+      "size": [
+        228.85307301667257,
+        272
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 66
+        }
+      ],
+      "outputs": [
+        {
+          "name": "string1",
+          "type": "STRING",
+          "links": [
+            62,
+            69
+          ]
+        },
+        {
+          "name": "string2",
+          "type": "STRING",
+          "links": [
+            63,
+            70
+          ]
+        },
+        {
+          "name": "string3",
+          "type": "STRING",
+          "links": [
+            59,
+            71
+          ]
+        },
+        {
+          "name": "string4",
+          "type": "STRING",
+          "links": [
+            61,
+            72
+          ]
+        },
+        {
+          "name": "string5",
+          "type": "STRING",
+          "links": [
+            60,
+            73
+          ]
+        },
+        {
+          "name": "string6",
+          "type": "STRING",
+          "links": [
+            67,
+            74
+          ]
+        },
+        {
+          "name": "string7",
+          "type": "STRING",
+          "links": [
+            65,
+            75
+          ]
+        },
+        {
+          "name": "string8",
+          "type": "STRING",
+          "links": [
+            64,
+            76
+          ]
+        },
+        {
+          "name": "string9",
+          "type": "STRING",
+          "links": [
+            68,
+            77
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SplitString_mmx"
+      },
+      "widgets_values": [
+        "",
+        "||"
+      ]
+    },
+    {
+      "id": 57,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        1194.6774835314748,
+        742.2992688917282
+      ],
+      "size": [
+        310.4898207545558,
+        268.55353158377295
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            66
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "001_第一段||002_第二行||003_第三段||004_第四行||005_第五段||006_第六行||007_第七段||008_第八行||009_第九段||"
+      ]
+    },
+    {
+      "id": 56,
+      "type": "PreviewAny",
+      "pos": [
+        2346.595076019873,
+        1145.725402667746
+      ],
+      "size": [
+        355.96502647158013,
+        261.28236166711434
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 78
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 10,
+      "type": "JoinStrings_mmx",
+      "pos": [
+        1978.6752726448028,
+        313.7116341055274
+      ],
+      "size": [
+        272.2271484375,
+        274
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text1",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "text1"
+          },
+          "link": 39
+        },
+        {
+          "name": "text2",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "text2"
+          },
+          "link": 40
+        },
+        {
+          "name": "text3",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "text3"
+          },
+          "link": 41
+        },
+        {
+          "name": "text4",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "text4"
+          },
+          "link": 42
+        },
+        {
+          "name": "text5",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "text5"
+          },
+          "link": 43
+        },
+        {
+          "name": "text6",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "text6"
+          },
+          "link": 44
+        },
+        {
+          "name": "text7",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "text7"
+          },
+          "link": 45
+        },
+        {
+          "name": "text8",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "text8"
+          },
+          "link": 46
+        },
+        {
+          "name": "text9",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "text9"
+          },
+          "link": 48
+        }
+      ],
+      "outputs": [
+        {
+          "name": "string",
+          "type": "STRING",
+          "links": [
+            58
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "JoinStrings_mmx"
+      },
+      "widgets_values": [
+        "||",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    }
+  ],
+  "links": [
+    [
+      38,
+      18,
+      0,
+      11,
+      0,
+      "STRING"
+    ],
+    [
+      39,
+      11,
+      0,
+      10,
+      0,
+      "STRING"
+    ],
+    [
+      40,
+      11,
+      1,
+      10,
+      1,
+      "STRING"
+    ],
+    [
+      41,
+      11,
+      2,
+      10,
+      2,
+      "STRING"
+    ],
+    [
+      42,
+      11,
+      3,
+      10,
+      3,
+      "STRING"
+    ],
+    [
+      43,
+      11,
+      4,
+      10,
+      4,
+      "STRING"
+    ],
+    [
+      44,
+      11,
+      5,
+      10,
+      5,
+      "STRING"
+    ],
+    [
+      45,
+      11,
+      6,
+      10,
+      6,
+      "STRING"
+    ],
+    [
+      46,
+      11,
+      7,
+      10,
+      7,
+      "STRING"
+    ],
+    [
+      48,
+      11,
+      8,
+      10,
+      8,
+      "STRING"
+    ],
+    [
+      49,
+      11,
+      0,
+      15,
+      0,
+      "STRING"
+    ],
+    [
+      50,
+      11,
+      1,
+      17,
+      0,
+      "STRING"
+    ],
+    [
+      51,
+      11,
+      2,
+      12,
+      0,
+      "STRING"
+    ],
+    [
+      52,
+      11,
+      3,
+      14,
+      0,
+      "STRING"
+    ],
+    [
+      53,
+      11,
+      4,
+      13,
+      0,
+      "STRING"
+    ],
+    [
+      54,
+      11,
+      5,
+      42,
+      0,
+      "STRING"
+    ],
+    [
+      55,
+      11,
+      6,
+      43,
+      0,
+      "STRING"
+    ],
+    [
+      56,
+      11,
+      7,
+      40,
+      0,
+      "STRING"
+    ],
+    [
+      57,
+      11,
+      8,
+      41,
+      0,
+      "STRING"
+    ],
+    [
+      58,
+      10,
+      0,
+      44,
+      0,
+      "STRING"
+    ],
+    [
+      59,
+      52,
+      2,
+      45,
+      0,
+      "STRING"
+    ],
+    [
+      60,
+      52,
+      4,
+      46,
+      0,
+      "STRING"
+    ],
+    [
+      61,
+      52,
+      3,
+      47,
+      0,
+      "STRING"
+    ],
+    [
+      62,
+      52,
+      0,
+      48,
+      0,
+      "STRING"
+    ],
+    [
+      63,
+      52,
+      1,
+      49,
+      0,
+      "STRING"
+    ],
+    [
+      64,
+      52,
+      7,
+      50,
+      0,
+      "STRING"
+    ],
+    [
+      65,
+      52,
+      6,
+      51,
+      0,
+      "STRING"
+    ],
+    [
+      66,
+      57,
+      0,
+      52,
+      0,
+      "STRING"
+    ],
+    [
+      67,
+      52,
+      5,
+      53,
+      0,
+      "STRING"
+    ],
+    [
+      68,
+      52,
+      8,
+      54,
+      0,
+      "STRING"
+    ],
+    [
+      69,
+      52,
+      0,
+      55,
+      0,
+      "STRING"
+    ],
+    [
+      70,
+      52,
+      1,
+      55,
+      1,
+      "STRING"
+    ],
+    [
+      71,
+      52,
+      2,
+      55,
+      2,
+      "STRING"
+    ],
+    [
+      72,
+      52,
+      3,
+      55,
+      3,
+      "STRING"
+    ],
+    [
+      73,
+      52,
+      4,
+      55,
+      4,
+      "STRING"
+    ],
+    [
+      74,
+      52,
+      5,
+      55,
+      5,
+      "STRING"
+    ],
+    [
+      75,
+      52,
+      6,
+      55,
+      6,
+      "STRING"
+    ],
+    [
+      76,
+      52,
+      7,
+      55,
+      7,
+      "STRING"
+    ],
+    [
+      77,
+      52,
+      8,
+      55,
+      8,
+      "STRING"
+    ],
+    [
+      78,
+      55,
+      0,
+      56,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.5989500000000024,
+      "offset": [
+        -573.7208635997974,
+        59.28318727113694
+      ]
+    },
+    "workflowRendererVersion": "LG",
+    "frontendVersion": "1.34.9",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
