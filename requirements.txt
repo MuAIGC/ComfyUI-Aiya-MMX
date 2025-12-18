@@ -3,5 +3,4 @@ aiohttp
 flask
 opencv-python
 requests
-PySide2
 numpy<=2
