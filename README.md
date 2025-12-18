@@ -55,41 +55,13 @@
 
 ---
 
-## 🚀 3 步快速上手
+## 🚀 步快速上手
 
 1. **克隆到 ComfyUI**
    ```bash
    cd ComfyUI/custom_nodes
    git clone https://github.com/MuAIGC/ComfyUI-Aiya-MMX.git
    ```
-
-2. **放入水印**
-   把透明 PNG 扔进  
-   `ComfyUI/custom_nodes/ComfyUI-Aiya-MMX/watermarks/`  
-   节点里点「🔄 刷新」立刻识别！
-
-3. **拖线即用**
-   - 图像/视频水印：连「位置/透明度/边距」→ 一键出图  
-   - 日期归档：文件名写 `%Aiya:yyyyMMdd%` 自动替换  
-   - 抽卡：改 seed → 新图立即生成
-
----
-
-## 🎨 进阶少女玩法
-
-| 技巧 | 输入示例 | 输出 |
-| --- | --- | --- |
-| **日期归档** | `输出/%Aiya:yyyyMMdd%_img` | `输出/20251207_img_00001.png` |
-| **多图合成** | 14 张参考图 + 提示词「图1 加图2 风格」 | 自动映射端口→最高分辨率 |
-| **视频流** | WAN → 强制落盘 → 水印 → SaveVideo | 4K 50 fps 实时叠加 |
-
----
-
-## ⚙️ 环境与依赖
-
-- **零额外依赖**——仅使用 ComfyUI 自带库 + 标准库  
-- **GPU/CPU 均可**——自动内存自适应  
-- **全平台** Linux / Windows / macOS
 
 ---
 
@@ -114,5 +86,3 @@
   <b>Made with 💕 by MuAIGC</b>
 </p>
 ```
-
-直接复制→粘贴到 `README.md` → Commit，仓库首页立刻粉嫩！
