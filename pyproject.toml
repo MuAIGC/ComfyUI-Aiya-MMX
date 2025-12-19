@@ -28,5 +28,5 @@ Documentation = "https://github.com/MuAIGC/ComfyUI-Aiya-MMX/wiki"
 [tool.comfy]
 PublisherId   = "MuAIGC"
 DisplayName   = "Aiya MMX Series Nodes"
-Icon          = "https://github.com/MuAIGC/ComfyUI-Aiya-MMX/blob/main/ComfyUI-Aiya-MMX-B.jpg"
+Icon          = "https://github.com/MuAIGC/ComfyUI-Aiya-MMX/blob/main/web/MMX-logo.jpg"
 requires-comfyui = ">=1.0.0"
