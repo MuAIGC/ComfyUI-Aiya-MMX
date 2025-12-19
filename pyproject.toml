@@ -6,7 +6,7 @@ readme = "README.md"
 license = {file = "LICENSE"}
 requires-python = ">=3.8"
 authors = [
-    {name = "MuAIGC", email = "hello@muai.gc"},
+    {name = "MuAIGC", email = "yiyiyi676767@163.com"},
 ]
 dependencies = [
     "torch",
