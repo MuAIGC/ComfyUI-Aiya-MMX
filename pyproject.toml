@@ -1,10 +1,11 @@
 [project]
-name        = "ComfyUI-Aiya-MMX"
-version     = "1.0.0"
-description = "💕 哎呀✦MMX 系列镜像节点 —— 水印 / 尺寸 / 保存 / 分辨率一键魔法"
-readme      = "README.md"
-license     = {file = "LICENSE"}
-authors     = [
+name = "aiya-mmx"
+version = "1.0.0"
+description = "Aiya MMX series image nodes: watermark, resize, save, resolution one-click magic"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.8"
+authors = [
     {name = "MuAIGC", email = "hello@muai.gc"},
 ]
 dependencies = [
@@ -14,11 +15,18 @@ dependencies = [
     "Pillow",
     "numpy",
 ]
+classifiers = [
+    "Operating System :: OS Independent",
+    "Environment :: GPU :: NVIDIA CUDA",
+]
 
 [project.urls]
 Repository    = "https://github.com/MuAIGC/ComfyUI-Aiya-MMX"
+Documentation = "https://github.com/MuAIGC/ComfyUI-Aiya-MMX/wiki"
+"Bug Tracker" = "https://github.com/MuAIGC/ComfyUI-Aiya-MMX/issues"
 
 [tool.comfy]
-PublisherId = "MuAIGC"
-DisplayName = "ComfyUI-Aiya-MMX"
-Icon        = "https://github.com/MuAIGC/ComfyUI-Aiya-MMX/blob/main/ComfyUI-Aiya-MMX-B.jpg"
+PublisherId   = "MuAIGC"
+DisplayName   = "Aiya MMX Series Nodes"
+Icon          = "https://github.com/MuAIGC/ComfyUI-Aiya-MMX/blob/main/ComfyUI-Aiya-MMX-B.jpg"
+requires-comfyui = ">=1.0.0"
