@@ -123,7 +123,7 @@ class MiniMaxTTS_DMX:
     RETURN_TYPES = ("AUDIO", "STRING")
     RETURN_NAMES = ("音频", "info")
     FUNCTION = "generate_speech"
-    CATEGORY = "哎呀✦MMX/audio"
+    CATEGORY = "哎呀✦MMX/DMXAPI"
     OUTPUT_NODE = True
 
     def __init__(self):
@@ -332,3 +332,4 @@ class MiniMaxTTS_DMX:
             return ({"waveform": torch.zeros(1, 1, 1), "sample_rate": 24000}, err)
 
 register_node(MiniMaxTTS_DMX, "MiniMax TTS 文字转语音_DMX")
+
