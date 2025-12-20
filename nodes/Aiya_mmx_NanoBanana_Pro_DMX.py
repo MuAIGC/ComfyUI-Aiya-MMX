@@ -68,7 +68,7 @@ class NanoBanana2_DMX:
     RETURN_TYPES = ("IMAGE", "STRING")
     RETURN_NAMES = ("image", "info")
     FUNCTION = "generate"
-    CATEGORY = "哎呀✦MMX/DMX"
+    CATEGORY = "哎呀✦MMX/DMXAPI"
 
     # ---------- 内部 ----------
     def build_json(self, prompt, imgs, ar, size):
