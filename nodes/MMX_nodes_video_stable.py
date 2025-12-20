@@ -114,7 +114,7 @@ class MMXVideoWatermarkStable:
     RETURN_TYPES = ("VIDEO", "BOOLEAN")
     RETURN_NAMES = ("video", "刷新回弹")
     FUNCTION = "apply"
-    CATEGORY = "哎呀✦MMX/视频"
+    CATEGORY = "哎呀✦MMX/video"
 
     def apply(self, video, 位置, 透明度, 边距, 水印选择, 刷新水印):
         if video is None:
