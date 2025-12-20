@@ -60,7 +60,7 @@ class BaiduAirDMX:
     RETURN_TYPES = ("IMAGE", "STRING")
     RETURN_NAMES = ("image", "info")
     FUNCTION = "generate"
-    CATEGORY = "哎呀✦MMX/BaiduAir"
+    CATEGORY = "哎呀✦MMX/DMX"
 
     # label→value 映射
     RATIO_SIZE_MAP = {
