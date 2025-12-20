@@ -33,7 +33,7 @@ class MiniMaxTTSMultiChar_DMX:
     RETURN_TYPES = ("AUDIO", "STRING")
     RETURN_NAMES = ("拼接音频", "info")
     FUNCTION = "generate_multichar_speech"
-    CATEGORY = "哎呀✦MMX/audio"
+    CATEGORY = "哎呀✦MMX/DMXAPI"
     OUTPUT_NODE = True
 
     def __init__(self):
