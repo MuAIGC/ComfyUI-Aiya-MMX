@@ -42,8 +42,9 @@ class MiniMaxTTSMultiChar_DMX:
     # ---------------- 小工具 ----------------
     @staticmethod
     def _make_silence_tensor(sec: float, sr: int):
+        """生成静音张量，确保返回float32类型"""
         n = int(sec * sr)
-        return torch.zeros(1, 1, n)
+        return torch.zeros(1, 1, n, dtype=torch.float32)
 
     @staticmethod
     def _parse_script(script: str):
@@ -141,22 +142,35 @@ class MiniMaxTTSMultiChar_DMX:
         audio_format,
         sample_rate,
     ):
+        # 错误处理：API Key为空
         if not api_key.strip():
-            return ({"waveform": torch.zeros(1, 1, 1), "sample_rate": 24000}, "❌ API Key 为空")
+            silence = torch.zeros(1, 1, 1, dtype=torch.float32)
+            return ({"waveform": silence, "sample_rate": 24000}, "❌ API Key 为空")
+        
+        # 解析剧本和音色映射
         dialogue = self._parse_script(script)
         role2voice = self._parse_voice_map(voice_map)
+        
+        # 错误处理：剧本或映射为空
         if not dialogue:
-            return ({"waveform": torch.zeros(1, 1, 1), "sample_rate": 24000}, "❌ 剧本解析为空")
+            silence = torch.zeros(1, 1, 1, dtype=torch.float32)
+            return ({"waveform": silence, "sample_rate": sample_rate}, "❌ 剧本解析为空")
         if not role2voice:
-            return ({"waveform": torch.zeros(1, 1, 1), "sample_rate": 24000}, "❌ 音色映射为空")
+            silence = torch.zeros(1, 1, 1, dtype=torch.float32)
+            return ({"waveform": silence, "sample_rate": sample_rate}, "❌ 音色映射为空")
 
         wav_list, info_list = [], []
+        
+        # 逐句处理对话
         for idx, item in enumerate(dialogue, 1):
             role, text = item["role"], item["text"]
-            # 本句参数优先用剧本里写的，没写再回落到全局
+            
+            # 获取本句参数（优先用剧本里的，否则用全局默认）
             spd = item.get("speed", speed)
             ptc = item.get("pitch", pitch)
             emo = item.get("emotion", emotion)
+            
+            # 获取角色对应的音色ID
             voice_id = role2voice.get(role)
             if not voice_id:
                 err = f"第{idx}句角色『{role}』未在 voice_map 中找到映射，已插入静音"
@@ -164,7 +178,7 @@ class MiniMaxTTSMultiChar_DMX:
                 wav_list.append(self._make_silence_tensor(0.1, sample_rate))
                 continue
 
-            # 调用单音色 worker
+            # 调用单音色合成节点
             audio_dict, info = self.worker.generate_speech(
                 api_key=api_key,
                 text=text,
@@ -177,18 +191,43 @@ class MiniMaxTTSMultiChar_DMX:
                 audio_format=audio_format,
                 sample_rate=sample_rate,
             )
+            
+            # 处理合成结果
             if "❌" in info:
+                # 合成失败，插入静音
                 wav_list.append(self._make_silence_tensor(0.1, sample_rate))
                 info_list.append(f"第{idx}句({role}) 失败: {info}")
             else:
-                wav_list.append(audio_dict["waveform"])
+                # 合成成功，确保音频是float32类型
+                waveform = audio_dict["waveform"]
+                if isinstance(waveform, torch.Tensor):
+                    waveform = waveform.float()  # 强制转换为float32
+                wav_list.append(waveform)
                 info_list.append(f"#{idx}({role}|spd={spd}|ptc={ptc}|emo={emo}) {info}")
 
-        # 拼接
-        full_wave = torch.cat(wav_list, dim=-1)
-        final_audio = {"waveform": full_wave, "sample_rate": sample_rate}
+        # 拼接所有音频片段
+        if wav_list:
+            # 确保所有张量都是float32类型
+            wav_list = [wav.float() if isinstance(wav, torch.Tensor) else wav for wav in wav_list]
+            full_wave = torch.cat(wav_list, dim=-1)
+        else:
+            # 如果没有音频片段，返回静音
+            full_wave = self._make_silence_tensor(1.0, sample_rate)
+        
+        # 最终确认数据类型为float32（ComfyUI标准）
+        full_wave = full_wave.float()
+        
+        # 构造ComfyUI标准的音频输出字典
+        final_audio = {
+            "waveform": full_wave,      # shape: (1, 1, n_samples), dtype: float32
+            "sample_rate": sample_rate   # 采样率
+        }
+        
+        # 生成信息输出
         final_info = "\n".join(info_list)
+        
         return (final_audio, final_info)
 
 
+# 注册节点
 register_node(MiniMaxTTSMultiChar_DMX, "MiniMax TTS 多人对话_DMX")
