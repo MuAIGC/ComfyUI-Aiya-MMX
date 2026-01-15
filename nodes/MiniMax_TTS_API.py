@@ -1,4 +1,4 @@
-# Aiya_mmx_minimax_tts_DMX.py 
+# MiniMax_TTS_API.py
 from __future__ import annotations
 import os
 import json
@@ -9,6 +9,7 @@ from datetime import datetime
 import folder_paths
 from ..register import register_node
 import soundfile as sf
+import re
 
 # ========== 官方 80 种主音色 ID（2025-12 更新） ==========
 VOICE_PRESETS = [
@@ -95,13 +96,14 @@ VOICE_PRESETS = [
 ]
 
 
-class MiniMaxTTS_DMX:
+# ========== 节点1: 单音色TTS ==========
+class MiniMaxTTS:
     DESCRIPTION = (
-        "💕 Aiya MiniMax TTS via DMXAPI（speech-2.6-hd）\n\n"
+        "💕 Aiya MiniMax TTS（speech-2.6-hd）\n\n"
         "【功能】输入文本 → 输出标准 AUDIO 张量，节点自身零落盘，下游随意保存/预览\n"
         "【必填】API 密钥 & 合成文本；其余参数按需调节\n"
         "【音色】80 种官方主音色（中英粤全覆盖），其余 ID 已下架\n"
-        "【模型】仅支持 speech-2.6-hd（国内 TTS TOP1，端到端 <250ms）\n"
+        "【模型】支持 speech-2.6-hd 等模型，可手动输入\n"
         "【参数】语速 0.5-2×、音高 ±12、音量 0-10、情绪 6 种、采样率 16k/24k/48k\n"
         "【输出】audio(1,1,N) 标准 dict + info 字符串（音色/模型/大小等）\n"
         "【连接】新增 voice_in 字符串口：\n"
@@ -123,7 +125,7 @@ class MiniMaxTTS_DMX:
     RETURN_TYPES = ("AUDIO", "STRING")
     RETURN_NAMES = ("音频", "info")
     FUNCTION = "generate_speech"
-    CATEGORY = "哎呀✦MMX/DMXAPI"
+    CATEGORY = "哎呀✦MMX/TTS"
     OUTPUT_NODE = True
 
     def __init__(self):
@@ -141,13 +143,18 @@ class MiniMaxTTS_DMX:
                     "default": "",
                     "placeholder": "sk-***************************"
                 }),
+                "api_url": ("STRING", {
+                    "default": "https://www.dmxapi.cn/v1/audio/speech",
+                    "placeholder": "API请求地址"
+                }),
+                "model": ("STRING", {
+                    "default": "speech-2.6-hd",
+                    "placeholder": "模型名称，如：speech-2.6-hd"
+                }),
                 "text": ("STRING", {
                     "multiline": True,
                     "default": "Hello, this is a test. 你好，测试完毕。",
                     "placeholder": "Text to synthesize"
-                }),
-                "model": (["speech-2.6-hd"], {
-                    "default": "speech-2.6-hd"
                 }),
                 "voice_id": (VOICE_PRESETS, {
                     "default": "female-tianmei-jingpin"
@@ -212,8 +219,9 @@ class MiniMaxTTS_DMX:
     def generate_speech(
         self,
         api_key,
-        text,
+        api_url,
         model,
+        text,
         voice_id,
         speed,
         pitch,
@@ -229,8 +237,18 @@ class MiniMaxTTS_DMX:
             return ({"waveform": torch.zeros(1, 1, 1), "sample_rate": 24000}, "❌ API Key 为空")
         if not text.strip():
             return ({"waveform": torch.zeros(1, 1, 1), "sample_rate": 24000}, "❌ 合成文本 为空")
+        
+        # ===== 2. 处理API URL =====
+        final_api_url = api_url.strip()
+        if not final_api_url:
+            final_api_url = "https://www.dmxapi.cn/v1/audio/speech"
+            
+        # ===== 3. 处理模型名称 =====
+        final_model = model.strip()
+        if not final_model:
+            final_model = "speech-2.6-hd"
 
-        # ===== 2. 音色优先级：voice_in > custom_voice_id > voice_id 下拉框 =====
+        # ===== 4. 音色优先级：voice_in > custom_voice_id > voice_id 下拉框 =====
         if voice_in.strip():                      # ① 外部连线优先
             final_voice_id = self.extract_voice_id(voice_in)
         elif custom_voice_id.strip():             # ② 备用自定义
@@ -238,13 +256,12 @@ class MiniMaxTTS_DMX:
         else:                                     # ③ 回落自身下拉框
             final_voice_id = self.extract_voice_id(voice_id)
 
-        api_url = "https://www.dmxapi.cn/v1/audio/speech"
         headers = {
             "Authorization": f"Bearer {api_key.strip()}",
             "Content-Type": "application/json"
         }
         payload = {
-            "model": model,
+            "model": final_model,
             "input": text,
             "voice": final_voice_id,
             "output_format": "url",
@@ -263,13 +280,14 @@ class MiniMaxTTS_DMX:
         }
 
         try:
-            print(f"[MiniMax TTS DMX] 正在生成语音...")
+            print(f"[MiniMax TTS] 正在生成语音...")
+            print(f"  API地址: {final_api_url}")
+            print(f"  模型: {final_model}")
             print(f"  文本长度: {len(text)} 字符")
-            print(f"  模型: {model}")
             print(f"  音色ID: {final_voice_id}")
 
-            response = requests.post(api_url, headers=headers, json=payload, timeout=120)
-            print(f"[MiniMax TTS DMX] HTTP {response.status_code}")
+            response = requests.post(final_api_url, headers=headers, json=payload, timeout=120)
+            print(f"[MiniMax TTS] HTTP {response.status_code}")
 
             if response.status_code != 200:
                 err_info = f"❌ API 错误 {response.status_code}: {response.text[:300]}"
@@ -280,7 +298,7 @@ class MiniMaxTTS_DMX:
             audio_data = None
             audio_url = response.headers.get("Audio-Url") or response.headers.get("audio-url")
             if audio_url:
-                print(f"[MiniMax TTS DMX] 从响应头取得音频URL: {audio_url}")
+                print(f"[MiniMax TTS] 从响应头取得音频URL: {audio_url}")
                 r = requests.get(audio_url, timeout=60)
                 if r.status_code != 200:
                     err = f"❌ 下载音频失败: {r.status_code}"
@@ -290,14 +308,14 @@ class MiniMaxTTS_DMX:
                 body = response.content
                 ct = response.headers.get("Content-Type", "")
                 if ct.startswith("audio/") or body.startswith((b"ID3", b"RIFF", b"\xFF\xFB", b"\xFF\xF3", b"\xFF\xE3")):
-                    print("[MiniMax TTS DMX] 检测到body为音频二进制，直接使用")
+                    print("[MiniMax TTS] 检测到body为音频二进制，直接使用")
                     audio_data = body
                 else:
                     try:
                         result = response.json()
                         url = result.get("audio", {}).get("url")
                         if url:
-                            print(f"[MiniMax TTS DMX] 从JSON取得音频URL: {url}")
+                            print(f"[MiniMax TTS] 从JSON取得音频URL: {url}")
                             r = requests.get(url, timeout=60)
                             if r.status_code != 200:
                                 err = f"❌ 下载音频失败: {r.status_code}"
@@ -315,11 +333,12 @@ class MiniMaxTTS_DMX:
             waveform, sr = self.audio_bytes_to_tensor(audio_data, audio_format, sample_rate)
             audio_dict = {"waveform": waveform, "sample_rate": sr}
             info_str = (
-                f"voice: {voice_id} | model: {model} | speed: {speed} | pitch: {pitch} | "
-                f"emotion: {emotion} | sample_rate: {sr} | format: {audio_format} | "
+                f"API: {final_api_url} | voice: {voice_id} | model: {final_model} | "
+                f"speed: {speed} | pitch: {pitch} | emotion: {emotion} | "
+                f"sample_rate: {sr} | format: {audio_format} | "
                 f"size: {len(audio_data)} bytes"
             )
-            print(f"[MiniMax TTS DMX] ✅ 音频已就绪，数据长度: {len(audio_data)} bytes")
+            print(f"[MiniMax TTS] ✅ 音频已就绪，数据长度: {len(audio_data)} bytes")
             return (audio_dict, info_str)
 
         except requests.exceptions.Timeout:
@@ -331,5 +350,277 @@ class MiniMaxTTS_DMX:
             print(err)
             return ({"waveform": torch.zeros(1, 1, 1), "sample_rate": 24000}, err)
 
-register_node(MiniMaxTTS_DMX, "MiniMax TTS 文字转语音_DMX")
 
+# ========== 节点2: 多人对话TTS ==========
+class MiniMaxTTSMultiChar:
+    DESCRIPTION = (
+        "💕 MiniMax 多人对话 TTS（speech-2.6-hd）\n\n"
+        "【用法】\n"
+        "1) script 端口每行格式：\n"
+        "     角色|语速|音高|情绪:文本   （后三项可省略，默认 1.0/0/neutral）\n"
+        "   例：\n"
+        "     小明|1.2:今天我们去吃火锅吧！\n"
+        "     小红|0.9|+2|happy:超开心！\n"
+        "     小刚:我就用默认参数\n"
+        "2) voice_map 端口写「角色=音色ID」映射，一行一条。\n"
+        "3) 其余参数（采样率、格式等）全局默认；单独写的优先级>全局。\n"
+        "4) 输出一条拼接好的长音频 + 每句 info（换行分隔）。\n"
+        "5) 任意句子合成失败自动插入 0.1 s 静音，下游永不崩溃。\n"
+    )
+
+    RETURN_TYPES = ("AUDIO", "STRING")
+    RETURN_NAMES = ("拼接音频", "info")
+    FUNCTION = "generate_multichar_speech"
+    CATEGORY = "哎呀✦MMX/TTS"
+    OUTPUT_NODE = True
+
+    def __init__(self):
+        self.worker = MiniMaxTTS()
+
+    # ---------------- 小工具 ----------------
+    @staticmethod
+    def _make_silence_tensor(sec: float, sr: int):
+        """生成静音张量，确保返回float32类型"""
+        n = int(sec * sr)
+        return torch.zeros(1, 1, n, dtype=torch.float32)
+
+    @staticmethod
+    def _parse_script(script: str):
+        """
+        解析剧本
+        每行格式：  角色|speed|pitch|emotion:文本
+        返回 List[Dict{'role','speed','pitch','emotion','text'}]
+        缺省值：speed=1.0  pitch=0  emotion='neutral'
+        """
+        lines = [ln.strip() for ln in script.splitlines() if ln.strip()]
+        out = []
+        for ln in lines:
+            if ':' not in ln:
+                continue
+            head, txt = ln.split(':', 1)
+            # 默认值
+            role, speed, pitch, emotion = head.strip(), 1.0, 0, 'neutral'
+            # 按 | 拆分最多 4 段
+            parts = [p.strip() for p in head.split('|')]
+            if len(parts) >= 1:
+                role = parts[0]
+            if len(parts) >= 2:
+                try:
+                    speed = float(parts[1])
+                except ValueError:
+                    speed = 1.0
+            if len(parts) >= 3:
+                try:
+                    pitch = int(parts[2])
+                except ValueError:
+                    pitch = 0
+            if len(parts) >= 4:
+                emotion = parts[3] if parts[3] in {"neutral", "happy", "sad", "angry", "fearful", "surprised"} else "neutral"
+            out.append({"role": role, "speed": speed, "pitch": pitch, "emotion": emotion, "text": txt.strip()})
+        return out
+
+    @staticmethod
+    def _parse_voice_map(voice_map: str):
+        mp = {}
+        for ln in voice_map.splitlines():
+            ln = ln.strip()
+            if not ln or '=' not in ln:
+                continue
+            role, vid = ln.split('=', 1)
+            mp[role.strip()] = vid.strip()
+        return mp
+
+    # ---------------- 输入端口 ----------------
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "api_key": ("STRING", {
+                    "default": "", "placeholder": "sk-***************************"
+                }),
+                "api_url": ("STRING", {
+                    "default": "https://www.dmxapi.cn/v1/audio/speech",
+                    "placeholder": "API请求地址"
+                }),
+                "model": ("STRING", {
+                    "default": "speech-2.6-hd",
+                    "placeholder": "模型名称，如：speech-2.6-hd"
+                }),
+                "script": ("STRING", {
+                    "multiline": True,
+                    "default": "小明|1.2:今天我们去吃火锅吧！\n小红|0.9:超开心！\n小刚:我就用默认参数",
+                    "placeholder": "角色|speed|pitch|emotion:文本  （后三项可省略）"
+                }),
+                "voice_map": ("STRING", {
+                    "multiline": True,
+                    "default": "小明=male-qn-qingse\n小红=female-tianmei\n小刚=male-qn-jingying",
+                    "placeholder": "角色=音色ID  一行一条"
+                }),
+                "speed": ("FLOAT", {
+                    "default": 1.0, "min": 0.5, "max": 2.0, "step": 0.05, "display": "slider"
+                }),
+                "pitch": ("INT", {
+                    "default": 0, "min": -12, "max": 12, "step": 1, "display": "slider"
+                }),
+                "volume": ("FLOAT", {
+                    "default": 1.0, "min": 0.0, "max": 10.0, "step": 0.1, "display": "slider"
+                }),
+                "emotion": (["neutral", "happy", "sad", "angry", "fearful", "surprised"], {"default": "neutral"}),
+                "audio_format": (["mp3", "wav"], {"default": "mp3"}),
+                "sample_rate": ("INT", {
+                    "default": 24000, "min": 16000, "max": 48000, "step": 8000
+                }),
+            }
+        }
+
+    # ---------------- 主入口 ----------------
+    def generate_multichar_speech(
+        self,
+        api_key,
+        api_url,
+        model,
+        script,
+        voice_map,
+        speed,
+        pitch,
+        volume,
+        emotion,
+        audio_format,
+        sample_rate,
+    ):
+        # 错误处理：API Key为空
+        if not api_key.strip():
+            silence = torch.zeros(1, 1, 1, dtype=torch.float32)
+            return ({"waveform": silence, "sample_rate": 24000}, "❌ API Key 为空")
+        
+        # 处理API URL
+        final_api_url = api_url.strip()
+        if not final_api_url:
+            final_api_url = "https://www.dmxapi.cn/v1/audio/speech"
+            
+        # 处理模型名称
+        final_model = model.strip()
+        if not final_model:
+            final_model = "speech-2.6-hd"
+        
+        # 解析剧本和音色映射
+        dialogue = self._parse_script(script)
+        role2voice = self._parse_voice_map(voice_map)
+        
+        # 错误处理：剧本或映射为空
+        if not dialogue:
+            silence = torch.zeros(1, 1, 1, dtype=torch.float32)
+            return ({"waveform": silence, "sample_rate": sample_rate}, "❌ 剧本解析为空")
+        if not role2voice:
+            silence = torch.zeros(1, 1, 1, dtype=torch.float32)
+            return ({"waveform": silence, "sample_rate": sample_rate}, "❌ 音色映射为空")
+
+        wav_list, info_list = [], []
+        
+        # 逐句处理对话
+        for idx, item in enumerate(dialogue, 1):
+            role, text = item["role"], item["text"]
+            
+            # 获取本句参数（优先用剧本里的，否则用全局默认）
+            spd = item.get("speed", speed)
+            ptc = item.get("pitch", pitch)
+            emo = item.get("emotion", emotion)
+            
+            # 获取角色对应的音色ID
+            voice_id = role2voice.get(role)
+            if not voice_id:
+                err = f"第{idx}句角色『{role}』未在 voice_map 中找到映射，已插入静音"
+                info_list.append(err)
+                wav_list.append(self._make_silence_tensor(0.1, sample_rate))
+                continue
+
+            # 调用单音色合成节点
+            audio_dict, info = self.worker.generate_speech(
+                api_key=api_key,
+                api_url=final_api_url,
+                model=final_model,
+                text=text,
+                voice_id=voice_id,
+                speed=spd,
+                pitch=ptc,
+                volume=volume,
+                emotion=emo,
+                audio_format=audio_format,
+                sample_rate=sample_rate,
+            )
+            
+            # 处理合成结果
+            if "❌" in info:
+                # 合成失败，插入静音
+                wav_list.append(self._make_silence_tensor(0.1, sample_rate))
+                info_list.append(f"第{idx}句({role}) 失败: {info}")
+            else:
+                # 合成成功，确保音频是float32类型
+                waveform = audio_dict["waveform"]
+                if isinstance(waveform, torch.Tensor):
+                    waveform = waveform.float()  # 强制转换为float32
+                wav_list.append(waveform)
+                info_list.append(f"#{idx}({role}|spd={spd}|ptc={ptc}|emo={emo}) {info}")
+
+        # 拼接所有音频片段
+        if wav_list:
+            # 确保所有张量都是float32类型
+            wav_list = [wav.float() if isinstance(wav, torch.Tensor) else wav for wav in wav_list]
+            full_wave = torch.cat(wav_list, dim=-1)
+        else:
+            # 如果没有音频片段，返回静音
+            full_wave = self._make_silence_tensor(1.0, sample_rate)
+        
+        # 最终确认数据类型为float32（ComfyUI标准）
+        full_wave = full_wave.float()
+        
+        # 构造ComfyUI标准的音频输出字典
+        final_audio = {
+            "waveform": full_wave,      # shape: (1, 1, n_samples), dtype: float32
+            "sample_rate": sample_rate   # 采样率
+        }
+        
+        # 生成信息输出
+        final_info = "\n".join(info_list)
+        
+        return (final_audio, final_info)
+
+
+# ========== 节点3: 音色选择器 ==========
+class MiniMaxVoicePicker:
+    DESCRIPTION = (
+        "💕 哎呀✦MiniMax 音色选择器\n\n"
+        "【用途】单独输出一个 voice_id 字符串，可连接下游 TTS 节点\n"
+        "【列表】80 种官方主音色（中英粤全覆盖），下拉框即拿即用\n"
+        "【连接】将本节点输出的「voice_id」接入「MiniMax TTS」的 custom_voice_id 口即可生效\n"
+        "【好处】① 复用音色 ② 一键切换 ③ 工作流更直观"
+    )
+
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("voice_in",)
+    FUNCTION = "pick_voice"
+    CATEGORY = "哎呀✦MMX/TTS"
+
+    def __init__(self):
+        pass
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "音色选择": (VOICE_PRESETS, {
+                    "default": "female-tianmei-jingpin",
+                    "label": "官方主音色（80 种）"
+                }),
+            }
+        }
+
+    def pick_voice(self, 音色选择):
+        # 下拉框值本身就是合法 ID，直接返回
+        return (音色选择,)
+
+
+# ========== 注册所有节点 ==========
+register_node(MiniMaxTTS, "MiniMax TTS 文字转语音")
+register_node(MiniMaxTTSMultiChar, "MiniMax TTS 多人对话")
+register_node(MiniMaxVoicePicker, "MiniMax TTS音色选择器")
