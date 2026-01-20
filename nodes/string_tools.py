@@ -93,7 +93,66 @@ class SplitString_mmx:
         print(f"[SplitString_mmx] 分割完成 → {result}")
         return result
 
+class Strings2List_mmx:
+    DESCRIPTION = (
+        "💕 哎呀✦字符串分割→LIST<STRING>\n"
+        "输入一段多行文本（或自定义分隔符）\n"
+        "输出：LIST<STRING> + List<STRING>，空行自动跳过"
+    )
+    RETURN_TYPES = ("LIST", "STRING")
+    RETURN_NAMES = ("string_list", "strings")
+    FUNCTION = "split_to_list"
+    CATEGORY = "哎呀✦MMX/text"
+    OUTPUT_IS_LIST = [False, True]
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "text": ("STRING", {"multiline": True, "default": ""}),
+                "separator": ("STRING", {"default": "", "multiline": False}),
+            }
+        }
+
+    def split_to_list(self, text: str, separator: str):
+        # 日期变量替换
+        text = replace_date_vars(text, safe_path=False)
+        sep = replace_date_vars(separator, safe_path=False)
+
+        # 分割并去空白、跳过空行
+        parts = text.splitlines() if sep == "" else text.split(sep)
+        items = [p.strip() for p in parts if p.strip()]
+
+        print(f"[Strings2List_mmx] 分割完成 → {len(items)} 条字符串")
+        return (items, items)
+
+class StrReplace_mmx:
+    DESCRIPTION = "💕 哎呀✦字符串查找替换（支持 \\n 转义）"
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("text",)
+    FUNCTION = "apply"
+    CATEGORY = "哎呀✦MMX/text"
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "text":    ("STRING", {"default": "", "multiline": True}),
+                "find":    ("STRING", {"default": "", "multiline": False}),
+                "replace": ("STRING", {"default": "", "multiline": False}),
+            }
+        }
+
+    def apply(self, text: str, find: str, replace: str) -> tuple[str,]:
+        # 让用户用 \n 字面量就能插入换行
+        replace = replace.replace("\\n", "\n")
+        find    = find.replace("\\n", "\n")
+        out = text.replace(find, replace)
+        print(f"[StrReplace_mmx] 替换完成")
+        return (out,)
 
 # 注册节点
 register_node(JoinStrings_mmx, "JoinStrings_mmx")
 register_node(SplitString_mmx, "SplitString_mmx")
+register_node(Strings2List_mmx, "Strings2List_mmx")
+register_node(StrReplace_mmx, "StrReplace_mmx")
