@@ -3,4 +3,5 @@ aiohttp
 flask
 opencv-python
 requests
-numpy<=2
+numpy
+python-pptx
