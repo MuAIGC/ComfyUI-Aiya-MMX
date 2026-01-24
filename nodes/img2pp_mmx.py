@@ -1,11 +1,25 @@
 # ~/ComfyUI/custom_nodes/Aiya_mmx/nodes/img2pp_mmx.py
 from __future__ import annotations
 import os
+import sys
 import uuid
 import re
 import time
-import fcntl
 from pathlib import Path
+
+# 平台判断：Windows 用 msvcrt，Linux/Mac 用 fcntl
+if sys.platform == 'win32':
+    import msvcrt
+    def lock_file(f):
+        msvcrt.locking(f.fileno(), msvcrt.LK_LOCK, 1)
+    def unlock_file(f):
+        msvcrt.locking(f.fileno(), msvcrt.LK_UNLCK, 1)
+else:
+    import fcntl
+    def lock_file(f):
+        fcntl.lockf(f, fcntl.LOCK_EX)
+    def unlock_file(f):
+        fcntl.lockf(f, fcntl.LOCK_UN)
 
 import torch
 import numpy as np
