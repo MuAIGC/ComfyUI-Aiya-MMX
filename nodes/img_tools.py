@@ -57,7 +57,7 @@ class save2JPG_mmx:
         "🖼 一键保存 JPG 并可选附加提示词文本\n\n"
         "参数说明：\n"
         "• optimize  — 压缩优化，文件更小，画质无损，耗时略增（默认开）\n"
-        "• progressive — 渐进式 JPG，网页大图加载“由模糊到清晰”，文件稍大，老设备可能不兼容（默认关）\n"
+        "• progressive — 渐进式 JPG，网页大图加载\"由模糊到清晰\"，文件稍大，老设备可能不兼容（默认关）\n"
         "• save_prompt_as_txt — 同步生成同名 *_prompt.txt，记录当时提示词，方便后期归档（默认开）"
     )
 
@@ -198,8 +198,109 @@ class LoadImageFromPath_mmx:
         return (rgb,)
 
 # --------------------------------------------------
+#  4. 图像等分切割  ImageSplitGrid_mmx
+# --------------------------------------------------
+class ImageSplitGrid_mmx:
+    """
+    将图像按网格等分切割，支持 1×1 到 3×3 共9种输出组合
+    宽切分数 × 高切分数 = 输出图片数量（最大9张）
+    """
+
+    def __init__(self):
+        pass
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "image": ("IMAGE",),
+                "width_split": ("INT", {
+                    "default": 2,
+                    "min": 1,
+                    "max": 3,
+                    "step": 1,
+                    "display": "number",
+                    "label": "宽度切分数"
+                }),
+                "height_split": ("INT", {
+                    "default": 2,
+                    "min": 1,
+                    "max": 3,
+                    "step": 1,
+                    "display": "number", 
+                    "label": "高度切分数"
+                }),
+            }
+        }
+
+    RETURN_TYPES = tuple(["IMAGE"] * 9)
+    RETURN_NAMES = tuple([f"image_{i}" for i in range(1, 10)])
+    FUNCTION = "split_image"
+    CATEGORY = "哎呀✦MMX/图像"
+
+    def split_image(self, image, width_split, height_split):
+        if width_split < 1 or width_split > 3 or height_split < 1 or height_split > 3:
+            raise ValueError("ImageSplitGrid_mmx: 切分数必须在 1-3 之间")
+
+        total_parts = width_split * height_split
+        if total_parts > 9:
+            raise ValueError(f"ImageSplitGrid_mmx: 总切割数 {total_parts} 超过最大值9")
+
+        if len(image.shape) == 4:
+            batch_size, height, width, channels = image.shape
+            if batch_size != 1:
+                raise ValueError("ImageSplitGrid_mmx: 暂不支持 batch > 1 的输入")
+            img_tensor = image[0]
+        else:
+            height, width, channels = image.shape
+            img_tensor = image
+
+        part_width = width // width_split
+        part_height = height // height_split
+
+        width_positions = []
+        height_positions = []
+
+        for i in range(width_split):
+            start = i * part_width
+            if i == width_split - 1:
+                end = width
+            else:
+                end = (i + 1) * part_width
+            width_positions.append((start, end))
+
+        for i in range(height_split):
+            start = i * part_height
+            if i == height_split - 1:
+                end = height
+            else:
+                end = (i + 1) * part_height
+            height_positions.append((start, end))
+
+        parts = []
+        for h_idx in range(height_split):
+            for w_idx in range(width_split):
+                h_start, h_end = height_positions[h_idx]
+                w_start, w_end = width_positions[w_idx]
+
+                part = img_tensor[h_start:h_end, w_start:w_end, :]
+                part = part.unsqueeze(0)
+                parts.append(part)
+
+        result = []
+        for i in range(9):
+            if i < len(parts):
+                result.append(parts[i])
+            else:
+                empty = torch.zeros((1, 1, 1, 3), dtype=img_tensor.dtype, device=img_tensor.device)
+                result.append(empty)
+
+        return tuple(result)
+
+# --------------------------------------------------
 #  统一注册
 # --------------------------------------------------
 register_node(ImageBatchCollector_mmx, "ImageBatchCollector_mmx")
 register_node(save2JPG_mmx, "save2JPG_mmx")
 register_node(LoadImageFromPath_mmx, "LoadImageFromPath_mmx")
+register_node(ImageSplitGrid_mmx, "ImageSplitGrid_mmx")
