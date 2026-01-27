@@ -46,7 +46,18 @@ class ImageBatchCollector_mmx:
         ]
         if not images:
             raise RuntimeError("ImageBatchCollector_mmx: 未收到任何图片输入！")
-        batch = torch.cat(images, dim=0)
+
+        # ---------- 统一尺寸：全部 resize 成第一张图大小 ----------
+        base_h, base_w = images[0].shape[1], images[0].shape[2]
+        resized = []
+        for img in images:
+            if img.shape[1] != base_h or img.shape[2] != base_w:
+                img = torch.nn.functional.interpolate(
+                    img, size=(base_h, base_w), mode="bilinear", align_corners=False
+                )
+            resized.append(img)
+        # ---------------------------------------------------------
+        batch = torch.cat(resized, dim=0)
         return (batch,)
 
 # --------------------------------------------------
@@ -246,55 +257,38 @@ class ImageSplitGrid_mmx:
         if total_parts > 9:
             raise ValueError(f"ImageSplitGrid_mmx: 总切割数 {total_parts} 超过最大值9")
 
+        # ---------- 统一 batch 维度 ----------
         if len(image.shape) == 4:
-            batch_size, height, width, channels = image.shape
-            if batch_size != 1:
+            if image.shape[0] != 1:
                 raise ValueError("ImageSplitGrid_mmx: 暂不支持 batch > 1 的输入")
-            img_tensor = image[0]
-        else:
-            height, width, channels = image.shape
-            img_tensor = image
+            image = image[0]                      # (H, W, C)
+        height, width, channels = image.shape
 
-        part_width = width // width_split
-        part_height = height // height_split
+        # ---------- 改成能被整除的尺寸 ----------
+        new_width  = (width  // width_split)  * width_split
+        new_height = (height // height_split) * height_split
+        if new_width != width or new_height != height:
+            image = image.permute(2, 0, 1).unsqueeze(0)          # 1,C,H,W
+            image = torch.nn.functional.interpolate(
+                image, size=(new_height, new_width), mode='bilinear', align_corners=False)
+            image = image.squeeze(0).permute(1, 2, 0)            # H,W,C
+        # ----------------------------------------
 
-        width_positions = []
-        height_positions = []
-
-        for i in range(width_split):
-            start = i * part_width
-            if i == width_split - 1:
-                end = width
-            else:
-                end = (i + 1) * part_width
-            width_positions.append((start, end))
-
-        for i in range(height_split):
-            start = i * part_height
-            if i == height_split - 1:
-                end = height
-            else:
-                end = (i + 1) * part_height
-            height_positions.append((start, end))
+        part_w = new_width  // width_split
+        part_h = new_height // height_split
 
         parts = []
-        for h_idx in range(height_split):
-            for w_idx in range(width_split):
-                h_start, h_end = height_positions[h_idx]
-                w_start, w_end = width_positions[w_idx]
+        for i in range(height_split):
+            for j in range(width_split):
+                sy, ey = i * part_h, (i + 1) * part_h
+                sx, ex = j * part_w, (j + 1) * part_w
+                parts.append(image[sy:ey, sx:ex, :].unsqueeze(0))
 
-                part = img_tensor[h_start:h_end, w_start:w_end, :]
-                part = part.unsqueeze(0)
-                parts.append(part)
-
+        # 补满 9 个输出
         result = []
         for i in range(9):
-            if i < len(parts):
-                result.append(parts[i])
-            else:
-                empty = torch.zeros((1, 1, 1, 3), dtype=img_tensor.dtype, device=img_tensor.device)
-                result.append(empty)
-
+            result.append(parts[i] if i < len(parts) else
+                          torch.zeros((1, part_h, part_w, channels), dtype=image.dtype, device=image.device))
         return tuple(result)
 
 # --------------------------------------------------
