@@ -1,0 +1,343 @@
+{
+  "id": "f77830a4-07ea-4250-8818-c063f8bb5fcd",
+  "revision": 0,
+  "last_node_id": 7,
+  "last_link_id": 5,
+  "nodes": [
+    {
+      "id": 3,
+      "type": "PreviewAny",
+      "pos": [
+        287.26547254206724,
+        246.65805616308572
+      ],
+      "size": [
+        370.47125939746616,
+        339.0573394214248
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 2
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.11.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 5,
+      "type": "MarkdownNote",
+      "pos": [
+        -863.0117213063172,
+        188.13663856723133
+      ],
+      "size": [
+        384.9431470394745,
+        296.28984931400294
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "说明",
+      "properties": {},
+      "widgets_values": [
+        "# 使用API模型需  填/注册API\n---\n## 可以使用贞贞工坊API\n\n## [>>点这里获取key<<](https://ai.t8star.cn/register?aff=QdDN47556/)\n\n## 令牌->添加令牌->获得key\n\n## ->将key填入下框->确认"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 7,
+      "type": "PreviewImage",
+      "pos": [
+        -65.23040617050916,
+        -67.32284141647867
+      ],
+      "size": [
+        295.28269032913204,
+        258
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 5
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.11.0",
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 1,
+      "type": "ImageFolderLoader_mmx",
+      "pos": [
+        -366.06747460201814,
+        172.60336754605177
+      ],
+      "size": [
+        266.237890625,
+        305.08829768421856
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "single_image",
+          "type": "IMAGE",
+          "links": [
+            1,
+            5
+          ]
+        },
+        {
+          "name": "batch",
+          "type": "IMAGE",
+          "links": []
+        },
+        {
+          "name": "current_file",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "name": "current_index",
+          "type": "INT",
+          "links": []
+        },
+        {
+          "name": "total_files",
+          "type": "INT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "aux_id": "MuAIGC/ComfyUI-Aiya-MMX",
+        "ver": "7e67126b953b9ac227607a696e1beb1e7ba7ea11",
+        "Node name for S&R": "ImageFolderLoader_mmx"
+      },
+      "widgets_values": [
+        "F:\\img",
+        1,
+        1,
+        false,
+        true,
+        "*"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "Gemini3Vision",
+      "pos": [
+        -71.96806742965487,
+        246.02615832790474
+      ],
+      "size": [
+        308.87733938703,
+        418.61705015834934
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 3
+        },
+        {
+          "name": "api_key",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "api_key"
+          },
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "MuAIGC/ComfyUI-Aiya-MMX",
+        "ver": "7e67126b953b9ac227607a696e1beb1e7ba7ea11",
+        "Node name for S&R": "Gemini3Vision"
+      },
+      "widgets_values": [
+        "你是一个专业视觉识别助手，为我识别图像，使用专业的摄影术语来描述图像内容，仅回复图像内容，不要回复其他内容。",
+        "详细描述图像内容，300字",
+        "gpt-5-nano-2025-08-07",
+        "https://ai.t8star.cn/v1/chat/completions",
+        740464531,
+        "randomize",
+        4096,
+        0.7,
+        ""
+      ]
+    },
+    {
+      "id": 2,
+      "type": "ImageScaleToTotalPixels",
+      "pos": [
+        -350.684750609208,
+        546.3672220652494
+      ],
+      "size": [
+        247.3111450671903,
+        106
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.11.0",
+        "Node name for S&R": "ImageScaleToTotalPixels"
+      },
+      "widgets_values": [
+        "nearest-exact",
+        1,
+        1
+      ]
+    },
+    {
+      "id": 6,
+      "type": "PrimitiveString",
+      "pos": [
+        -763.447277670523,
+        572.3490500436031
+      ],
+      "size": [
+        236.43055943935497,
+        59.88784994843547
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "title": "key",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.11.0",
+        "Node name for S&R": "PrimitiveString"
+      },
+      "widgets_values": [
+        ""
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "IMAGE"
+    ],
+    [
+      2,
+      4,
+      0,
+      3,
+      0,
+      "STRING"
+    ],
+    [
+      3,
+      2,
+      0,
+      4,
+      0,
+      "IMAGE"
+    ],
+    [
+      4,
+      6,
+      0,
+      4,
+      1,
+      "STRING"
+    ],
+    [
+      5,
+      1,
+      0,
+      7,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "workflowRendererVersion": "LG",
+    "ds": {
+      "scale": 1.0506240889250915,
+      "offset": [
+        850.9484181829081,
+        71.43944889333943
+      ]
+    },
+    "frontendVersion": "1.37.11"
+  },
+  "version": 0.4
+}
