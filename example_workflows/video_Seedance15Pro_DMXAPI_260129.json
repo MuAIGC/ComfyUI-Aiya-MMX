@@ -1,0 +1,2029 @@
+{
+  "id": "9712da5a-170e-4496-930f-7c7228e614e8",
+  "revision": 0,
+  "last_node_id": 109,
+  "last_link_id": 234,
+  "nodes": [
+    {
+      "id": 25,
+      "type": "SaveVideo",
+      "pos": [
+        637.6331361084394,
+        3357.905471110998
+      ],
+      "size": [
+        270,
+        249.80087847730624
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 35,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 160
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "video/ComfyUI",
+        "auto",
+        "auto"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "PreviewAny",
+      "pos": [
+        1015.5283143075372,
+        3534.572208469402
+      ],
+      "size": [
+        470.9425799993521,
+        112
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 37,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 162
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 23,
+      "type": "PreviewAny",
+      "pos": [
+        1016.9539219071944,
+        3702.0454028021563
+      ],
+      "size": [
+        467.17282339159647,
+        112
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 38,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 163
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 24,
+      "type": "SaveVideo",
+      "pos": [
+        631.6228386551469,
+        2984.2878417805628
+      ],
+      "size": [
+        270,
+        249.80087847730624
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 26,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 157
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "video/ComfyUI",
+        "auto",
+        "auto"
+      ]
+    },
+    {
+      "id": 21,
+      "type": "PreviewAny",
+      "pos": [
+        1007.9680837878257,
+        3377.599593209659
+      ],
+      "size": [
+        470.9426950431937,
+        112
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 36,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 161
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 28,
+      "type": "MarkdownNote",
+      "pos": [
+        -917.7237211775466,
+        1909.7473226609702
+      ],
+      "size": [
+        410.70184179689704,
+        347.9087855968014
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "说明",
+      "properties": {},
+      "widgets_values": [
+        "# 【第一步】 填/注册API\n---\n## 可以使用DMX-API\n\n## [>>点这里获取key<<](https://www.dmxapi.cn/register?aff=LpUa/)\n\n## 令牌->添加令牌->获得key\n\n## ->将key填入下框->确认"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 27,
+      "type": "MarkdownNote",
+      "pos": [
+        -452.0952797730671,
+        1910.7507399959425
+      ],
+      "size": [
+        385.61418813396176,
+        254.58251337908882
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "说明",
+      "properties": {},
+      "widgets_values": [
+        "# 【第二步】 选择玩法\n---\n## 这个开关，每次跑图建议，只打开一个“yes”，不然开几个跑几次图"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 39,
+      "type": "LoadImage",
+      "pos": [
+        179.3686906535935,
+        1170.024586201083
+      ],
+      "size": [
+        326.2036230531095,
+        326
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            209
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "20260107_img-Aiya-_00356_.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 65,
+      "type": "Reroute",
+      "pos": [
+        283.15406342141597,
+        726.2760895928855
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 14,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "widget": {
+            "name": "value"
+          },
+          "link": 123
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "STRING",
+          "links": [
+            182
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 13,
+      "type": "SaveVideo",
+      "pos": [
+        1036.9465141547407,
+        271.03484431947874
+      ],
+      "size": [
+        374,
+        334.7690965334009
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 23,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 183
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "video/ComfyUI",
+        "auto",
+        "auto"
+      ]
+    },
+    {
+      "id": 69,
+      "type": "Reroute",
+      "pos": [
+        907.4219216230741,
+        650.3000877612906
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 184
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "STRING",
+          "links": [
+            129
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 42,
+      "type": "Reroute",
+      "pos": [
+        429.205934955522,
+        1514.2068325283076
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "widget": {
+            "name": "value"
+          },
+          "link": 49
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "STRING",
+          "links": [
+            189
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 74,
+      "type": "Reroute",
+      "pos": [
+        232.49579431948703,
+        2380.5858089139974
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 15,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "widget": {
+            "name": "value"
+          },
+          "link": 140
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "STRING",
+          "links": [
+            200,
+            230
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 73,
+      "type": "LoadImage",
+      "pos": [
+        101.5086826783915,
+        2012.4827554121443
+      ],
+      "size": [
+        326.2036230531095,
+        326
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 3,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            205
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "20260107_img-Aiya-_00356_.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 84,
+      "type": "LoadImage",
+      "pos": [
+        446.8703750504416,
+        2102.849873836424
+      ],
+      "size": [
+        326.2036230531095,
+        326
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 4,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            207
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "20260107_img-Aiya-_00176_.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 85,
+      "type": "DownloadVideo_mmx",
+      "pos": [
+        160.1099053974935,
+        3046.736343226738
+      ],
+      "size": [
+        302.0796875,
+        106
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "download_url",
+          "type": "STRING",
+          "widget": {
+            "name": "download_url"
+          },
+          "link": 200
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "links": [
+            157,
+            164
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "MuAIGC/ComfyUI-Aiya-MMX",
+        "ver": "b2ee45f5def423d67c4714c3dfd53d06487e9467",
+        "Node name for S&R": "DownloadVideo_mmx"
+      },
+      "widgets_values": [
+        "",
+        "Aiya/%Aiya:yyyyMMdd%/download",
+        300
+      ]
+    },
+    {
+      "id": 86,
+      "type": "VideoToPath_mmx",
+      "pos": [
+        203.56456430741093,
+        3402.7396731283366
+      ],
+      "size": [
+        280.655859375,
+        118
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 164
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "links": [
+            160
+          ]
+        },
+        {
+          "name": "file_path",
+          "type": "STRING",
+          "links": [
+            161
+          ]
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            162
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            163
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "MuAIGC/ComfyUI-Aiya-MMX",
+        "ver": "b2ee45f5def423d67c4714c3dfd53d06487e9467",
+        "Node name for S&R": "VideoToPath_mmx"
+      },
+      "widgets_values": [
+        false
+      ]
+    },
+    {
+      "id": 90,
+      "type": "Reroute",
+      "pos": [
+        911.0759845993218,
+        788.5400840734999
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 25,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 185
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "INT",
+          "links": [
+            174
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 26,
+      "type": "PreviewAny",
+      "pos": [
+        1033.609764453509,
+        655.0080312968902
+      ],
+      "size": [
+        210,
+        112.68543120938148
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 33,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 129
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 91,
+      "type": "PreviewAny",
+      "pos": [
+        1266.876379941984,
+        710.313497282324
+      ],
+      "size": [
+        210,
+        112
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 34,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 174
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 11,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        65.27116873252828,
+        344.3290782867528
+      ],
+      "size": [
+        339.6839230368738,
+        201.5078796343339
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 5,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            181
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "20岁亚洲女子对着镜头说'茄子'，360度环绕运镜"
+      ]
+    },
+    {
+      "id": 36,
+      "type": "SaveVideo",
+      "pos": [
+        1120.9657073025658,
+        1167.9313055483324
+      ],
+      "size": [
+        394.741277212461,
+        324.6107332145609
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 188
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "video/ComfyUI",
+        "auto",
+        "auto"
+      ]
+    },
+    {
+      "id": 34,
+      "type": "PreviewAny",
+      "pos": [
+        1084.122396071986,
+        1532.5490302855314
+      ],
+      "size": [
+        210,
+        112
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 31,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 116
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 97,
+      "type": "PreviewAny",
+      "pos": [
+        1309.6155319205116,
+        1591.1101088810567
+      ],
+      "size": [
+        210,
+        112
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 192
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 96,
+      "type": "Reroute",
+      "pos": [
+        1003.7648433599451,
+        1649.0176938564568
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 193
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "INT",
+          "links": [
+            192
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 59,
+      "type": "Reroute",
+      "pos": [
+        998.4256314569394,
+        1509.0299185509534
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 191
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "STRING",
+          "links": [
+            116
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 35,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        185.59121750560038,
+        1600.331354204391
+      ],
+      "size": [
+        333.40717090722217,
+        88
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            190
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "0.0s - 2.5s｜远景建立\n景别：中远景（膝盖以上），人物居中偏右三分线，背景为柔和虚化的工作室/居家环境（书架或柔光灯具若隐若现）。镜头静止，人物肩部放松，眼神先低垂看向画外下方（似在准备），嘴角已带0.5分含蓄笑意。环境光：侧逆光勾勒人物轮廓，主面光柔和（柔光箱效果），色温5600K。\n2.5s - 5.0s｜缓慢推进开始\n运镜：平滑Dolly In（摄影机物理前移），速度0.3m/s，画面从 medium shot 推至 medium close-up（胸部以上）。人物在3秒时抬起双眼直视镜头，视线聚焦点精确在镜头中心偏上，瞳孔有细微收缩反应（表现真实注视感）。微笑从嘴角逐渐扩散至苹果肌，牙齿微露（不露牙龈），左侧嘴角略高（非对称真实微笑）。\n5.0s - 7.0s｜台词起始+表情峰值\n景别：近景（头部至肩膀）。人物嘴唇微启，下颌轻抬，说出第一字\"欢\"时，眉毛自然上扬0.3cm（友好度提升），右手（或左手，视画面平衡）从画面下方自然抬起，手掌微张，指尖朝向镜头，做一个\"邀请\"手势。此时镜头推进速度放缓至0.1m/s，营造\"呼吸感\"。\n7.0s - 8.5s｜中段稳定\n镜头：完全稳定在过肩特写（头部占画面高度60%）。继续\"迎来到我的\"，语速中等偏缓（约3字/秒），每个字之间气音过渡，尾音上扬。\"我的\"二字时，人物头部微侧15度（表现俏皮/亲和），眼神光（catchlight）在瞳孔上方闪烁。\n8.5s - 10.0s｜收尾+定格\n台词\"频道\"二字加重音量（非大喊，而是胸腔共鸣），同时镜头推进完全停止，定格在特写（头部占画面70%）。人物微笑达到峰值：眼角出现轻微鱼尾纹（真实感），嘴角定格，眼神坚定温暖。最后一帧（10s）：人物可轻微眨眼一次（Wink）或保持凝视，右手缓慢收回（动作延续至10s后）。"
+      ]
+    },
+    {
+      "id": 99,
+      "type": "PreviewAny",
+      "pos": [
+        1062.3930619639211,
+        2439.1248902681014
+      ],
+      "size": [
+        210,
+        112
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 39,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 224
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 100,
+      "type": "PreviewAny",
+      "pos": [
+        1287.8861978124467,
+        2497.685968863627
+      ],
+      "size": [
+        210,
+        112
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 40,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 199
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 101,
+      "type": "Reroute",
+      "pos": [
+        982.0355092518802,
+        2555.5935538390268
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 30,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 234
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "INT",
+          "links": [
+            199
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 102,
+      "type": "Reroute",
+      "pos": [
+        976.6962973488745,
+        2415.6057785335233
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 29,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 233
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "STRING",
+          "links": [
+            224
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 79,
+      "type": "SaveVideo",
+      "pos": [
+        1219.857501216565,
+        2046.4092434169036
+      ],
+      "size": [
+        285.2676845262947,
+        310.4333820940491
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 28,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 232
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "video/ComfyUI",
+        "auto",
+        "auto"
+      ]
+    },
+    {
+      "id": 104,
+      "type": "ImageScaleToTotalPixels",
+      "pos": [
+        605.0439521834882,
+        2060.355752675217
+      ],
+      "size": [
+        210,
+        106
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 12,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 207
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            229
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.11.1",
+        "Node name for S&R": "ImageScaleToTotalPixels"
+      },
+      "widgets_values": [
+        "nearest-exact",
+        1,
+        1
+      ]
+    },
+    {
+      "id": 103,
+      "type": "ImageScaleToTotalPixels",
+      "pos": [
+        477.84911240565384,
+        2014.0094420952864
+      ],
+      "size": [
+        210,
+        106
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 11,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 205
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            228
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.11.1",
+        "Node name for S&R": "ImageScaleToTotalPixels"
+      },
+      "widgets_values": [
+        "nearest-exact",
+        1,
+        1
+      ]
+    },
+    {
+      "id": 105,
+      "type": "ImageScaleToTotalPixels",
+      "pos": [
+        503.80658716876854,
+        1131.915606254591
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 209
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            210
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.11.1",
+        "Node name for S&R": "ImageScaleToTotalPixels"
+      },
+      "widgets_values": [
+        "nearest-exact",
+        1,
+        1
+      ]
+    },
+    {
+      "id": 109,
+      "type": "SeedanceFirstLastFrame2Video",
+      "pos": [
+        828.783510148695,
+        2012.5616617713904
+      ],
+      "size": [
+        329.7984375,
+        344
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "first_frame",
+          "type": "IMAGE",
+          "link": 228
+        },
+        {
+          "name": "last_frame",
+          "type": "IMAGE",
+          "link": 229
+        },
+        {
+          "name": "dmxapi_key",
+          "type": "STRING",
+          "widget": {
+            "name": "dmxapi_key"
+          },
+          "link": 230
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 231
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "links": [
+            232
+          ]
+        },
+        {
+          "name": "download_url",
+          "type": "STRING",
+          "links": [
+            233
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            234
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "MuAIGC/ComfyUI-Aiya-MMX",
+        "ver": "b2ee45f5def423d67c4714c3dfd53d06487e9467",
+        "Node name for S&R": "SeedanceFirstLastFrame2Video"
+      },
+      "widgets_values": [
+        "https://www.dmxapi.cn",
+        "sk-",
+        "镜头从首帧平滑过渡至尾帧，人物自然转身",
+        "480p",
+        "16:9（横屏-YouTube/腾讯视频）",
+        "10",
+        3268868758,
+        "randomize",
+        "开启（推荐）",
+        "无水印"
+      ]
+    },
+    {
+      "id": 95,
+      "type": "SeedanceImage2Video",
+      "pos": [
+        559.4018822575426,
+        1160.9651756331307
+      ],
+      "size": [
+        400,
+        368
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "first_frame",
+          "type": "IMAGE",
+          "link": 210
+        },
+        {
+          "name": "dmxapi_key",
+          "type": "STRING",
+          "widget": {
+            "name": "dmxapi_key"
+          },
+          "link": 189
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 190
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "links": [
+            188
+          ]
+        },
+        {
+          "name": "download_url",
+          "type": "STRING",
+          "links": [
+            191
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            193
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "MuAIGC/ComfyUI-Aiya-MMX",
+        "ver": "b2ee45f5def423d67c4714c3dfd53d06487e9467",
+        "Node name for S&R": "SeedanceImage2Video"
+      },
+      "widgets_values": [
+        "https://www.dmxapi.cn",
+        "sk-",
+        "",
+        "480p",
+        "16:9（横屏-YouTube/腾讯视频）",
+        "10",
+        3645690491,
+        "randomize",
+        "开启（推荐）",
+        "运镜移动",
+        "无水印"
+      ]
+    },
+    {
+      "id": 93,
+      "type": "SeedanceText2Video",
+      "pos": [
+        450.4062845222615,
+        326.82877921213213
+      ],
+      "size": [
+        400,
+        368
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "dmxapi_key",
+          "type": "STRING",
+          "widget": {
+            "name": "dmxapi_key"
+          },
+          "link": 182
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 181
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "links": [
+            183
+          ]
+        },
+        {
+          "name": "download_url",
+          "type": "STRING",
+          "links": [
+            184
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            185
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "MuAIGC/ComfyUI-Aiya-MMX",
+        "ver": "b2ee45f5def423d67c4714c3dfd53d06487e9467",
+        "Node name for S&R": "SeedanceText2Video"
+      },
+      "widgets_values": [
+        "https://www.dmxapi.cn",
+        "sk-",
+        "图中女孩对着镜头说'茄子'，360度环绕运镜",
+        "480p",
+        "16:9（横屏-YouTube/腾讯视频）",
+        "10",
+        3063784281,
+        "randomize",
+        "开启（推荐）",
+        "运镜移动",
+        "无水印"
+      ]
+    },
+    {
+      "id": 78,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        264.3434495711034,
+        2490.679276762592
+      ],
+      "size": [
+        333.40717090722217,
+        88
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 7,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            231
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "0.0s - 2.0s｜开场眼神锚定\n画面：特写眼部（占画幅60%），瞳孔清晰反光，睫毛根根分明\n运镜：静止1秒→ micro zoom out 微拉远至鼻尖以上（速度0.5cm/s）\n台词：\"今天教大家\"（5字，语速2.5字/秒，尾音\"家\"下沉）\n表演：左眼轻微wink（0.3秒），嘴角一侧先上扬\n2.0s - 2.3s｜气口过渡\n纯静默，人物眨眼一次，镜头暂停运动\n2.3s - 4.8s｜道具介入\n画面：胸部以上中景，右手入场举起手机（屏幕朝内），左手自然下垂\n运镜：缓慢右移5cm（跟随手部动作），焦点始终锁定面部\n台词：\"用手机拍出\"（5字，\"拍\"字重音，手部同步做\"捏合\"手势）\n节奏：\"用-手-机\"各占0.5秒，\"拍出\"连读占1.5秒（流畅感关键）\n4.8s - 5.1s｜呼吸点\n人物下巴微收，嘴唇轻闭，镜头稳定\n5.1s - 7.6s｜情绪递进\n画面：近景（画幅胸部以上），身体前倾15度，食指指向镜头（手指占前景虚化）\n运镜：Dolly in 推进3cm同时焦点锐化至眼睛\n台词：\"电影感大片\"（5字，语速渐变：\"电影感\"快（1.5字/秒），\"大～片～\"极慢拖长（各1秒），营造悬念）\n7.6s - 8.0s｜停顿留白\n保持前倾姿势，眉毛上扬定格，嘴巴微张（欲言又止感）\n8.0s - 10.0s｜收尾定格\n画面：回到面部特写，头部恢复垂直，双手出画\n运镜：完全静止（tripod lock），背景光斑轻微闪烁（bokeh breathing）\n台词：\"超级简单\"（4字，\"超\"字爆破音短促（0.3s），\"级～简～单～\"拖长至1.7秒，尾音上扬+点头同步）\n结束帧：10.0s整时，牙齿微露微笑定格，眼神直视镜头中心"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "PrimitiveString",
+      "pos": [
+        -886.927595069747,
+        2333.77425489751
+      ],
+      "size": [
+        346.13329430018143,
+        58
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            49,
+            123,
+            140
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "PrimitiveString"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 31,
+      "type": "Fast Groups Bypasser (rgthree)",
+      "pos": [
+        -441.95926190165443,
+        2276.9729950638252
+      ],
+      "size": [
+        364.71261714343973,
+        202
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "可选连接",
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "玩法选择",
+      "properties": {
+        "matchColors": "",
+        "matchTitle": "",
+        "showNav": true,
+        "showAllGraphs": true,
+        "sort": "position",
+        "customSortAlphabet": "",
+        "toggleRestriction": "default"
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    }
+  ],
+  "links": [
+    [
+      49,
+      12,
+      0,
+      42,
+      0,
+      "STRING"
+    ],
+    [
+      116,
+      59,
+      0,
+      34,
+      0,
+      "STRING"
+    ],
+    [
+      123,
+      12,
+      0,
+      65,
+      0,
+      "STRING"
+    ],
+    [
+      129,
+      69,
+      0,
+      26,
+      0,
+      "STRING"
+    ],
+    [
+      140,
+      12,
+      0,
+      74,
+      0,
+      "STRING"
+    ],
+    [
+      157,
+      85,
+      0,
+      24,
+      0,
+      "VIDEO"
+    ],
+    [
+      160,
+      86,
+      0,
+      25,
+      0,
+      "VIDEO"
+    ],
+    [
+      161,
+      86,
+      1,
+      21,
+      0,
+      "STRING"
+    ],
+    [
+      162,
+      86,
+      2,
+      22,
+      0,
+      "INT"
+    ],
+    [
+      163,
+      86,
+      3,
+      23,
+      0,
+      "INT"
+    ],
+    [
+      164,
+      85,
+      0,
+      86,
+      0,
+      "VIDEO"
+    ],
+    [
+      174,
+      90,
+      0,
+      91,
+      0,
+      "*"
+    ],
+    [
+      181,
+      11,
+      0,
+      93,
+      1,
+      "STRING"
+    ],
+    [
+      182,
+      65,
+      0,
+      93,
+      0,
+      "STRING"
+    ],
+    [
+      183,
+      93,
+      0,
+      13,
+      0,
+      "VIDEO"
+    ],
+    [
+      184,
+      93,
+      1,
+      69,
+      0,
+      "STRING"
+    ],
+    [
+      185,
+      93,
+      2,
+      90,
+      0,
+      "INT"
+    ],
+    [
+      188,
+      95,
+      0,
+      36,
+      0,
+      "VIDEO"
+    ],
+    [
+      189,
+      42,
+      0,
+      95,
+      1,
+      "STRING"
+    ],
+    [
+      190,
+      35,
+      0,
+      95,
+      2,
+      "STRING"
+    ],
+    [
+      191,
+      95,
+      1,
+      59,
+      0,
+      "STRING"
+    ],
+    [
+      192,
+      96,
+      0,
+      97,
+      0,
+      "*"
+    ],
+    [
+      193,
+      95,
+      2,
+      96,
+      0,
+      "INT"
+    ],
+    [
+      199,
+      101,
+      0,
+      100,
+      0,
+      "*"
+    ],
+    [
+      200,
+      74,
+      0,
+      85,
+      0,
+      "STRING"
+    ],
+    [
+      205,
+      73,
+      0,
+      103,
+      0,
+      "IMAGE"
+    ],
+    [
+      207,
+      84,
+      0,
+      104,
+      0,
+      "IMAGE"
+    ],
+    [
+      209,
+      39,
+      0,
+      105,
+      0,
+      "IMAGE"
+    ],
+    [
+      210,
+      105,
+      0,
+      95,
+      0,
+      "IMAGE"
+    ],
+    [
+      224,
+      102,
+      0,
+      99,
+      0,
+      "STRING"
+    ],
+    [
+      228,
+      103,
+      0,
+      109,
+      0,
+      "IMAGE"
+    ],
+    [
+      229,
+      104,
+      0,
+      109,
+      1,
+      "IMAGE"
+    ],
+    [
+      230,
+      74,
+      0,
+      109,
+      2,
+      "STRING"
+    ],
+    [
+      231,
+      78,
+      0,
+      109,
+      3,
+      "STRING"
+    ],
+    [
+      232,
+      109,
+      0,
+      79,
+      0,
+      "VIDEO"
+    ],
+    [
+      233,
+      109,
+      1,
+      102,
+      0,
+      "STRING"
+    ],
+    [
+      234,
+      109,
+      2,
+      101,
+      0,
+      "INT"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "测试功能",
+      "bounding": [
+        85.27793882729051,
+        2777.0762990144854,
+        1474.8565440774598,
+        1087.0727654417358
+      ],
+      "color": "#3f789e",
+      "font_size": 100,
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "玩法1：文生视频",
+      "bounding": [
+        68.18073060402389,
+        56.50925027812082,
+        1432.248736599269,
+        787.3482251166105
+      ],
+      "color": "#3f789e",
+      "font_size": 100,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "玩法2：图生视频",
+      "bounding": [
+        89.97587414497633,
+        953.9354966911167,
+        1432.248736599269,
+        787.3482251166105
+      ],
+      "color": "#3f789e",
+      "font_size": 100,
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "玩法3：首尾帧生视频",
+      "bounding": [
+        95.46176974309566,
+        1820.3144730768063,
+        1432.248736599269,
+        787.3482251166105
+      ],
+      "color": "#3f789e",
+      "font_size": 100,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.37190082644629746,
+      "offset": [
+        1777.3491189686356,
+        -336.5019514258727
+      ]
+    },
+    "workflowRendererVersion": "LG",
+    "frontendVersion": "1.37.11",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
