@@ -44,7 +44,7 @@ def _print_logo():
     # 模块统计
     if loaded_modules:
         mod_list = ", ".join(loaded_modules)
-        print(f"   已装载节点模块 [{len(loaded_modules)}]: {mod_list}")
+        print(f"   已装载节点模块 [{len(loaded_modules)}]")
     
     # FFmpeg 状态
     if shutil.which("ffmpeg"):
