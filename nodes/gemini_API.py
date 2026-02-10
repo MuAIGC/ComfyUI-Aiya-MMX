@@ -29,7 +29,7 @@ def tensor2pil_single(t: torch.Tensor) -> Image.Image:
     return Image.fromarray(t.numpy())
 
 # ===================================================================
-#  1. Nano-Banana Pro
+#  1.1. Nano-Banana Pro
 # ===================================================================
 class NanoBananaPro:
     DESCRIPTION = (
@@ -337,7 +337,7 @@ class Gemini3Vision:
 
 
 # ===================================================================
-#  3. Veo3.1 文生视频
+#  3.1. Veo3.1 文生视频
 # ===================================================================
 def build_video_obj(video_path: Path) -> Video:
     cap = cv2.VideoCapture(str(video_path))
@@ -497,7 +497,248 @@ class Veo3_1:
         except Exception as e:
             return (Video.create_empty(), "", f"❌ 异常: {str(e)}")
 
+# ===================================================================
+#  3.2. Veo3.1 并发提交节点
+# ===================================================================
+class Veo3_1_Submit:
+    DESCRIPTION = (
+        "💕 哎呀✦MMX/Veo3.1 提交 | 异步并发\n"
+        "提交视频生成任务，立即返回task_id，后台自动轮询下载"
+    )
+    
+    RETURN_TYPES = ("STRING", "STRING")
+    RETURN_NAMES = ("task_id", "status")
+    FUNCTION = "submit"
+    CATEGORY = "哎呀✦MMX/Video"
 
+    def __init__(self):
+        self.timeout = 120
+        self.poll_interval = 2
+        self.max_poll = 150
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "api_key": ("STRING", {"default": "", "placeholder": "sk-***************************"}),
+                "base_url": ("STRING", {"default": "https://ai.t8star.cn", "placeholder": "API 根地址"}),
+                "prompt": ("STRING", {"multiline": True, "default": "A cinematic aerial shot of a neon-lit cyberpunk city at night, 4K, ultra detailed"}),
+                "model": ("STRING", {"default": "veo3.1", "placeholder": "veo3.1 / veo3.1-fast / ..."}),
+                "duration": (["5", "10", "15", "20", "25"], {"default": "10"}),
+                "aspect_ratio": (["16:9", "9:16"], {"default": "16:9"}),
+                "enhance_prompt": ("BOOLEAN", {"default": True}),
+                "enable_upsample": ("BOOLEAN", {"default": False}),
+            },
+            "optional": {
+                "image1": ("IMAGE",), "image2": ("IMAGE",), "image3": ("IMAGE",),
+                "seed": ("INT", {"default": 0, "min": 0, "max": 2147483647}),
+            }
+        }
+
+    def image_to_base64(self, img_tensor):
+        if img_tensor is None:
+            return None
+        pil = tensor2pil(img_tensor)[0]
+        buf = io.BytesIO()
+        pil.save(buf, format="PNG")
+        return base64.b64encode(buf.getvalue()).decode()
+
+    def submit(self, api_key, base_url, prompt, model, duration, aspect_ratio,
+               enhance_prompt, enable_upsample, image1=None, image2=None, image3=None, seed=0):
+        
+        if not api_key.strip():
+            return ("", "Error: API Key missing")
+
+        local_task_id = str(uuid.uuid4())
+        event = threading.Event()
+        with _cache_lock:
+            _processing_events[local_task_id] = event
+
+        images_b64 = []
+        for img in (image1, image2, image3):
+            if img is not None:
+                b64 = self.image_to_base64(img)
+                if b64:
+                    images_b64.append(f"data:image/png;base64,{b64}")
+
+        def worker():
+            api_task_id = None
+            
+            try:
+                print(f"[Veo3.1Submit] 后台启动 | local: {local_task_id[:8]} | model: {model}")
+                
+                root = base_url.rstrip("/")
+                submit_url = f"{root}/v2/videos/generations"
+                
+                payload = {
+                    "model": model,
+                    "prompt": prompt,
+                    "duration": int(duration),
+                    "aspect_ratio": aspect_ratio,
+                    "enhance_prompt": enhance_prompt,
+                    "enable_upsample": enable_upsample,
+                }
+                if images_b64:
+                    payload["images"] = images_b64
+                if seed > 0:
+                    payload["seed"] = seed
+
+                headers = {
+                    "Content-Type": "application/json",
+                    "Authorization": f"Bearer {api_key.strip()}"
+                }
+
+                resp = requests.post(submit_url, headers=headers, json=payload, timeout=self.timeout)
+                resp.raise_for_status()
+                data = resp.json()
+                api_task_id = data.get("task_id")
+                
+                if not api_task_id:
+                    print(f"[Veo3.1Submit] 后台错误 | local: {local_task_id[:8]} | 未返回task_id")
+                    cache_result(local_task_id, None)
+                    return
+                
+                print(f"[Veo3.1Submit] 已提交 | local: {local_task_id[:8]} | 远程ID: {api_task_id}")
+
+                query_url = f"{root}/v2/videos/generations/{api_task_id}"
+                video_url = None
+                
+                for i in range(self.max_poll):
+                    time.sleep(self.poll_interval)
+                    st = requests.get(query_url, headers=headers, timeout=30)
+                    st.raise_for_status()
+                    st_data = st.json()
+                    status = st_data.get("status", "")
+                    
+                    if status == "SUCCESS":
+                        video_url = st_data.get("data", {}).get("output", "")
+                        break
+                    elif status == "FAILURE":
+                        reason = st_data.get("fail_reason", "Unknown")
+                        print(f"[Veo3.1Submit] 后台失败 | local: {local_task_id[:8]} | {reason}")
+                        cache_result(local_task_id, None)
+                        return
+
+                if not video_url:
+                    print(f"[Veo3.1Submit] 后台超时 | local: {local_task_id[:8]}")
+                    cache_result(local_task_id, None)
+                    return
+
+                print(f"[Veo3.1Submit] 下载中 | local: {local_task_id[:8]} | {video_url[:60]}...")
+                import folder_paths
+                temp_dir = Path(folder_paths.get_temp_directory())
+                temp_dir.mkdir(parents=True, exist_ok=True)
+                temp_file = temp_dir / f"veo3_1_{local_task_id[:8]}_{int(time.time()*1000)}.mp4"
+                
+                download_file(video_url, temp_file)
+                
+                video_obj = build_video_obj(temp_file)
+                cache_result(local_task_id, video_obj)
+                
+                # 使用 size 属性获取宽高
+                w, h = video_obj.size if hasattr(video_obj, 'size') else (getattr(video_obj, 'frame_width', 0), getattr(video_obj, 'frame_height', 0))
+                print(f"[Veo3.1Submit] 后台完成 | local: {local_task_id[:8]} | 视频: {w}x{h}")
+                
+            except Exception as e:
+                print(f"[Veo3.1Submit] 后台异常 | local: {local_task_id[:8]} | {e}")
+                cache_result(local_task_id, None)
+
+        threading.Thread(target=worker, daemon=True).start()
+        return (local_task_id, "Submitted")
+
+
+# ===================================================================
+#  3.3. Veo3.1 并发收集节点
+# ===================================================================
+class Veo3_1_Collector:
+    DESCRIPTION = (
+        "💕 哎呀✦MMX/Veo3.1 收集器 | 九路并发\n"
+        "收集最多9个Veo3.1提交节点的结果，按顺序一一对应\n"
+        "未连接/超时/失败的输出空视频"
+    )
+    
+    RETURN_TYPES = ("VIDEO", "VIDEO", "VIDEO", "VIDEO", "VIDEO", "VIDEO", "VIDEO", "VIDEO", "VIDEO", "STRING")
+    RETURN_NAMES = ("video_1", "video_2", "video_3", "video_4", "video_5", 
+                   "video_6", "video_7", "video_8", "video_9", "info")
+    FUNCTION = "collect"
+    CATEGORY = "哎呀✦MMX/Video"
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {},
+            "optional": {
+                f"task_id_{i}": ("STRING", {"forceInput": True}) for i in range(1, 10)
+            }
+        }
+
+    def get_video_size(self, video_obj):
+        """安全获取视频尺寸"""
+        if hasattr(video_obj, 'size'):
+            return video_obj.size
+        elif hasattr(video_obj, 'frame_width') and hasattr(video_obj, 'frame_height'):
+            return (video_obj.frame_width, video_obj.frame_height)
+        else:
+            return (0, 0)
+
+    def create_empty_video(self):
+        """构造空视频对象"""
+        import folder_paths
+        temp_dir = Path(folder_paths.get_temp_directory())
+        temp_dir.mkdir(parents=True, exist_ok=True)
+        temp_file = temp_dir / f"veo3_empty_{int(time.time()*1000)}.mp4"
+        
+        fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+        writer = cv2.VideoWriter(str(temp_file), fourcc, 1.0, (64, 64))
+        black_frame = np.zeros((64, 64, 3), dtype=np.uint8)
+        writer.write(black_frame)
+        writer.release()
+        
+        return Video(str(temp_file), 1.0, 64, 64)
+
+    def wait_for_video(self, task_id, max_wait=300):
+        """循环等待视频结果"""
+        start_time = time.time()
+        check_interval = 0.5
+        
+        while time.time() - start_time < max_wait:
+            result = get_result(task_id)
+            if result is not None:
+                return result
+            time.sleep(check_interval)
+        
+        return None
+
+    def collect(self, **kwargs):
+        task_ids = [kwargs.get(f"task_id_{i}", "") for i in range(1, 10)]
+        results = []
+        info_lines = []
+        info_lines.append(f"🎬 Veo3.1 Collector | {time.strftime('%Y-%m-%d %H:%M:%S')}")
+        info_lines.append("-" * 40)
+
+        for idx, task_id in enumerate(task_ids, 1):
+            if not task_id or not isinstance(task_id, str):
+                results.append(self.create_empty_video())
+                info_lines.append(f"[{idx}/9] 未连接")
+                continue
+
+            print(f"[Veo3.1Collector] 等待 [{idx}/9] | task: {task_id[:8]}...")
+            video_obj = self.wait_for_video(task_id, max_wait=300)
+            
+            if video_obj is None:
+                results.append(self.create_empty_video())
+                info_lines.append(f"[{idx}/9] ❌ 失败/超时 | {task_id[:8]}")
+            else:
+                results.append(video_obj)
+                w, h = self.get_video_size(video_obj)
+                info_lines.append(f"[{idx}/9] ✅ 成功 | {w}x{h} | {task_id[:8]}")
+
+        info_str = "\n".join(info_lines)
+        success_count = sum(1 for v in results if self.get_video_size(v)[0] > 64)
+        print(f"[Veo3.1Collector] 收集完成 | 成功: {success_count}/9")
+        
+        return tuple(results + [info_str])
+    
 # ===================================================================
 #  统一注册
 # ===================================================================
@@ -505,3 +746,5 @@ register_node(NanoBananaPro, "NanoBanana_Pro_mmx")
 register_node(NanoBananaProSubmit, "NanoBanana_Pro_Submit_mmx")
 register_node(Gemini3Vision, "Gemini3Vision_mmx")
 register_node(Veo3_1, "Veo3.1_mmx")
+register_node(Veo3_1_Submit, "Veo3.1_Submit_mmx")
+register_node(Veo3_1_Collector, "Veo3.1_Collector_mmx")
