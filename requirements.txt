@@ -6,3 +6,4 @@ requests
 numpy
 python-pptx
 soundfile
+PyMuPDF
