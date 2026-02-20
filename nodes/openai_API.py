@@ -863,7 +863,7 @@ class SVG_Generate_Save_mmx:
             },
             "optional": {
                 "temperature": ("FLOAT", {"default": 0.4, "min": 0.0, "max": 2.0, "step": 0.1}),
-                "max_tokens": ("INT", {"default": 4096, "min": 1024, "max": 8192, "step": 1024}),
+                "max_tokens": ("INT", {"default": 4096, "min": 1024, "max": 8192000, "step": 1024}),
                 "save_html": ("BOOLEAN", {"default": True, "tooltip": "含动画时保存HTML"}),
                 **{f"image_{i}": ("IMAGE",) for i in range(1, 15)}
             }
@@ -990,3 +990,4 @@ register_node(GPTImageEdit, "GPTImage_Edit_mmx")
 register_node(GPTImageEditSubmit, "GPTImage_Edit_Submit_mmx")
 register_node(GPTImageEditCollect, "GPTImage_Edit_Collect_mmx")
 register_node(SVG_Generate_Save_mmx, "SVG_Generate_mmx")
+
