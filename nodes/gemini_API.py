@@ -115,7 +115,7 @@ class NanoBananaPro:
 
         payload = self.build_payload(prompt, imgs, aspect_ratio, model)
         headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
-        resp = requests.post(endpoint_url, headers=headers, json=payload, timeout=180)
+        resp = requests.post(endpoint_url, headers=headers, json=payload, timeout=300)
         if resp.status_code != 200:
             raise RuntimeError(f"HTTP {resp.status_code}: {resp.text[:200]}")
 
@@ -233,7 +233,7 @@ class NanoBananaProSubmit:
                 payload = self.build_payload(prompt, imgs, aspect_ratio, model)
                 headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
                 
-                resp = requests.post(endpoint_url, headers=headers, json=payload, timeout=180)
+                resp = requests.post(endpoint_url, headers=headers, json=payload, timeout=300)
                 resp.raise_for_status()
                 
                 data = resp.json()
